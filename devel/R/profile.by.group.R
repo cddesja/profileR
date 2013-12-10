@@ -1,6 +1,6 @@
 
 
-profile.by.group <- function(x, y, labels=TRUE, profile.plot=FALSE, ...) {
+profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	
 	labels <- labels
 	x <- as.data.frame(x)
