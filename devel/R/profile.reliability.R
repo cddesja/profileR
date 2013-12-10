@@ -1,10 +1,10 @@
-#' @name subscore.reliability
-#' @title Within-person and Between-person Subscore Reliability via Profile Analysis
-#' @aliases subscore.reliability
-#' @description The \code{subscore.reliability} function uses subscores from two parallel test forms and 
-#' compute profile analysis-based subscore reliability coefficients as described in Bulut (2013).
+#' @name profile.reliability
+#' @title Pattern and Level Reliability via Profile Analysis
+#' @aliases profile.reliability
+#' @description The \code{profile.reliability} function uses subscores from two parallel test forms and 
+#' compute profile pattern and level reliability coefficients as described in Bulut (2013).
 #' 
-#' @usage subscore.reliability(form1,form2)
+#' @usage profile.reliability(form1,form2)
 #'  
 #' \S3method{print}{prof}(object)
 #'  
@@ -17,9 +17,9 @@
 #'  
 #'  \item{pattern.level}{A matrix of all pattern and level values obtained from the subscores}
 #'  
-#' @details Within-person and between-person reliability coefficients are based on the profile analysis approach described in Davison and Davenport (2002) and Bulut (2013). Using the parallel test forms or multiple administration of the same test form, within-person and between-person subscore reliability
-#' coefficients are computed. Within-person reliability is an indicator of variability between the subscores of an examinee and 
-#' the between-person subscore reliability is an indicator of the variation among all examinees. For details, see \href{http://conservancy.umn.edu/bitstream/155592/1/Bulut_umn_0130E_13879.pdf}{Bulut (2003)}. 
+#' @details Pattern and level reliability coefficients are based on the profile analysis approach described in Davison and Davenport (2002) and Bulut (2013). Using the parallel test forms or multiple administration of the same test form, 
+#' pattern and level reliability coefficients are computed. Profile pattern reliability is an indicator of variability between the subscores of an examinee and 
+#' profile level reliability is an indicator of the averae subscore variation among all examinees. For details, see \href{http://conservancy.umn.edu/bitstream/155592/1/Bulut_umn_0130E_13879.pdf}{Bulut (2003)}. 
 #' 
 #' @author Okan Bulut \email{okanbulut84@@gmail.com}
 #' 
@@ -32,7 +32,7 @@
 #' @examples 
 #' \dontrun{
 #'data(EEGS)
-#'result <- subscore.reliability(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
+#'result <- profile.reliability(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
 #'print(result)
 #'plot(result)
 #' }
@@ -42,7 +42,7 @@
 
 
 
-subscore.reliability <- function(form1,form2) {
+profile.reliability <- function(form1,form2) {
 	
 	n <- ncol(form1)
 	k <- nrow(form1)
@@ -98,7 +98,7 @@ subscore.reliability <- function(form1,form2) {
 	pattern <- num3/denum3
 	
 	result1 <- rbind(level,pattern,overall)
-	rownames(result1) <- c("Between-Person","Within-Person","Overall")
+	rownames(result1) <- c("Level","Pattern","Overall")
 	colnames(result1) <- c("Estimate")
 	
 	colnames(pattern1) <- c(paste("Form1_pattern",c(1:n),sep=""))
