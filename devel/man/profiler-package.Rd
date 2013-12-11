@@ -1,10 +1,10 @@
 \docType{package}
 \name{profileR-package}
 \alias{profileR-package}
-\title{Profile Analysis and Its Applications}
+\title{Profile Analysis and Multivariate Analysis in R}
 \description{
-  profileR provides a set of tools that implement the
-  profile analysis and cross-validation techniques
+  profileR provides a set of tools that implement multivariate analysis,
+  profile analysis, and cross-validation techniques
   described in Davison & Davenport (2002) and Bulut (2013).
 }
 \author{
