@@ -1,7 +1,7 @@
 \docType{package}
 \name{profileR-package}
 \alias{profileR-package}
-\title{Profile Analysis and Multivariate Analysis in R}
+\title{Profile Analysis of Multivariate Data in R}
 \description{
   profileR provides a set of data analysis and visualization tools that implement 
   multivariate analysis, profile analysis, and cross-validation techniques
