@@ -1,8 +1,8 @@
 Package: profileR
 Title: Profile Analysis and Multivariate Analysis in R
 Type: Package
-Description: This package provides a set of tools that implement multivariate analysis,
-    profile analysis, and cross-validation techniques described 
+Description: The package profileR provides a set of data analysis and visualization tools 
+    to implement multivariate analysis, profile analysis, and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
 Version: 0.2
 Date: 11-15-2013
