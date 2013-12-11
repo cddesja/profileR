@@ -1,5 +1,4 @@
 
-
 profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	
 	labels <- labels
@@ -87,7 +86,7 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	level <- data.frame(F3,df1,df2,pf3)
 	names(level) <- c("F","df1","df2","p-value")
   result <- rbind(parallel,coincidential,level)
-  rownames(result) <- c("Parallel","Coincidential","Level")
+  rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidential","Ho: Profiles are level")
 	
 	call<- match.call()
 	output <- list(call=call, data.summary=average, profile.test=result)
