@@ -12,6 +12,8 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	else {
   	
 	z <- as.data.frame(cbind(x,y))
+	cor.table=by(z[,1:k],z[,(1+k)],cor)
+	
 	if(labels) {colnames(z) <- c(labs <- colnames(x),"group")}
 		else {colnames(z) <- c(labs <- paste("v",1:k,sep=""),"group")}
 	z$group <- as.factor(z$group)
@@ -88,7 +90,7 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
   	rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidential","Ho: Profiles are level")
 	
 	call<- match.call()
-	output <- list(call=call, data.summary=average, profile.test=result)
+	output <- list(call=call, data.summary=average, cor.table=cor.table, profile.test=result)
 	class(output) <- "profg"
 	return(output)
 		}
