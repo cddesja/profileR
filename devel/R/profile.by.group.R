@@ -1,4 +1,3 @@
-
 profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	
 	labels <- labels
@@ -29,7 +28,7 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	#The following part creates a profile plot of observed variables across two groups
 	if(profile.plot) {
 	par(mar=c(4.1,4.1,0.5,0.5))
-	p.plot <- matplot(1:k, average, type="b", pch=21:22, col=c("red","green3"),
+	p.plot <- matplot(1:k, average, type="b", pch=21:22, col=c("red","green3"),main="Profile Plot",
 					  xaxt="n", ylab="Mean Score", xlab="Observed Variables",cex=1.5)
 	axis(1,at=1:k,lab=labs)
 	legend(x="topleft", legend=colnames(average), lty=1:2, pch=21:22,col=c("red","green3")) }
