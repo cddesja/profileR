@@ -20,10 +20,12 @@ License: GPL (>= 2)
 LazyData: true
 Collate:
     'profileplot.R'
-    'subscore.reliability.R'
+    'profile.reliability.R'
     'print.prof.R'
     'plot.prof.R'
     'profileR-package.R'
     'criterion.pattern.R'
     'profilecv.R'
     'summary.critpat.R'
+    'profile.by.group.R'
+    'summary.profg.R'
