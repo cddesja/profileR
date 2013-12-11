@@ -3,8 +3,8 @@
 \alias{profileR-package}
 \title{Profile Analysis and Multivariate Analysis in R}
 \description{
-  profileR provides a set of tools that implement multivariate analysis,
-  profile analysis, and cross-validation techniques
+  profileR provides a set of data analysis and visualization tools that implement 
+  multivariate analysis, profile analysis, and cross-validation techniques
   described in Davison & Davenport (2002) and Bulut (2013).
 }
 \author{
