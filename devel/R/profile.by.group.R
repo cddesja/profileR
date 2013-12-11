@@ -1,6 +1,5 @@
-profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
+profile.by.group <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
-	labels <- labels
 	x <- as.data.frame(x)
 	y <- as.data.frame(y)
 	n=nrow(x)
@@ -14,7 +13,7 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
 	z <- as.data.frame(cbind(x,y))
 	cor.table=by(z[,1:k],z[,(1+k)],cor)
 	
-	if(labels) {colnames(z) <- c(labs <- colnames(x),"group")}
+	if(original.names) {colnames(z) <- c(labs <- colnames(x),"group")}
 		else {colnames(z) <- c(labs <- paste("v",1:k,sep=""),"group")}
 	z$group <- as.factor(z$group)
 	
