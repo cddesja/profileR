@@ -31,11 +31,16 @@
 
 
 
-profileplot <- function(form,person.id,interval=10) {
+profileplot <- function(form,person.id,interval=10,by.pattern=TRUE,original.names=TRUE) {
+	
+	if(by.pattern) {
+	
 	subscore.id <- subscore <- NULL
 	n <- ncol(form)
 	k <- nrow(form)
-	labels <- colnames(form)
+	
+	if(original.names){labels <- colnames(form)}
+	else {labels <- c(paste("v",1:n,sep=""))}
 	
 	#Level scores
 	level <- as.matrix(rowMeans(form,na.rm = TRUE),ncol=1,nrow=k)
@@ -102,9 +107,42 @@ profileplot <- function(form,person.id,interval=10) {
 	plot1 <- ggplot(form.long, aes(x=subscore.id, y=subscore, group=id, color=id)) + geom_line() + geom_point(size=3, fill="white") + scale_colour_hue(name="Person",l=30) +
 		theme(panel.background = element_rect(fill='white', colour='black'),panel.grid.minor=element_blank(), 
 					panel.grid.major=element_blank()) + scale_x_discrete(name=" ", labels=labels)+
-		scale_y_continuous(name="Scores", limits=c(min.s,max.s),breaks=seq(min.s, max.s, int)) + scale_shape_discrete(name="Person")
+		scale_y_continuous(name="Scores", limits=c(min.s,max.s),breaks=seq(min.s, max.s, int)) + scale_shape_discrete(name="Person")}
 	
-	return(plot1)
+	else {
 	
+  
+  	require(RColorBrewer)
+  	#Prepare data for plotting
+  	form <- as.data.frame(form)
+  	numvariables <- ncol(form)
+  	colours <- brewer.pal(numvariables,"Set1")
+  	mymin <- 1e+20
+  	mymax <- 1e-20
+  
+  	for (i in 1:numvariables){
+    		Scores <- form[,i]
+		mini <- min(Scores)
+    		maxi <- max(Scores)
+    		if (mini < mymin) { mymin <- mini }
+    		if (maxi > mymax) { mymax <- maxi }
+  	}
+  
+  	if(original.names) {names <- colnames(form)}
+  	else {names <- c(paste("v",1:numvariables,sep=""))}
+  
+  
+  	#Plot the variables
+  	for (i in 1:numvariables) {
+		Scoresi <- form[,i]
+    		namei <- names[i]
+    		colouri <- colours[i]
+    		if (i == 1) { plot1 <- plot(Scoresi,col=colouri,type="l",ylim=c(mymin,mymax),ylab="Score",xlab="Person") }
+    		else         {points(Scoresi, col=colouri,type="l")                                     }
+    		lastxval <- length(Scoresi)
+    		lastyval <- Scoresi[length(Scoresi)]
+    		text((lastxval-10),(lastyval),namei,col="black",cex=0.6)}
+	}
+    return(plot1)
 }
 
