@@ -90,7 +90,7 @@ profile.by.group <- function(x, y, labels=FALSE, profile.plot=FALSE, ...) {
   	rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidential","Ho: Profiles are level")
 	
 	call<- match.call()
-	output <- list(call=call, data.summary=average, cor.table=cor.table, profile.test=result)
+	output <- list(call=call, data.summary=average, corr.table=cor.table, profile.test=result)
 	class(output) <- "profg"
 	return(output)
 		}
