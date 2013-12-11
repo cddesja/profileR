@@ -9,6 +9,10 @@
 #' @param form A matrix or dataframe including two or more subscores.
 #' @param person.id A vector that includes ID values for individuals (Optional).
 #' @param interval The number of equal intervals from the mimimum score to the meximum score. Default is 10.
+#' @param by.pattern Create profile plot using pattern and leves with ggplot2. If not TRUE, then a profile plot of 
+#' scores by persons are created using the base graphics in R. Default is TRUE. 
+#' @param original.names Use original column names in the dataset. If FALSE, then columns are renamed as v1, v2, ...,vn 
+#' where n is the number of columns. Default is TRUE. 
 #' 		
 #' @return An object of score \code{profile.plot}.
 #' 
