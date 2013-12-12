@@ -1,0 +1,34 @@
+Package: profileR
+Title: Profile Analysis of Multivariate Data in R
+Type: Package
+Description: The package profileR provides a set of data analysis and visualization tools 
+    to implement multivariate analysis, profile analysis, and cross-validation techniques described 
+    in Davison & Davenport (2002) and Bulut (2013).
+Version: 0.2
+Date: 11-15-2013
+Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
+    <cddesjardins@gmail.com>
+Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
+Depends:
+    ggplot2,
+    MASS,
+    RColorBrewer,
+    reshape,
+    methods,
+    plyr,
+    R (>= 3.0.0)
+License: GPL (>= 2)
+LazyData: true
+Collate:
+    'profileplot.R'
+    'profile.reliability.R'
+    'profile.by.group.R'
+    'print.prof.R'
+    'plot.prof.R'
+    'summary.profg.R'
+    'profileR-package.R'
+    'criterion.pattern.R'
+    'profilecv.R'
+    'summary.critpat.R'
+    'profile.by.group.R'
+
