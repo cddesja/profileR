@@ -1,7 +1,7 @@
 \name{print.prof}
 \alias{print.prof}
 
-\title{Print the output from the output from profile.reliability}
+\title{Print the output from profile.reliability}
 
 \usage{
   \S3method{print}{prof}(x,...)
