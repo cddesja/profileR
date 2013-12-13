@@ -107,8 +107,10 @@ profile.reliability <- function(form1,form2) {
 	colnames(f2) <- c("Level2")	
 	
 	result2 <- cbind(pattern1,f1,pattern2,f2)
-
-	output <- list(reliability=result1,pattern.level=result2)
+        
+        call<- match.call()
+        
+	output <- list(call=call, reliability=result1,pattern.level=result2)
 	class(output) <- "prof"
 	output
 }
