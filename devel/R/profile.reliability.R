@@ -110,7 +110,7 @@ profile.reliability <- function(form1,form2) {
         
         call<- match.call()
         
-	output <- list(call=call, reliability=result1,pattern.level=result2)
+	output <- list(call=call,reliability=result1,pattern.level=result2)
 	class(output) <- "prof"
 	output
 }
