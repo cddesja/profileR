@@ -25,7 +25,7 @@
 }
 
 \value{
-  An object of class profg is returned, listing the listing the following components: 
+  An object of class "profileR" is returned, listing the listing the following components: 
   \describe{
   \item{data.summary}{Means of observed variables by the grouping variable} 
   \item{corr.table}{A matrix of correlations among observed variables splitted by the grouping variable}
@@ -54,6 +54,6 @@ summary(mod) #prints the results of hypothesis tests
 }
 
 \seealso{
-  \code{\link{summary.profg}}
+  \code{\link{profileplot}}
 }
 

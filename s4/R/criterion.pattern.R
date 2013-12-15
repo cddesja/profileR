@@ -102,9 +102,39 @@ criterion.pattern <-
     rownames(F.table) <- c("R2full = 0 ","R2pat = 0","R2lvl = 0","R2full = R2lvl","R2full = R2pat")
     F.table <- round(F.table,digits=6)
     
-    call<- match.call()
-    output <- list(call=call,lvl.comp=Xp,pat.comp=pat.comp,b=regweg,bstar=bstar, xc=xc, k=k, Covpc=Covpc, Ypred=ypred,r2=r2,F.table=F.table)
+    call <- match.call()
     
-    class(output) <- "critpat"
+    method="criterion.pattern"
+     
+    output <- new(Class="profileR",
+    							call=call,
+    							lvl.comp=Xp,
+    							pat.comp=pat.comp,
+    							b=regweg,
+    							bstar=bstar, 
+    							xc=xc, 
+    							k=k, 
+    							Covpc=Covpc, 
+    							Ypred=ypred,
+    							r2=r2,
+    							F.table=F.table,
+    							method=method)
+    
     return(output)
+    
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

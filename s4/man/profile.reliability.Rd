@@ -12,7 +12,7 @@
   NA.}
 }
 \value{
-  \item{reliability}{Within-person, between-person, and
+  \item{reliability}{Pattern, level, and
   overall subscore reliability}
 
   \item{pattern.level}{A matrix of all pattern and level
@@ -59,6 +59,6 @@ plot(result)
   468-484.
 }
 \seealso{
-  \code{\link{profileplot}},\code{\link{print.prof}},\code{\link{plot.prof}}
+  \code{\link{profileplot}}}
 }
 

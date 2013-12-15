@@ -15,7 +15,7 @@
   \item{...}{additional arguments to be passed}
 }
 \value{
-  An object of class critpat is returned, listing the
+  An object of class "profileR" is returned, listing the
   following components: \item{lvl.comp}{The level
   component} \item{pat.comp}{The pattern component}
   \item{b}{The regression weights} \item{bstar}{The mean
@@ -62,7 +62,7 @@ summary(mod)
   468-484.
 }
 \seealso{
-  \code{\link{profilecv}},\code{\link{summary.critpat}}
+  \code{\link{profilecv}}}
 }
 \keyword{methods}
 

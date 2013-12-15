@@ -85,18 +85,22 @@ profile.by.group <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...
 	df2 <- (c1+c2-k+1)
 	level <- data.frame(F3,df1,df2,pf3)
 	names(level) <- c("F","df1","df2","p-value")
-  	result <- rbind(parallel,coincidential,level)
-  	rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidental","Ho: Profiles are level")
+  result <- rbind(parallel,coincidential,level)
+  rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidental","Ho: Profiles are level")
 	
 	call<- match.call()
-	output <- list(call=call, data.summary=average, corr.table=cor.table, profile.test=result)
-	class(output) <- "profg"
+	
+	method="profile.by.group"
+	
+	output <- new(Class="profileR",
+								call=call,
+								data.summary=average, 
+								corr.table=cor.table, 
+								profile.test=result,
+								method=method)
+
 	return(output)
-		}
-	}
-
-
-
+}
 
 
 

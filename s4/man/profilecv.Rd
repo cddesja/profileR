@@ -22,7 +22,7 @@
   Davenport (2002).
 }
 \details{
-  The \code{profile.cv} function requires two arguments: X
+  The \code{profilecv} function requires two arguments: X
   and Y. The argument X corresponds to the predictor
   variables. This matrix of covariates may be in their own
   object or in the same object as the dependent variable.

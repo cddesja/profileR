@@ -143,7 +143,20 @@ profilecv <- function(x,y){
   R2.lvlO <- round(R2.lvlO,digits=6)
   r2.pattern <- round(r2.pattern,digits=6)
   r2.level <- round(r2.level,digits=6)
-  list(R2.full=r2.full,R2.patO=R2.patO,R2.lvlO=R2.lvlO,R2.full.lvl=r2.pattern,R2.full.pat=r2.level)
+  
+  method="profilecv"
+  
+  output <- new(Class="profileR",
+  							R2.full=r2.full,
+  							R2.patO=R2.patO,
+  							R2.lvlO=R2.lvlO,
+  							R2.full.lvl=r2.pattern,
+  							R2.full.pat=r2.level,
+  							method=method)
+  
+  return(output)
 }
+
+
 
 
