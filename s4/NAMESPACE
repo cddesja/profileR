@@ -15,4 +15,3 @@ exportClasses(profileR)
 exportMethods(summary)
 S3method(print)
 
-
