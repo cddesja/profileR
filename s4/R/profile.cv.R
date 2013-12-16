@@ -1,37 +1,4 @@
-#' @name profilecv
-#' @title Cross-Validation for Profile Analysis
-#' @aliases profilecv
-#' @description Implements the cross-validation described in Davison & Davenport (2002).
-#' @usage profilecv(x, y)
-#' @param x Corresponds to the predictor variable
-#' @param y Corresponds to the dependent variable
-#'  
-#' @details The \code{profile.cv} function requires two arguments: X and Y. The argument X corresponds to the predictor variables. 
-#' This matrix of covariates may be in their own object or in the same object as the dependent variable. 
-#' The Y argument corresponds to the dependent variable. This vector may be in a separate object or in the same object as X. 
-#' The function returns the cross-validation technique described in Davison & Davenport (2002). 
-#' The data must be specified as matrices and there can be no missing data.
-#' 
-#' @return
-#'  \item{R2.full}{Test of the null hypothesis that R2 = 0}
-#'  \item{R2.pat}{Test that the R2_pattern = 0}
-#'  \item{R2.level}{Test that the R2_level = 0}
-#'  \item{R2.full.lvl}{Test that the R2_full = R2_level = 0}
-#'  \item{R2.full.pat}{Test that the R2_full = R2_pattern = 0}
-#'
-#' @author Christopher David Desjardins \email{cddesjardins@@gmail.com}
-#'  
-#' @references 
-#' Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores
-#' using multiple regression. \emph{Psychological Methods, 7}(4), 468-484.
-#' 
-#' @seealso \code{\link{criterion.pattern}}
-#' 
-#' @keywords methods
-#' 
-#' @export  
-
-profilecv <- function(x,y){
+profile.cv <- function(x,y){
   k <- 1
   index <- 1:nrow(x)
   index.samp <- sample(index,nrow(x)/2)
@@ -63,10 +30,17 @@ profilecv <- function(x,y){
   pat.compX2 <- X2 - apply(X2,1,mean)
   Covpc.X1 <- V1*(as.matrix(pat.compX1)%*%as.matrix(X2.xc))
   Covpc.X2 <- V2*(as.matrix(pat.compX2)%*%as.matrix(X1.xc))
+  
+  # Proportion of Shared Variability #
+  # Level
   R2.lvl.rs1 <- cor(Xp.X1,Y1)^2
   R2.lvl.rs2 <- cor(Xp.X2,Y2)^2
+  
+  # Pattern 
   R2.pat.rs1 <- cor(Covpc.X1,Y1)^2
   R2.pat.rs2 <- cor(Covpc.X2,Y2)^2
+  
+  # Model R2
   ypredrs1 <- fitted(lm(Y1 ~ 1 + Covpc.X1 + Xp.X1))
   ypredrs2 <- fitted(lm(Y2 ~ 1 + Covpc.X2 + Xp.X2))
   
@@ -150,13 +124,7 @@ profilecv <- function(x,y){
   							R2.full=r2.full,
   							R2.patO=R2.patO,
   							R2.lvlO=R2.lvlO,
-  							R2.full.lvl=r2.pattern,
-  							R2.full.pat=r2.level,
   							method=method)
   
   return(output)
 }
-
-
-
-
