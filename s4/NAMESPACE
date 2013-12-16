@@ -1,5 +1,5 @@
 export(criterion.pattern)
-export(profilecv)
+export(profile.cv)
 export(profileplot)
 export(profile.reliability)
 export(profile.by.group)

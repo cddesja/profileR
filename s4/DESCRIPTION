@@ -25,9 +25,8 @@ Collate:
     'profile.reliability.R'
     'profile.by.group.R'
     'criterion.pattern.R'
-    'profilecv.R'
+    'profile.cv.R'
     'profileR.class.R'
-    'profileR-package.R'
     
 
 

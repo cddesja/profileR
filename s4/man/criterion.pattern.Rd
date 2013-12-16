@@ -62,7 +62,7 @@ summary(mod)
   468-484.
 }
 \seealso{
-  \code{\link{profilecv}}}
+  \code{\link{profile.cv}}}
 }
 \keyword{methods}
 
