@@ -60,5 +60,5 @@ plot(result)
 }
 \seealso{
   \code{\link{profileplot}}}
-}
+
 

@@ -15,8 +15,7 @@ setClass(
     k="numeric",
     Covpc="matrix",
     Ypred="numeric",
-    r2="matrix",
-    F.table="data.frame",
+    ftable="matrix",
     reliability="matrix",
     pattern.level="matrix",
     data.summary="matrix",
@@ -38,8 +37,7 @@ setClass(
     k=numeric(0),
     Covpc=matrix(0),
     Ypred=numeric(0),
-    r2=matrix(0),
-    F.table=data.frame(),
+    ftable=matrix(0),
     reliability=matrix(0),
     pattern.level=matrix(0),
     data.summary=matrix(0),
@@ -63,16 +61,19 @@ setMethod(
 
 setMethod(
   f = "print",
-  signature = signature(x = "profileR"),
-  definition = function(x)
+  signature = signature(object = "profileR"),
+  definition = function(object)
   {
-    if (x@method=="profile.reliability") {
+    if (object@method=="profile.reliability") {
       cat("******Profile Reliability Estimates******\n")
       cat("\n")
-      print(x@reliability)
+      print(object@reliability)
     }
+	if(x@method=="criterion.pattern"){
+	print(object@r2)	
+	}	
     else {
-      print(x)
+      print(object)
     }
   }
 )
@@ -81,12 +82,13 @@ setMethod(
   f = "summary",
   signature = signature(object = "profileR"),
   definition = function(object) {
-    if (x@method=="criterion.pattern") {
-      cat("Call:\n")
+    if (object@method=="criterion.pattern") {
+     
+ cat("Call:\n")
       print(object@call)
-      cat("\n*****Hypothesis Tests:*****\n")
+      cat("\nAnalysis of Variance\n")
       cat("\n")
-      print(object@F.table)
+      print(object@ftable)
     }
     if (x@method=="profile.by.group") {
       cat("Call:\n")

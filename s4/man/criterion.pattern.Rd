@@ -63,6 +63,6 @@ summary(mod)
 }
 \seealso{
   \code{\link{profile.cv}}}
-}
+
 \keyword{methods}
 

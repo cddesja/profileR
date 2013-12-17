@@ -14,7 +14,7 @@
   \item{R2.pat}{Test that the R2_pattern = 0}
   \item{R2.level}{Test that the R2_level = 0}
   }
-}
+
 \description{
   Implements the cross-validation described in Davison &
   Davenport (2002).

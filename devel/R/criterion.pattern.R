@@ -1,58 +1,7 @@
-#' @name criterion.pattern
-#' @title Criterion-Related Profile Analysis
-#' @aliases criterion.pattern
-#' @description Implements the criterion-related profile analysis described in Davison & Davenport (2002).
-#' @usage criterion.pattern(x, y, k = 100)
-#' 
-#' \S3method{summary}{critpat}(object)
-#' 
-#' @param x Corresponds to the predictor Variable
-#' @param y Corresponds to the Dependent Variable
-#' @param k Corresponds to the scalar constant and must be greater than 0. Defaults to 100
-#' 
-#' @return An object of class critpat is returned, listing the following components: 
-#'  \item{lvl.comp}{The level component}
-#'  \item{pat.comp}{The pattern component}
-#'  \item{b}{The regression weights}
-#'  \item{bstar}{The mean centered regression weights}
-#'  \item{xc}{The scalar constant times bstar}
-#'  \item{k}{The scale constant}
-#'  \item{Covpc}{The pattern effect}
-#'  \item{Ypred}{The predicted values}
-#'  \item{r2}{The proportion of variability attributed to the different components}
-#'  \item{F.table}{The associated F-statistic table}
-#'  \item{F.statistic}{The F-statistics}
-#'  \item{df}{The df used in the test}
-#'  \item{pvalue}{The p-values for the test}
-#'  
-#' @details The \code{criterion.pattern} function requires two arguments: X and Y. The argument X corresponds to the predictor variables. 
-#'  This matrix of covariates may be in their own object or in the same object as the dependent variable. 
-#'  The Y argument corresponds to the dependent variable. This vector may be in a separate object or in 
-#'  the same object as X. The function returns the criterion-related profile analysis described in 
-#'  Davison & Davenport (2002). Presently there can be no missing data.
-#'   
-#' @author Christopher David Desjardins \email{cddesjardins@@gmail.com}
-#'  
-#' @references 
-#' Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores
-#' using multiple regression. \emph{Psychological Methods, 7}(4), 468-484.
-#' 
-#' @seealso \code{\link{profilecv}}
-#' 
-#' @keywords methods
-#' 
-#' @examples
-#'  
-#' \dontrun{
-#' data(IPMMc)
-#' Imod <- criterion.pattern(IPMMc[,1:4],IPMMc[,5],k=100)
-#' summary(mod)
-#' }
-#' @export
-
-
 criterion.pattern <-
-  function(x,y,k=100){
+  function(criterion,predictor, k=100){
+    x <- predictor
+    y <- criterion
     N <- nrow(x)
     v <- ncol(x)
     V <- 1/ncol(x)
@@ -94,16 +43,16 @@ criterion.pattern <-
     F.R2.lvl.only <- ((R2.lvl)*lvl.df[2])/((1-R2.lvl)*lvl.df[1])
     p.value.F.R2.lvl.only <- pf(F.R2.lvl.only,lvl.df[1],lvl.df[2],lower.tail = FALSE)
     
-    F.table <- c(F.R2.full,F.R2.pat.only,F.R2.lvl.only,F.R2.pat,F.R2.lvl)
-    F.table <-as.data.frame(F.table)
-    colnames(F.table) <- "F.statistic"
-    F.table$df <- rbind(full.df,pat.df,lvl.df,pat.df,lvl.df)
-    F.table$pvalue <- rbind(p.value.F.R2.full,p.value.F.R2.pat.only,p.value.F.R2.lvl.only,p.value.F.R2.pat,p.value.F.R2.lvl)
-    rownames(F.table) <- c("R2full = 0 ","R2pat = 0","R2lvl = 0","R2full = R2lvl","R2full = R2pat")
-    F.table <- round(F.table,digits=6)
+    fvalue <- c(F.R2.full,F.R2.pat.only,F.R2.lvl.only,F.R2.pat,F.R2.lvl)
+    df <- rbind(full.df,pat.df,lvl.df,pat.df,lvl.df)
+    pvalue <- rbind(p.value.F.R2.full,p.value.F.R2.pat.only,p.value.F.R2.lvl.only,p.value.F.R2.pat,p.value.F.R2.lvl)
+    ftable <- cbind(df,fvalue,pvalue)  
     
+    rownames(ftable) <- c("R2.full = 0 ","R2.pat = 0","R2.lvl = 0","R2.full = R2.lvl","R2.full = R2.pat")
+    colnames(ftable) <- c("df1", "df2", "F value", "Pr(>F)")
+ 
     call<- match.call()
-    output <- list(call=call,lvl.comp=Xp,pat.comp=pat.comp,b=regweg,bstar=bstar, xc=xc, k=k, Covpc=Covpc, Ypred=ypred,r2=r2,F.table=F.table)
+    output <- list(call=call,lvl.comp=Xp,pat.comp=pat.comp,b=regweg,bstar=bstar, xc=xc, k=k, Covpc=Covpc, Ypred=ypred,r2=r2,ftable=ftable)
     
     class(output) <- "critpat"
     return(output)
