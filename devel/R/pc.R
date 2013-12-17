@@ -1,3 +1,5 @@
+#'@export
+
 pc <- function(criterion,predictor,seed=NULL, na.action = NULL){
   
   if(is.numeric(seed) == T)

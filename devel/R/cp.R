@@ -1,3 +1,5 @@
+#'@export
+
 cp <- function(criterion, predictor, k=100){
     x <- predictor
     y <- criterion

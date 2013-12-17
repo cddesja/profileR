@@ -5,14 +5,22 @@
 
 \usage{
 	cp(criterion, predictor,k = 100)
+	
+	\method{summary}{critpat}(object, ...)
+  
+  \method{print}{critpat}(x, ...)
+  
+  \method{plot}{critpat}(x, ...)
+  
+  \method{anova}{critpat}(object, ...)
 }
 
-
 \arguments{
-  \item{criterion}{Corresponds to the criterion variable}
-  \item{predictor}{Corresponds to the predictor variables}
-  \item{k}{Corresponds to the scalar constant and must be
-  greater than 0. Defaults to 100.}
+  \item{criterion}{Corresponds to the criterion variable.}
+  \item{predictor}{Corresponds to the predictor variables.}
+  \item{k}{Corresponds to the scalar constant and must be greater than 0. Defaults to 100.}
+  \item{object}{An object of class \code{"critpat"}.}
+  \item{...}{Additional arguments to be passed.}
 }
 \value{
   An object of class \code{critpat} is returned, listing the
@@ -47,8 +55,11 @@
 \examples{
 \dontrun{
 data(IPMMc)
-mod <- criterion.pattern(IPMMc[,1:4],IPMMc[,5],k=100)
+mod <- cp(IPMMc[,5], IPMMc[,1:4],k=100)
+print(mod)
 summary(mod)
+plot(mod)
+anova(mod)
 }
 }
 \author{
@@ -62,7 +73,7 @@ summary(mod)
   468-484.
 }
 \seealso{
-  \code{\link{pc}},\code{\link{summary.critpat}}
+  \code{\link{pc}}
 }
 \keyword{methods}
 

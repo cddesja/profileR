@@ -1,16 +1,13 @@
 \name{pr}
 \alias{pr}
-\alias{plot}
-\alias{plot.prof}
-\alias{print.prof}
 
 \title{Pattern and Level Reliability via Profile Analysis}
 \usage{
   pr(form1,form2)
   
-  \method{print}{prof}(x)
+  \method{print}{prof}(x, ...)
   
-  \method{plot}{prof}(x)
+  \method{plot}{prof}(x, ...)
 }
 
 \arguments{
@@ -20,7 +17,9 @@
   the same order. Missing subscores have to be inserted as
   NA.}
   
-  \item{x}{An object of class \code{"prof"} returned from the \code{pr} function.} 
+  \item{x}{An object of class \code{"prof"} returned from the \code{pr} function.}
+  
+  \item{...}{Additional arguments to be passed.} 
 }
 
 \value{

@@ -1,3 +1,5 @@
+#'@export
+
 pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
 	x <- as.data.frame(x)

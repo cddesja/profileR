@@ -1,6 +1,5 @@
 \name{pbg}
 \alias{pbg}
-\alias{summary.profg}
 
 \title{Profile by group: Parallel, coincidential, and level profiles}
 

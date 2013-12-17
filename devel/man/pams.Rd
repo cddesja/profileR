@@ -28,8 +28,8 @@ The \code{pams} function computes similarity/dissimilarity indices based on Eucl
 \examples{
 \dontrun{
 data(PS)
-result <- pams(PS[,2:4],dim=2)
-print(result)
+result <- pams(PS[,2:4], dim=2)
+result
 }
 }
 

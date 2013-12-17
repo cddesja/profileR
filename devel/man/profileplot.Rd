@@ -17,12 +17,13 @@
   \item{by.pattern}{If TRUE, the function creates a profile plot with level and pattern values using ggplot2.
   Otherwise, the function creates a profile plot showing profile scores of persons using the base graphics in R. Default is TRUE.}
   
-  \item{original.names}{Use the original column names in the data. Otherwise, columns are renamed as v1,v2,.... Default is TRUE} 
+  \item{original.names}{Use the original column names in the data. Otherwise, columns are renamed as v1,v2,.... Default is TRUE.} 
 }
 
 \value{
-  The \code{profileplot} functions returns a score profile plot from either ggplot2 or the base graphics in R.}
+  The \code{profileplot} functions returns a score profile plot from either ggplot2 or the base graphics in R.
 }
+
 \description{
   The \code{profileplot} function creates a profile plot
   for a matrix or dataframe with multiple scores or

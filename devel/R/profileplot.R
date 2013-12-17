@@ -1,3 +1,4 @@
+#'@export
 
 profileplot <- function(form,person.id,interval=10,by.pattern=TRUE,original.names=TRUE) {
 	
