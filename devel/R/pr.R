@@ -42,7 +42,7 @@
 
 
 
-profile.reliability <- function(form1,form2) {
+pr <- function(form1,form2) {
 	
 	n <- ncol(form1)
 	k <- nrow(form1)

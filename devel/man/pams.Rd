@@ -25,7 +25,6 @@
 The \code{pams} function computes similarity/dissimilarity indices based on Euclidean distances between the scores provided in the data, and then extracts dimensional coordinates for each score using multidimensional scaling. A weight matrix, level parameters, and fit measures are computed for each subject in the data. 
 }
 
-}
 \examples{
 \dontrun{
 data(PS)
@@ -43,6 +42,6 @@ print(result)
   Davenport, E. C., Ding, S., & Davison, M. L. (1995). PAMS: SAS Template. 
 }
 \seealso{
-  \code{\link{criterion.pattern}}, \code{\link{profile.reliability}}
+  \code{\link{cp}}, \code{\link{pr}}
 }
 

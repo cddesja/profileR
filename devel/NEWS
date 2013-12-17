@@ -1,0 +1,12 @@
+Changes in version: profileR_0.2
+
+  * Added pams(). This function adds profile analysis via multidimensional scaling. 
+
+  * Add additional generic functions to classes critpat and prof
+  
+  * Renamed functions to reduce conflict with base functions and to introduce a coding convention.
+  
+ Changes in version: profileR_0.1
+ 
+  * Initial CRAN release
+

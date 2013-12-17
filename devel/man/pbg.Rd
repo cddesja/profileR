@@ -1,10 +1,10 @@
-\name{profile.by.group}
-\alias{profile.by.group}
+\name{pbg}
+\alias{pbg}
 
 \title{Testing parallel, coincidential, and level profiles across two groups}
 
 \usage{
-  profile.by.group(x, y, original.names=FALSE, profile.plot=FALSE, ...)
+  pbg(x, y, original.names=FALSE, profile.plot=FALSE, ...)
 }
 
 \arguments{
@@ -33,7 +33,7 @@
 }}
 
 \description{
-  The \code{profile.by.group} function implements three hypothesis tests. These tests are whether the profiles
+  The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles
   are parallel, coincidental, and level across two groups defined by the grouping variable. If parallelism is rejected, 
   the other two tests are meaningless. In that case, flatness may be assessed within each group, and various
   within- and between-group contrasts may be analyzed. 
@@ -43,7 +43,7 @@
 \dontrun{
 #Read spouse data from Professor Richard Jonhson's website 
 spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
-mod <- profile.by.group(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
+mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
 mod$data.summary #prints average scores in the profile across two groups
 summary(mod) #prints the results of hypothesis tests
 }

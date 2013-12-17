@@ -1,5 +1,8 @@
 \name{summary.critpat}
+\alias{anova.critpat}
 \alias{summary.critpat}
+\alias{print.critpat}
+\alias{plot.critpat}
 
 \title{Methods for Criterion-Related Profile Analysis}
 
@@ -12,7 +15,7 @@
 }
 \arguments{
   \item{object}{an object of class \code{"critpat"} as returned by
-    \code{\link{criterion.pattern}}.}
+    \code{\link{cp}} or \code{\link{pc}}.}
 
   \item{...}{additional arguments to be passed}
   
@@ -42,7 +45,7 @@ summary(mod)
   468-484.
 }
 \seealso{
-  \code{\link{profilecv}}
+  \code{\link{cp},\link{pc}}
 }
 \keyword{methods}
 

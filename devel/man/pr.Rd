@@ -1,8 +1,8 @@
-\name{profile.reliability}
-\alias{profile.reliability}
+\name{pr}
+\alias{pr}
 \title{Pattern and Level Reliability via Profile Analysis}
 \usage{
-  profile.reliability(form1,form2)
+  pr(form1,form2)
 }
 \arguments{
   \item{form1,form2}{Two data matrices or data frames; rows
@@ -19,7 +19,7 @@
   values obtained from the subscores}
 }
 \description{
-  The \code{profile.reliability} function uses subscores
+  The \code{pr} function uses subscores
   from two parallel test forms and compute profile 
   reliability coefficients as described in Bulut (2013).
 }

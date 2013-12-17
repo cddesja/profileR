@@ -1,37 +1,28 @@
-#' @name profilecv
-#' @title Cross-Validation for Profile Analysis
-#' @aliases profilecv
-#' @description Implements the cross-validation described in Davison & Davenport (2002).
-#' @usage profilecv(x, y)
-#' @param x Corresponds to the predictor variable
-#' @param y Corresponds to the dependent variable
-#'  
-#' @details The \code{profile.cv} function requires two arguments: X and Y. The argument X corresponds to the predictor variables. 
-#' This matrix of covariates may be in their own object or in the same object as the dependent variable. 
-#' The Y argument corresponds to the dependent variable. This vector may be in a separate object or in the same object as X. 
-#' The function returns the cross-validation technique described in Davison & Davenport (2002). 
-#' The data must be specified as matrices and there can be no missing data.
-#' 
-#' @return
-#'  \item{R2.full}{Test of the null hypothesis that R2 = 0}
-#'  \item{R2.pat}{Test that the R2_pattern = 0}
-#'  \item{R2.level}{Test that the R2_level = 0}
-#'  \item{R2.full.lvl}{Test that the R2_full = R2_level = 0}
-#'  \item{R2.full.pat}{Test that the R2_full = R2_pattern = 0}
-#'
-#' @author Christopher David Desjardins \email{cddesjardins@@gmail.com}
-#'  
-#' @references 
-#' Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores
-#' using multiple regression. \emph{Psychological Methods, 7}(4), 468-484.
-#' 
-#' @seealso \code{\link{criterion.pattern}}
-#' 
-#' @keywords methods
-#' 
-#' @export  
+pc <- function(criterion,predictor,seed=NULL, na.action = NULL){
+  
+  if(is.numeric(seed) == T)
+    set.seed(seed)
+  
 
-profilecv <- function(x,y){
+  if(na.action == "na.omit"){
+    dat.tmp <- cbind(criterion,predictor)
+    dat.tmp <- na.omit(dat.tmp)
+    criterion <- dat.tmp[,1]
+    predictor <- dat.tmp[,-1]
+  }
+  
+  if(na.action == "na.fail"){
+    stop("Missing data are present. This function will terminate.")
+  }
+
+  if(any(is.na(criterion == T))) 
+    stop("Missing data mechanism not yet implement. Please specify via na.action")
+  if(any(is.na(predictor == T))) 
+    stop("Missing data mechanism not yet implement. Please specify via na.action")
+  
+  
+  x <- predictor
+  y <- criterion
   k <- 1
   index <- 1:nrow(x)
   index.samp <- sample(index,nrow(x)/2)
@@ -88,9 +79,9 @@ profilecv <- function(x,y){
   r2.frF <- rbind(F.R2.fullrs1,F.R2.fullrs2)
   r2.fr.p <- rbind(p.value.F.R2.fullrs1,p.value.F.R2.fullrs2)
   df.full <- rbind(df.f1,df.f2)
-  r2.full <- cbind(r2.frs,r2.frF,df.full,r2.fr.p)
+  r2.full <- cbind(r2.frs,df.full, r2.frF,r2.fr.p)
   rownames(r2.full) <- c("Random Sample 1","Random Sample 2")
-  colnames(r2.full) <- c("R2","F.statistic","df1","df2","pvalue")
+  colnames(r2.full) <- c("R2","df1","df2","F value","Pr(>F)")
   
   F.R2.patOrs1 <- (R2.pat.rs1*df.rs1[2])/((1-R2.pat.rs1)*df.rs1[1])
   F.R2.patOrs2 <- (R2.pat.rs2*df.rs2[2])/((1-R2.pat.rs2)*df.rs2[1])
@@ -100,9 +91,9 @@ profilecv <- function(x,y){
   r2.pOrF <- rbind(F.R2.patOrs1,F.R2.patOrs2)
   r2.pOr.p <- rbind(p.value.F.R2.patOrs1,p.value.F.R2.patOrs2)
   df.pat <- rbind(df.rs1,df.rs2)
-  R2.patO <- cbind(r2.patOrs,r2.pOrF,df.pat,r2.pOr.p)
+  R2.patO <- cbind(r2.patOrs,df.pat,r2.pOrF,r2.pOr.p)
   rownames(R2.patO) <- c("Random Sample 1","Random Sample 2")
-  colnames(R2.patO) <- c("R2","F.statistic","df1","df2","pvalue")
+  colnames(R2.patO) <- c("R2","df1","df2","F value","Pr(>F)")
   
   F.R2.lvlOrs1 <- (R2.lvl.rs1*df.rs1[2])/((1-R2.lvl.rs1)*df.rs1[1])
   F.R2.lvlOrs2 <- (R2.lvl.rs2*df.rs2[2])/((1-R2.lvl.rs2)*df.rs2[1])
@@ -112,9 +103,9 @@ profilecv <- function(x,y){
   r2.lOrF <- rbind(F.R2.lvlOrs1,F.R2.lvlOrs2)
   r2.lOr.p <- rbind(p.value.F.R2.lvlOrs1,p.value.F.R2.lvlOrs2)
   df.lvl <- rbind(df.rs1,df.rs2)
-  R2.lvlO <- cbind(r2.lvlOrs,r2.lOrF,df.lvl,r2.lOr.p)
+  R2.lvlO <- cbind(r2.lvlOrs,df.lvl, r2.lOrF,r2.lOr.p)
   rownames(R2.lvlO) <- c("Random Sample 1","Random Sample 2")
-  colnames(R2.lvlO) <- c("R2","F.statistic","df1","df2","pvalue")
+  colnames(R2.lvlO) <- c("R2","df1","df2", "F value","Pr(>F)")
   
   F.R2.patrs1 <- ((R2.f.rs1 - R2.lvl.rs1)*df.rs1[2])/((1-R2.f.rs1)*df.rs1[1])
   F.R2.patrs2 <- ((R2.f.rs2 - R2.lvl.rs2)*df.rs2[2])/((1-R2.f.rs2)*df.rs2[1])
@@ -125,7 +116,7 @@ profilecv <- function(x,y){
   r2.pr.p <- rbind(p.value.F.R2.patrs1,p.value.F.R2.patrs2)
   r2.pattern <- cbind(r2.prs,r2.prF,df.pat,r2.pr.p)
   rownames(r2.pattern) <- c("Random Sample 1","Random Sample 2")
-  colnames(r2.pattern) <- c("R2","F.statistic","df1","df2","pvalue")
+  colnames(r2.pattern) <- c("R2","F value","df1","df2","Pr(>F)")
   
   F.R2.lvl.rs1 <- ((R2.f.rs1 - R2.pat.rs1)*df.rs1[2])/((1-R2.f.rs1))
   F.R2.lvl.rs2 <- ((R2.f.rs2 - R2.pat.rs2)*df.rs2[2])/((1-R2.f.rs2))
@@ -135,15 +126,27 @@ profilecv <- function(x,y){
   r2.lrF <- rbind(F.R2.lvl.rs1,F.R2.lvl.rs2)
   df.lvl <- rbind(df.rs1,df.rs2)
   r2.lr.p <- rbind(p.value.F.R2.lvl.rs1,p.value.F.R2.lvl.rs2)
-  r2.level <- cbind(r2.lrs,r2.lrF,df.lvl,r2.lr.p)
+  r2.level <- cbind(r2.lrs,df.lvl,r2.lrF,r2.lr.p)
   rownames(r2.level) <- c("Random Sample 1","Random Sample 2")
-  colnames(r2.level) <- c("R2","F.statistic","df1","df2","pvalue")
+  colnames(r2.level) <- c("R2","df1","df2","F value","Pr(>F)")
   r2.full <- round(r2.full,digits=6)
   R2.patO <- round(R2.patO,digits=6)
   R2.lvlO <- round(R2.lvlO,digits=6)
   r2.pattern <- round(r2.pattern,digits=6)
   r2.level <- round(r2.level,digits=6)
-  list(R2.full=r2.full,R2.patO=R2.patO,R2.lvlO=R2.lvlO,R2.full.lvl=r2.pattern,R2.full.pat=r2.level)
+  b = list(X1.b,X2.b)
+  names(b) = c("Random Sample 1", "Random Sample 2")
+  call<- match.call()
+  ftable <- list(r2.full, R2.patO,R2.lvlO,r2.pattern,r2.level)
+  r2 <- list(r2.full[,1],R2.patO[,1],R2.lvlO[,1],r2.pattern[,1],r2.level[,1])
+  names(ftable) <- c("R2.full = 0", "R2.pat = 0", "R2.lvl = 0", "R2.full = R2.lvl", "R2.full = R2.pat")
+  names(r2) <- names(ftable)
+  
+  output = list(call=call,b = b, ftable = ftable,r2 = r2)
+  class(output) <- "critpat"
+  return(output)
 }
+
+
 
 

@@ -1,5 +1,4 @@
-criterion.pattern <-
-  function(criterion,predictor, k=100){
+cp <- function(criterion, predictor, k=100){
     x <- predictor
     y <- criterion
     N <- nrow(x)

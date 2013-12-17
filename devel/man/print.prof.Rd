@@ -13,13 +13,13 @@
 
 \description{
   Methods for extracting information from model objects of class \code{"prof"} returned by
-  \code{profile.reliability}. Presently, only the print and plot functions are implemented. 
-  See \code{\link{profile.reliability}} for more details. 
+  \code{pr}. Presently, only the print and plot functions are implemented. 
+  See \code{\link{pr}} for more details. 
 }
 
 \details{
   The \code{summary} returns three profile reliability coefficients from
-  \code{profile.reliability}. These coefficients are pattern, level, and overall
+  \code{pr}. These coefficients are pattern, level, and overall
   profile reliability coefficients. For more details, see
   \href{http://conservancy.umn.edu/bitstream/155592/1/Bulut_umn_0130E_13879.pdf}{Bulut
   (2003)}.
@@ -27,7 +27,7 @@
 \examples{
 \dontrun{
 data(EEGS)
-result <- profile.reliability(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
+result <- pr(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
 print(result)
 }
 }

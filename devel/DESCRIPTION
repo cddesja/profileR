@@ -4,7 +4,7 @@ Type: Package
 Description: The package profileR provides a set of multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
-Version: 0.1.1
+Version: 0.2
 Date: 12-17-2013
 Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
     <cddesjardins@gmail.com>
@@ -21,26 +21,19 @@ License: GPL (>= 2)
 LazyData: true
 Collate:
     'anova.critpat.R'
-    'criterion.pattern.R'
-    'pams.R'
-    'plot.critpat.R'
-    'plot.prof.R'
+    'summary.critpat.R'
     'print.critpat.R'
-    'print.prof.R'
-    'profile.by.group.R'
-    'profile.reliability.R'
-    'profile.cv.R'
+    'plot.critpat.R'
+    'cp.R'
+    'pams.R'
+    'pbg.R'
+    'pr.R'
+    'pc.R'
     'profileplot.R'
-    
-    'profileplot.R'
-    'profile.reliability.R'
-    'profile.by.group.R'
     'print.prof.R'
     'plot.prof.R'
     'summary.profg.R'
-    'profileR-package.R'
-
-    'profilecv.R'
+    'print.prof.R'
+    'profileplot.R'
     'summary.critpat.R'
-    'profile.by.group.R'
-
+    'summary.profg.R'

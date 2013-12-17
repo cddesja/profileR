@@ -1,13 +1,17 @@
-\name{profilecv}
-\alias{profilecv}
+\name{pc}
+\alias{pc}
 \title{Cross-Validation for Profile Analysis}
 \usage{
-  profilecv(x, y)
+  pc(criterion, predictor, seed, na.action)
 }
 \arguments{
-  \item{x}{Corresponds to the predictor variable}
+  \item{criterion}{Corresponds to the criterion variable}
 
-  \item{y}{Corresponds to the dependent variable}
+  \item{predictor}{Corresponds to the predictor variable}
+  
+  \item{seed}{Optional argument that sets the seed for replication}
+  
+  \item{na.action}{How should missing data be handled?}
 }
 \value{
   \item{R2.full}{Test of the null hypothesis that R2 = 0}
@@ -22,7 +26,7 @@
   Davenport (2002).
 }
 \details{
-  The \code{profile.cv} function requires two arguments: X
+  The \code{pc} function requires two arguments: X
   and Y. The argument X corresponds to the predictor
   variables. This matrix of covariates may be in their own
   object or in the same object as the dependent variable.
@@ -44,7 +48,7 @@
   468-484.
 }
 \seealso{
-  \code{\link{criterion.pattern}}
+  \code{\link{cp}}
 }
 \keyword{methods}
 

@@ -12,7 +12,9 @@
 }
 \arguments{
   \item{object}{an object of class \code{"profg"} as returned by
-    \code{\link{profile.by.group}}.}  
+    \code{\link{pbg}}.}
+    
+    \item{...}{additional arguments to be passed} 
 }
 
 
@@ -26,7 +28,7 @@
 \dontrun{
 #Read spouse data from Professor Richard Jonhson's website 
 spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
-mod <- profile.by.group(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
+mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
 mod$data.summary #prints average scores in the profile across two groups
 summary(mod) #prints the results of hypothesis tests
 }
@@ -38,7 +40,7 @@ summary(mod) #prints the results of hypothesis tests
 }
 
 \seealso{
-  \code{\link{profile.by.group}}
+  \code{\link{pbg}}
 }
 \keyword{methods}
 

@@ -116,7 +116,7 @@ profileplot <- function(form,person.id,interval=10,by.pattern=TRUE,original.name
 	else {
 	
   
-  	require(RColorBrewer)
+  	
   	#Prepare data for plotting
   	form <- as.data.frame(form)
   	numvariables <- ncol(form)

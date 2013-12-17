@@ -1,21 +1,69 @@
+<<<<<<< HEAD:devel/man/cp.Rd
+\name{cp}
+\alias{cp}
+=======
 \name{criterion.pattern}
 \alias{criterion.pattern}
-\title{Criterion-Related Profile Analysis}
-\usage{
-  criterion.pattern(x, y, k = 100)
-}
-\arguments{
-  \item{x}{Corresponds to the predictor Variable}
+\alias{plot.critpat}
+\alias{print.critpat}
+\alias{summary.critpat}
+\alias{anova.critpat}
 
-  \item{y}{Corresponds to the Dependent Variable}
+<<<<<<< HEAD:devel/man/cp.Rd
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
+\title{Criterion-Related Profile Analysis}
+
+\usage{
+<<<<<<< HEAD:devel/man/cp.Rd
+  cp(criterion, predictor, k = 100)
+=======
+=======
+\title{Criterion-Related Profile Analysis}
+
+\usage{
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
+criterion.pattern(x, y, k = 100)
+
+\method{plot}{critpat}(x, y, ...)
+
+\method{print}{critpat}(object, ...)
+
+\method{summary}{critpat}(object, ...)
+
+\method{anova}{critpat}(object, ...)
+<<<<<<< HEAD:devel/man/cp.Rd
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
+=======
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
+}
+
+
+\arguments{
+<<<<<<< HEAD:devel/man/cp.Rd
+<<<<<<< HEAD:devel/man/cp.Rd
+  \item{criterion}{Corresponds to the criterion variable}
+
+  \item{predictor}{Corresponds to the predictor variables}
+=======
+  \item{x}{Corresponds to the predictor variable.}
+
+  \item{y}{Corresponds to the Dependent variable.}
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
+=======
+  \item{x}{Corresponds to the predictor variable.}
+
+  \item{y}{Corresponds to the Dependent variable.}
+>>>>>>> a3cf41fde5c7656b8b9ce742ab2411281d149baf:devel/man/criterion.pattern.Rd
 
   \item{k}{Corresponds to the scalar constant and must be
-  greater than 0. Defaults to 100}
+  greater than 0. Defaults to 100.}
   
-  \item{...}{additional arguments to be passed}
+  \item{...}{Additional arguments to be passed.}
+  
+  \item{object}{An object of class \code{"critpat"}.}
 }
 \value{
-  An object of class critpat is returned, listing the
+  An object of class \code{critpat} is returned, listing the
   following components: \item{lvl.comp}{The level
   component} \item{pat.comp}{The pattern component}
   \item{b}{The regression weights} \item{bstar}{The mean
@@ -62,7 +110,7 @@ summary(mod)
   468-484.
 }
 \seealso{
-  \code{\link{profilecv}},\code{\link{summary.critpat}}
+  \code{\link{pc}},\code{\link{summary.critpat}}
 }
 \keyword{methods}
 

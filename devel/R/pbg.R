@@ -1,4 +1,4 @@
-profile.by.group <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
+pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
 	x <- as.data.frame(x)
 	y <- as.data.frame(y)

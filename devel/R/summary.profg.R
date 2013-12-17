@@ -1,10 +1,10 @@
 
 #'@S3method summary profg
 
-summary.profg <- function(x, ...){
+summary.profg <- function(object, ...){
 	cat("Call:\n")
-	print(x$call)
+	print(object$call)
 	cat("\nHypothesis Tests:\n")
-	print(x$profile.test)
+	print(object$profile.test)
 }
 
