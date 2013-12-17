@@ -3,7 +3,7 @@
 
 print.critpat <- function(x, ...){
 	cat("Call:\n")
-	print(object$call)
+	print(x$call)
   cat("\nCoefficients\n")
-	print(object$b)
+	print(x$b)
 }

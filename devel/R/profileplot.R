@@ -1,39 +1,3 @@
-#' @name profileplot
-#' @aliases profileplot  
-#' @title Score Profile Plot 
-#' @description The \code{profile.plot} function creates a profile plot for a matrix or dataframe 
-#' with multiple scores or subscores using \code{\link[ggplot2]{ggplot2}} function in  \code{ggplot2} package.
-#' 
-#' @usage profileplot(form,person.id,interval=10)
-#' 
-#' @param form A matrix or dataframe including two or more subscores.
-#' @param person.id A vector that includes ID values for individuals (Optional).
-#' @param interval The number of equal intervals from the mimimum score to the meximum score. Default is 10.
-#' @param by.pattern Create profile plot using pattern and leves with ggplot2. If not TRUE, then a profile plot of 
-#' scores by persons are created using the base graphics in R. Default is TRUE. 
-#' @param original.names Use original column names in the dataset. If FALSE, then columns are renamed as v1, v2, ...,vn 
-#' where n is the number of columns. Default is TRUE. 
-#' 		
-#' @return An object of score \code{profile.plot}.
-#' 
-#' @seealso \link[ggplot2]{ggplot2},\link{PS}
-#' 
-#' @author Okan Bulut \email{okanbulut84@@gmail.com}
-#' 
-#' @examples 
-#'\dontrun{
-#'data(PS)
-#'myplot <- profile.plot(PS[,2:4],person.id=PS$Person)
-#'myplot
-#'
-#'data(leisure)
-#'leisure1 <- ddply(leisure,~Group,summarise,Read.Dance=mean(Read.Dance),Dance.TV=mean(Dance.TV),TV.Ski=mean(TV.Ski))
-#'leis.plot <- profile.plot(leisure1[,2:4],person.id=leisure1$Group,interval=10)
-#'leis.plot
-#'}
-#'@export
-
-
 
 profileplot <- function(form,person.id,interval=10,by.pattern=TRUE,original.names=TRUE) {
 	

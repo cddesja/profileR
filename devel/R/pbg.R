@@ -31,7 +31,7 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	par(mar=c(4.1,4.1,0.5,0.5))
 	p.plot <- matplot(1:k, average, type="b", pch=21:22, col=c("red","green3"),
 					  xaxt="n", ylab="Mean Score", xlab="Observed Variables",cex=1.5)
-	axis(1,at=1:k,lab=labs)
+	axis(1,at=1:k,labels=labs)
 	legend(x="topleft", legend=colnames(average), lty=1:2, pch=21:22,col=c("red","green3")) }
 	
 	#Profile analysis 
@@ -59,7 +59,7 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
 	#Parallel profile test
 	F1 <- t(y) %*% solve(Cont %*% S %*% t(Cont)) %*% y 
-	pf1 <- pf(F1*(c1+c2-k)/(c1+c2-2)/(k-1), k-1, (c1+c2-k), lower=F) #P-value
+	pf1 <- pf(F1*(c1+c2-k)/(c1+c2-2)/(k-1), k-1, (c1+c2-k), lower.tail=F) #P-value
 	df1=k-1
 	df2=(c1+c2-k)
 	parallel <- data.frame(F1,df1,df2,pf1)
@@ -67,7 +67,7 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
 	#Coincidential profile test
 	F2 <- sum(average[,1] - average[,2])^2 / sum(S) 
-	pf2 <- pf(F2, 1, (c1+c2-2), lower=F) # P-value
+	pf2 <- pf(F2, 1, (c1+c2-2), lower.tail=F) # P-value
 	df1 <- 1
 	df2 <- (c1+c2-2)
 	coincidential <- data.frame(F2,df1,df2,pf2)
@@ -79,7 +79,7 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	y <- Cont %*% xbar
 	F3 <- (c1+c2)*sum(y*(solve(Cont%*%allS%*%t(Cont)) %*% y))
 
-	pf3 <- pf(F3*(c1+c2-k+1)/(c1+c2-1)/(k-1), (k-1), (c1+c2-k+1), lower=F) #P-value
+	pf3 <- pf(F3*(c1+c2-k+1)/(c1+c2-1)/(k-1), (k-1), (c1+c2-k+1), lower.tail=F) #P-value
 	
 	df1 <- (k-1)
 	df2 <- (c1+c2-k+1)

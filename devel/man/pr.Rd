@@ -1,28 +1,44 @@
 \name{pr}
 \alias{pr}
+\alias{plot}
+\alias{plot.prof}
+\alias{print.prof}
+
 \title{Pattern and Level Reliability via Profile Analysis}
 \usage{
   pr(form1,form2)
+  
+  \method{print}{prof}(x)
+  
+  \method{plot}{prof}(x)
 }
+
 \arguments{
   \item{form1,form2}{Two data matrices or data frames; rows
   represent individuals, columns represent subscores. Both
   forms should have the same individuals and subscores in
   the same order. Missing subscores have to be inserted as
   NA.}
+  
+  \item{x}{An object of class \code{"prof"} returned from the \code{pr} function.} 
 }
+
 \value{
+ An object of class prof is returned, listing the following components:
+\describe{
   \item{reliability}{Within-person, between-person, and
   overall subscore reliability}
 
   \item{pattern.level}{A matrix of all pattern and level
   values obtained from the subscores}
-}
+}}
+
 \description{
   The \code{pr} function uses subscores
-  from two parallel test forms and compute profile 
+  from two parallel test forms and computes profile 
   reliability coefficients as described in Bulut (2013).
 }
+
 \details{
   Profile pattern and level reliability coefficients
   are based on the profile analysis approach described in
@@ -35,6 +51,7 @@
   \href{http://conservancy.umn.edu/bitstream/155592/1/Bulut_umn_0130E_13879.pdf}{Bulut
   (2003)}.
 }
+
 \examples{
 \dontrun{
 data(EEGS)
@@ -59,6 +76,6 @@ plot(result)
   468-484.
 }
 \seealso{
-  \code{\link{profileplot}},\code{\link{print.prof}},\code{\link{plot.prof}}
+  \code{\link{profileplot}}
 }
 
