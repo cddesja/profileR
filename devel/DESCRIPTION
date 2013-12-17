@@ -29,18 +29,9 @@ Collate:
     'print.prof.R'
     'profile.by.group.R'
     'profile.reliability.R'
-    'profile.cv.R'
-    'profileplot.R'
-    
-    'profileplot.R'
-    'profile.reliability.R'
-    'profile.by.group.R'
-    'print.prof.R'
-    'plot.prof.R'
-    'summary.profg.R'
-    'profileR-package.R'
-
     'profilecv.R'
+    'profileplot.R'
     'summary.critpat.R'
-    'profile.by.group.R'
+    'summary.profg.R'
+
 

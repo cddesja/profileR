@@ -1,21 +1,39 @@
 \name{criterion.pattern}
 \alias{criterion.pattern}
-\title{Criterion-Related Profile Analysis}
-\usage{
-  criterion.pattern(x, y, k = 100)
-}
-\arguments{
-  \item{x}{Corresponds to the predictor Variable}
+\alias{plot.critpat}
+\alias{print.critpat}
+\alias{summary.critpat}
+\alias{anova.critpat}
 
-  \item{y}{Corresponds to the Dependent Variable}
+\title{Criterion-Related Profile Analysis}
+
+\usage{
+criterion.pattern(x, y, k = 100)
+
+\method{plot}{critpat}(x, y, ...)
+
+\method{print}{critpat}(object, ...)
+
+\method{summary}{critpat}(object, ...)
+
+\method{anova}{critpat}(object, ...)
+}
+
+
+\arguments{
+  \item{x}{Corresponds to the predictor variable.}
+
+  \item{y}{Corresponds to the Dependent variable.}
 
   \item{k}{Corresponds to the scalar constant and must be
-  greater than 0. Defaults to 100}
+  greater than 0. Defaults to 100.}
   
-  \item{...}{additional arguments to be passed}
+  \item{...}{Additional arguments to be passed.}
+  
+  \item{object}{An object of class \code{"critpat"}.}
 }
 \value{
-  An object of class critpat is returned, listing the
+  An object of class \code{critpat} is returned, listing the
   following components: \item{lvl.comp}{The level
   component} \item{pat.comp}{The pattern component}
   \item{b}{The regression weights} \item{bstar}{The mean
