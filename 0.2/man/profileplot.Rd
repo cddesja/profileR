@@ -37,8 +37,10 @@ myplot <- profileplot(PS[,2:4],person.id=PS$Person,by.pattern=TRUE,original.name
 myplot
 
 data(leisure)
-leisure1 <- ddply(leisure,~Group,summarise,Read.Dance=mean(Read.Dance),Dance.TV=mean(Dance.TV),TV.Ski=mean(TV.Ski))
-leis.plot <- profileplot(leisure1[,2:4],person.id=leisure1$Group,interval=10,by.pattern=FALSE,original.names=TRUE)
+leisure1 <- ddply(leisure,~Group,summarise,Read.Dance=mean(Read.Dance),
+  Dance.TV=mean(Dance.TV),TV.Ski=mean(TV.Ski))
+leis.plot <- profileplot(leisure1[,2:4],person.id=leisure1$Group,
+  interval=10,by.pattern=FALSE,original.names=TRUE)
 leis.plot
 }
 }
