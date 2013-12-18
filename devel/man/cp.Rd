@@ -3,23 +3,27 @@
 \alias{plot.critpat}
 \alias{summary.critpat}
 \alias{anova.critpat}
+\alias{print.critpat}
 
 \title{Criterion-Related Profile Analysis}
 
 \usage{
-	cp(criterion, predictor,k = 100)
+	cp(criterion, predictor,k = 100, na.action = NULL)
 	
 	\method{summary}{critpat}(object, ...)
   
   \method{plot}{critpat}(x, ...)
   
   \method{anova}{critpat}(object, ...)
+  
+  \method{print}{critpat}(x, ...)
 }
 
 \arguments{
   \item{criterion}{Corresponds to the criterion variable.}
   \item{predictor}{Corresponds to the predictor variables.}
   \item{k}{Corresponds to the scalar constant and must be greater than 0. Defaults to 100.}
+  \item{na.action}{How should missing data be handled? Function defaults to failing if missing data are present.}
   \item{x}{An object of class \code{"critpat"}.}
   \item{object}{An object of class \code{"critpat"}.}
   \item{...}{Additional arguments to be passed.}
@@ -45,14 +49,10 @@
 }
 \details{
   The \code{criterion.pattern} function requires two
-  arguments: X and Y. The argument X corresponds to the
-  predictor variables.  This matrix of covariates may be in
-  their own object or in the same object as the dependent
-  variable.  The Y argument corresponds to the dependent
-  variable. This vector may be in a separate object or in
-  the same object as X. The function returns the
+  arguments: criterion and predictors. The function returns the
   criterion-related profile analysis described in Davison &
-  Davenport (2002). Presently there can be no missing data.
+  Davenport (2002). Missing data is presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, which causes the function to fail. The following s3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. This function provide a summary (namely, R2 and the level and pattern components), perform ANOVA of the R2, provides output similar to \code{lm()}, and plots the pattern effect.
+
 }
 \examples{
 \dontrun{

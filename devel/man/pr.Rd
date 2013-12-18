@@ -53,7 +53,7 @@
 \examples{
 \dontrun{
 data(EEGS)
-result <- profile.reliability(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
+result <- pr(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
 print(result)
 plot(result)
 }

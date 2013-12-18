@@ -1,6 +1,23 @@
 #'@export
 
-cp <- function(criterion, predictor, k=100){
+cp <- function(criterion, predictor, k=100, na.action = NULL){
+  
+  if(na.action == "na.omit"){
+    dat.tmp <- cbind(criterion,predictor)
+    dat.tmp <- na.omit(dat.tmp)
+    criterion <- dat.tmp[,1]
+    predictor <- dat.tmp[,-1]
+  }
+  
+  if(na.action == "na.fail"){
+    stop("Missing data are present. This function will terminate.")
+  }
+  
+  if(any(is.na(criterion == T))) 
+    stop("Missing data mechanism not yet implement. Please specify via na.action")
+  if(any(is.na(predictor == T))) 
+    stop("Missing data mechanism not yet implement. Please specify via na.action")
+  
     x <- predictor
     y <- criterion
     N <- nrow(x)

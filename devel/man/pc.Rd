@@ -2,16 +2,16 @@
 \alias{pc}
 \title{Cross-Validation for Profile Analysis}
 \usage{
-  pc(criterion, predictor, seed, na.action)
+  pc(criterion, predictor, seed = NULL, na.action = NULL)
 }
 \arguments{
   \item{criterion}{Corresponds to the criterion variable}
 
   \item{predictor}{Corresponds to the predictor variable}
   
-  \item{seed}{Optional argument that sets the seed for replication}
+  \item{seed}{Should a seed be set? Function defaults to a random seed.}
   
-  \item{na.action}{How should missing data be handled?}
+  \item{na.action}{How should missing data be handled? Function defaults to failing if missing data are present.}
 }
 \value{
   \item{R2.full}{Test of the null hypothesis that R2 = 0}
@@ -26,16 +26,9 @@
   Davenport (2002).
 }
 \details{
-  The \code{pc} function requires two arguments: X
-  and Y. The argument X corresponds to the predictor
-  variables. This matrix of covariates may be in their own
-  object or in the same object as the dependent variable.
-  The Y argument corresponds to the dependent variable.
-  This vector may be in a separate object or in the same
-  object as X. The function returns the cross-validation
-  technique described in Davison & Davenport (2002). The
-  data must be specified as matrices and there can be no
-  missing data.
+  The \code{pc} function requires two arguments: criterion
+  and predictor. The criterion corresonds to the dependent variable and the predictor corresponds to the matrix of predictor variables. The function performs the cross-validation
+  technique described in Davison & Davenport (2002) and an object of class \code{critpat} is returned. There the following s3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These function provide a summary (namely, R2), performs ANOVA of the R2 based on the split, provides output similar to \code{lm()}, and plot the estimated parameters for the random split.  Missing data is presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, which causes the function to fail. A seed may also be set for reproducibility by setting the \code{seed}. 
 }
 \author{
   Christopher David Desjardins
@@ -48,7 +41,7 @@
   468-484.
 }
 \seealso{
-  \code{\link{cp}}
+  \code{\link{cp}},\code{\link{print.critpat}},\code{\link{summary.critpat}},\code{\link{anova.critpat}},\code{\link{plot.critpat}} 
 }
 \keyword{methods}
 
