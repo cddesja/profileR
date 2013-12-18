@@ -1,11 +1,10 @@
 \name{pr}
 \alias{pr}
+\alias{plot.prof}
 
 \title{Pattern and Level Reliability via Profile Analysis}
 \usage{
-  pr(form1,form2)
-  
-  \method{print}{prof}(x, ...)
+  pr(form1,form2)  
   
   \method{plot}{prof}(x, ...)
 }

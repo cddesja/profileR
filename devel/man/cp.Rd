@@ -1,5 +1,8 @@
 \name{cp}
 \alias{cp}
+\alias{plot.critpat}
+\alias{summary.critpat}
+\alias{anova.critpat}
 
 \title{Criterion-Related Profile Analysis}
 
@@ -7,8 +10,6 @@
 	cp(criterion, predictor,k = 100)
 	
 	\method{summary}{critpat}(object, ...)
-  
-  \method{print}{critpat}(x, ...)
   
   \method{plot}{critpat}(x, ...)
   
@@ -19,6 +20,7 @@
   \item{criterion}{Corresponds to the criterion variable.}
   \item{predictor}{Corresponds to the predictor variables.}
   \item{k}{Corresponds to the scalar constant and must be greater than 0. Defaults to 100.}
+  \item{x}{An object of class \code{"critpat"}.}
   \item{object}{An object of class \code{"critpat"}.}
   \item{...}{Additional arguments to be passed.}
 }

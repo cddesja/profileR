@@ -1,14 +1,13 @@
 \name{pbg}
 \alias{pbg}
+\alias{summary.profg}
 
-\title{Profile by group: Parallel, coincidential, and level profiles}
+\title{Profile by group: Testing parallel, coincidental, and level profiles}
 
 \usage{
   pbg(x, y, original.names=FALSE, profile.plot=FALSE, ...)
   
-  \method{summary}{profg}(object, ...)
-  
-  \method{print}{profg}(x, ...)
+  \method{summary}{profg}(object, ...)  
 }
 
 \arguments{

@@ -3,9 +3,9 @@
 \alias{profileR-package}
 \title{Profile Analysis of Multivariate Data in R}
 \description{
-  The package profileR provides a set of statistical analysis and data visualization tools to implement 
-  multivariate analysis, profile analysis, and cross-validation techniques
-  described in Davison & Davenport (2002) and Bulut (2013).
+  The package profileR provides a set of multivariate methods and data visualization 
+  tools to implement profile analysis and cross-validation techniques described in 
+  Davison & Davenport (2002) and Bulut (2013).
 }
 \author{
   Okan Bulut \email{okanbulut84@gmail.com}
