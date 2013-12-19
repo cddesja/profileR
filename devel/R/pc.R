@@ -1,6 +1,4 @@
-#'@export
-
-pc <- function(criterion,predictor,seed=NULL, na.action = NULL){
+pc <- function(criterion,predictor,seed=NULL, na.action = "na.fail"){
   
   if(is.numeric(seed) == T)
     set.seed(seed)
@@ -13,14 +11,10 @@ pc <- function(criterion,predictor,seed=NULL, na.action = NULL){
     predictor <- dat.tmp[,-1]
   }
   
-  if(na.action == "na.fail"){
-    stop("Missing data are present. This function will terminate.")
-  }
-
   if(any(is.na(criterion == T))) 
-    stop("Missing data mechanism not yet implement. Please specify via na.action")
+    stop("Missing data are present. This function will terminate.")
   if(any(is.na(predictor == T))) 
-    stop("Missing data mechanism not yet implement. Please specify via na.action")
+    stop("Missing data are present. This function will terminate.")
   
   
   x <- predictor

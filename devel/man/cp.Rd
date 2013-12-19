@@ -51,7 +51,7 @@
   The \code{criterion.pattern} function requires two
   arguments: criterion and predictors. The function returns the
   criterion-related profile analysis described in Davison &
-  Davenport (2002). Missing data is presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, which causes the function to fail. The following s3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. This function provide a summary (namely, R2 and the level and pattern components), perform ANOVA of the R2, provides output similar to \code{lm()}, and plots the pattern effect.
+  Davenport (2002). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following s3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
 
 }
 \examples{
