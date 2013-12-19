@@ -1,3 +1,11 @@
+Changes in version: profileR_0.2-1
+
+  * Fixed cp and pc functions. They weren’t working with missing data because of default na.action. This is fine now.
+
+  * Fixed typos in manpages
+
+  * Fixed plot for critpat class
+
 Changes in version: profileR_0.2
 
   * Added pams(). This function adds profile analysis via multidimensional scaling. 

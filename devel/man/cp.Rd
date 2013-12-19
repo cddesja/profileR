@@ -8,7 +8,7 @@
 \title{Criterion-Related Profile Analysis}
 
 \usage{
-	cp(criterion, predictor,k = 100, na.action = NULL)
+	cp(criterion, predictor,k = 100, na.action = "na.fail")
 	
 	\method{summary}{critpat}(object, ...)
   

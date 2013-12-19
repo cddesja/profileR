@@ -2,7 +2,7 @@
 \alias{pc}
 \title{Cross-Validation for Profile Analysis}
 \usage{
-  pc(criterion, predictor, seed = NULL, na.action = NULL)
+  pc(criterion, predictor, seed = NULL, na.action = "na.fail")
 }
 \arguments{
   \item{criterion}{Corresponds to the criterion variable}
