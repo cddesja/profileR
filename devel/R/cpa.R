@@ -1,12 +1,12 @@
 cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
-	if(is.null(weights)==TRUE)
+	if(is.null(weights))
     regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
     else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)
 	b <- coef(regweg)[-1]
     bstar <- b - mean(b)
     xc <- k*bstar
     
-    if(is.null(weights)==TRUE)
+    if(is.null(weights))
     x <- regweg$model[,-1]
     else x <- regweg$model[,c(-1,-ncol(regweg$model))]
   	y <- regweg$model[,1]

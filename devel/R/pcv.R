@@ -1,12 +1,12 @@
 pcv <- function(formula, data, seed=NULL, na.action = "na.fail", family = "gaussian", weights = NULL){
   
-  if(is.numeric(seed) == T)
+  if(is.numeric(seed))
   	set.seed(seed)
   
   index <- 1:nrow(data)
   index.samp <- sample(index,nrow(data)/2)
   
-  if(is.null(weights)==TRUE){
+  if(is.null(weights)){
   	regweg.X1<- glm(formula=formula,data=data[index.samp,],family = family,na.action = na.action)
   	regweg.X2<- glm(formula=formula,data=data[-(index.samp),],family = family,na.action = na.action)
   	}
@@ -21,7 +21,7 @@ pcv <- function(formula, data, seed=NULL, na.action = "na.fail", family = "gauss
   X1.xc <- k*X1.bstar # criterion-pattern
   X2.xc <- k*X2.bstar
   
-  if(is.null(weights)==TRUE){
+  if(is.null(weights)){
     X1 <- regweg.X1$model[,-1]
     X2 <- regweg.X2$model[,-1]
     }
