@@ -37,9 +37,9 @@ result
   Okan Bulut \email{okanbulut84@gmail.com}
 }
 \references{
-  Davison, M. L., Davenport, E. C., & Bielinski, J. (1995). PAMS: SPSS Template. 
-
   Davenport, E. C., Ding, S., & Davison, M. L. (1995). PAMS: SAS Template. 
+  
+  Davison, M. L., Davenport, E. C., & Bielinski, J. (1995). PAMS: SPSS Template. 
 }
 \seealso{
   \code{\link{cp}}, \code{\link{pr}}

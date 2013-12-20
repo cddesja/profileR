@@ -23,13 +23,13 @@
 
 \value{
  An object of class prof is returned, listing the following components:
-\describe{
+
   \item{reliability}{Within-person, between-person, and
   overall subscore reliability}
 
   \item{pattern.level}{A matrix of all pattern and level
   values obtained from the subscores}
-}}
+}
 
 \description{
   The \code{pr} function uses subscores

@@ -2,7 +2,7 @@
 \alias{profileplot}
 \title{Score Profile Plot}
 \usage{
-  profileplot(form,person.id,interval=10,by.pattern=TRUE,original.names=TRUE)
+  profileplot(form,person.id,standardize=TRUE,interval=10,by.pattern=TRUE,original.names=TRUE)
 }
 
 \arguments{
@@ -10,6 +10,8 @@
   subscores.}
 
   \item{person.id}{A vector that includes person ID values (Optional).}
+  
+  \item{standardize}{If not FALSE, all scores are rescaled with a mean of 0 and standard deviation of 1. Default is TRUE.}
 
   \item{interval}{The number of equal intervals from the
   mimimum score to the meximum score. Default is 10. Ignored when by.pattern=FALSE.}
@@ -37,13 +39,11 @@ myplot <- profileplot(PS[,2:4],person.id=PS$Person,by.pattern=TRUE,original.name
 myplot
 
 data(leisure)
-leisure1 <- ddply(leisure,~Group,summarise,Read.Dance=mean(Read.Dance),
-  Dance.TV=mean(Dance.TV),TV.Ski=mean(TV.Ski))
-leis.plot <- profileplot(leisure1[,2:4],person.id=leisure1$Group,
-  interval=10,by.pattern=FALSE,original.names=TRUE)
+leis.plot <- profileplot(leisure[,2:4],standardize=TRUE,by.pattern=FALSE)
 leis.plot
 }
 }
+
 \author{
   Okan Bulut \email{okanbulut84@gmail.com}
 }

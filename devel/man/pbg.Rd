@@ -2,7 +2,7 @@
 \alias{pbg}
 \alias{summary.profg}
 
-\title{Profile by group: Testing parallel, coincidental, and level profiles}
+\title{Profile by group: Testing Parallel, Coincidental, and Level Profiles}
 
 \usage{
   pbg(x, y, original.names=FALSE, profile.plot=FALSE, ...)
@@ -31,11 +31,10 @@
 
 \value{
   An object of class profg is returned, listing the following components: 
-  \describe{
   \item{data.summary}{Means of observed variables by the grouping variable} 
   \item{corr.table}{A matrix of correlations among observed variables splitted by the grouping variable}
   \item{profile.test}{Results of F-tests for testing parallel, coincidential, and level profiles across two groups.}
-}}
+}
 
 \description{
   The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles

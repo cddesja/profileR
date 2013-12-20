@@ -1,6 +1,8 @@
 Changes in version: profileR_0.2-1
 
-  * Fixed cp and pc functions. They weren’t working with missing data because of default na.action. This is fine now.
+  * Fixed the legend issue on profileplot function when by.pattern is set to FALSE. 	
+
+  * Fixed cp and pc functions. They weren't working with missing data because of default na.action. This is fine now.
 
   * Fixed typos in manpages
 
@@ -12,7 +14,7 @@ Changes in version: profileR_0.2
   
   * Add pbg(). This function tests parallel, level, and coincidential profiles across two groups.
 
-  * Add additional generic functions to classes critpat and prof
+  * Add additional generic functions to classes critpat, prof, and profg. 
   
   * Renamed functions to reduce conflict with base functions and to introduce a coding convention. 
   
