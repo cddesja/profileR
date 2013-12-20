@@ -18,6 +18,7 @@ Depends:
     plyr,
     R (>= 3.0.0)
 License: GPL (>= 2)
+# URL: http://lontra.github.io/profileR/
 LazyData: true
 Collate:
     'anova.critpat.R'
