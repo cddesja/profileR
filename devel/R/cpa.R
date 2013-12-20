@@ -1,34 +1,22 @@
-cp <- function(criterion, predictor, k=100, na.action = "na.fail"){
-
-  if(na.action == "na.omit"){
-    dat.tmp <- cbind(criterion,predictor)
-    dat.tmp <- na.omit(dat.tmp)
-    criterion <- dat.tmp[,1]
-    predictor <- dat.tmp[,-1]
-  }
-   
-  if(any(is.na(criterion == T)))   
-  	stop("Missing data are present. This function will terminate.")
-  if(any(is.na(predictor == T))) 
-    stop("Missing data are present. This function will terminate.")
-  
-    x <- predictor
-    y <- criterion
+cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
+	if(is.null(weights)==TRUE)
+    regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
+    else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)
+	b <- coef(regweg)[-1]
+    bstar <- b - mean(b)
+    xc <- k*bstar
+    
+    if(is.null(weights)==TRUE)
+    x <- regweg$model[,-1]
+    else x <- regweg$model[,c(-1,-ncol(regweg$model))]
+  	y <- regweg$model[,1]
     N <- nrow(x)
     v <- ncol(x)
     V <- 1/ncol(x)
     pat.comp <- x - apply(x,1,mean)
     Xp <- apply(x,1,mean)
-    dv <- "y ~ 1"
-    pred <- colnames(x)
-    basic <- paste(pred,collapse="+",sep="")
-    form <- as.formula(paste(dv,"+",basic,sep=""))
-    regweg<- coef(lm(formula=form,data=as.data.frame(cbind(x,y))))
-    b <- regweg[-1]
-    bstar <- b - mean(b)
-    xc <- k*bstar
     Covpc <- V*(as.matrix(pat.comp)%*%as.matrix(xc))
-    ypred <- fitted(lm(y ~ 1 + Covpc + Xp))
+    ypred <- fitted(lm(y ~ 1 + Covpc + Xp, na.action = na.action))
     R2.f <- cor(ypred,y)^2
     R2.pat <- cor(y,as.vector(Covpc))^2 ## pattern effect
     R2.lvl <- cor(y,Xp)^2 ## level effect

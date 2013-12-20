@@ -1,49 +1,45 @@
-pc <- function(criterion,predictor,seed=NULL, na.action = "na.fail"){
+pcv <- function(formula, data, seed=NULL, na.action = "na.fail", family = "gaussian", weights = NULL){
   
   if(is.numeric(seed) == T)
-    set.seed(seed)
+  	set.seed(seed)
   
-
-  if(na.action == "na.omit"){
-    dat.tmp <- cbind(criterion,predictor)
-    dat.tmp <- na.omit(dat.tmp)
-    criterion <- dat.tmp[,1]
-    predictor <- dat.tmp[,-1]
+  index <- 1:nrow(data)
+  index.samp <- sample(index,nrow(data)/2)
+  
+  if(is.null(weights)==TRUE){
+  	regweg.X1<- glm(formula=formula,data=data[index.samp,],family = family,na.action = na.action)
+  	regweg.X2<- glm(formula=formula,data=data[-(index.samp),],family = family,na.action = na.action)
+  	}
+  else {
+  	regweg.X1<- glm(formula=formula,data=data[index.samp,],family = family,na.action = na.action,weights=weights)
+  	regweg.X2<- glm(formula=formula,data=data[-(index.samp),],family = family,na.action = na.action,,weights=weights)
   }
-  
-  if(any(is.na(criterion == T))) 
-    stop("Missing data are present. This function will terminate.")
-  if(any(is.na(predictor == T))) 
-    stop("Missing data are present. This function will terminate.")
-  
-  
-  x <- predictor
-  y <- criterion
-  k <- 1
-  index <- 1:nrow(x)
-  index.samp <- sample(index,nrow(x)/2)
-  X1 <- x[index.samp,]
-  X2 <- x[-index.samp,]
-  Y1 <- y[index.samp]
-  Y2 <- y[-index.samp]
-  N1 <- nrow(X1)
-  N2 <- nrow(X2)
-  V1 <- 1/ncol(X1)
-  V2 <- 1/ncol(X2)
-  dv.X1 <- "Y1 ~ 1"
-  dv.X2 <- "Y2 ~ 1"
-  pred <- colnames(x)
-  basic <- paste(pred,collapse="+",sep="")
-  formX1 <- as.formula(paste(dv.X1,"+",basic,sep=""))
-  formX2 <- as.formula(paste(dv.X2,"+",basic,sep=""))
-  regweg.X1<- coef(lm(formula=formX1,data=as.data.frame(cbind(X1,Y1))))
-  regweg.X2<- coef(lm(formula=formX2,data=as.data.frame(cbind(X2,Y2))))
-  X1.b <- regweg.X1[-1]
-  X2.b <- regweg.X2[-1]
+  X1.b <- coef(regweg.X1)[-1]
+  X2.b <- coef(regweg.X2)[-1]
   X1.bstar <- X1.b - mean(X1.b)
   X2.bstar <- X2.b - mean(X2.b)
   X1.xc <- k*X1.bstar # criterion-pattern
   X2.xc <- k*X2.bstar
+  
+  if(is.null(weights)==TRUE){
+    X1 <- regweg.X1$model[,-1]
+    X2 <- regweg.X2$model[,-1]
+    }
+    else{
+    	X1 <- regweg.X1$model[,c(-1,-ncol(regweg.X1$model))]
+    	X2 <- regweg.X2$model[,c(-1,-ncol(regweg.X2$model))]
+    	}
+
+  k <- 1
+
+  Y1 <- regweg.X1$model[,1]
+  Y2 <- regweg.X2$model[,1]
+  N1 <- nrow(X1)
+  N2 <- nrow(X2)
+  V1 <- 1/ncol(X1)
+  V2 <- 1/ncol(X2)
+  
+  
   Xp.X1 <- apply(X1,1,mean)
   Xp.X2 <- apply(X2,1,mean)
   pat.compX1 <- X1 - apply(X1,1,mean)

@@ -21,10 +21,10 @@ License: GPL (>= 2)
 LazyData: true
 Collate:
     'anova.critpat.R'
-    'cp.R'
+    'cpa.R'
     'pams.R'
     'pbg.R'
-    'pc.R'
+    'pcv.R’
     'plot.critpat.R'
     'plot.prof.R'
     'pr.R'
