@@ -1,6 +1,21 @@
-wprifm <- function(data, scale = FALSE, save.model = FALSE){
+#' Within-Person Random Intercept Factor Model
+#' 
+#' @export
+#' @param data Data.frame containing the manifest variables.
+#' @param scale Should the data be scaled? Default = FALSE
+#' @param save_model Should the temporary lavaan model syntax be saved. Default = FALSE
+#' @return an object of class \code{lavaan}
+#'
+#'@details This function performs the within-person random intercept factor model described in Davison, Kim, and Close (2009). For information about this model, please see this reference. This function returns an object of \code{lavaan} class and thus any generics defined for \code{lavaan} will work on this object. This function provides a simple wrapper for \code{lavaan}.
+#'
+#' @examples
+#' data <- HolzingerSwineford1939[,7:ncol(HolzingerSwineford1939)]
+#' wprifm(data, scale = TRUE)
+#' @references Davison, M., Kim, S.-K., Close, C. (2009). Factor analytic modeling of within person variation in score profiles. Multivariate Behavioral Research, 44(5), 668 - 687.
+
+wprifm <- function(data, scale = FALSE, save_model = FALSE){
 	if(scale){
-		data <- scale(data)
+		data <- as.data.frame(scale(data))
 	} 
 	
     # Define random Intercept Factor
@@ -10,7 +25,7 @@ wprifm <- function(data, scale = FALSE, save.model = FALSE){
     # Define factor of interest
     f2params <- paste("lam",1:ncol(data),sep="")
     f2x <- paste(f2params, paste("x", 1:ncol(data), sep=""), sep="*")
- 	f2 <- paste("f2 =~ ", paste(f2x[1:length(f2x)-1],"+ ", collapse=""), f2x[length(f2x)], sep = "")
+ 	f2 <- paste("f2 =~ NA*x1 + ", paste(f2x[1:length(f2x)-1],"+ ", collapse=""), f2x[length(f2x)], sep = "")
 
  	# Constraints
  	constraints <- "f1 ~~ f2\nf2 ~~ 1*f2"
@@ -21,7 +36,7 @@ wprifm <- function(data, scale = FALSE, save.model = FALSE){
  	model <- readLines("tmp.out")
 
  	# Remove file unless asked not to
- 	if(save.model == FALSE){
+ 	if(save_model == FALSE){
  		system("rm tmp.out")
  	}
  	fit <- sem(model, data = data)
