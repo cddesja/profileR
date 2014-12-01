@@ -6,5 +6,5 @@ Profile Analysis and Its Applications
 
 ```R
 library(devtools)
-install_github(username = "cddesja", repo = "profileR", ref = "develop")
+install_github(repo = "cddesja/profileR", ref = "develop")
 ```
