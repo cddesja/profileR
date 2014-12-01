@@ -1,7 +1,0 @@
-2013-12-15 Christopher Desjardins <cddesjardins@gmail.com>
-
-* Changed profilecv to profile.cv
-
-* Added ChangeLog
-
-* Updated methods from S3 to S4 to be future-ready
