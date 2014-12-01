@@ -19,5 +19,5 @@ Depends:
     plyr,
     R (>= 3.0.0)
 License: GPL (>= 2)
-URL: http://cddesjardins.github.io/profileR/
+URL: http://cddesjardins.github.io/profile_analysis/
 LazyData: true
