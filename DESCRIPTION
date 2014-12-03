@@ -1,7 +1,7 @@
 Package: profileR
 Title: Profile Analysis of Multivariate Data
 Type: Package
-Description: profileR provides a set of multivariate methods and
+Description: A set of multivariate methods and
     data visualization tools to implement profile analysis and cross-validation
     techniques described in Davison & Davenport (2002) and Bulut (2013) as
     well as a within-person random intercept factor model.
