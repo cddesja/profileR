@@ -6,7 +6,7 @@ Description: A set of multivariate methods and
     techniques described in Davison & Davenport (2002) and Bulut (2013) as
     well as a within-person random intercept factor model.
 Version: 0.3
-Date: 03-06-2014
+Date: 04-12-2014
 Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
     <cddesjardins@gmail.com>
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
@@ -17,6 +17,7 @@ Depends:
     reshape,
     lavaan,
     methods,
+    stats,
     plyr,
     R (>= 3.0.0)
 License: GPL (>= 2)
