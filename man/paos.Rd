@@ -34,6 +34,6 @@ paos(nutrient, scale=TRUE)
 }
 
 \seealso{
-  \code{\link{cp}}, \code{\link{pr}}
+  \code{\link{cpa}}, \code{\link{pr}}
 }
 

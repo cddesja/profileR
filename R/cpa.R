@@ -2,7 +2,7 @@ cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian"
 	if(is.null(weights))
     regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
     else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)
-	b <- coef(regweg)[-1]
+	  b <- coef(regweg)[-1]
     bstar <- b - mean(b)
     xc <- k*bstar
     

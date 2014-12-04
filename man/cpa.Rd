@@ -1,5 +1,5 @@
-\name{cp}
-\alias{cp}
+\name{cpa}
+\alias{cpa}
 \alias{plot.critpat}
 \alias{summary.critpat}
 \alias{anova.critpat}
@@ -8,7 +8,7 @@
 \title{Criterion-Related Profile Analysis}
 
 \usage{
-	cp(criterion, predictor,k = 100, na.action = "na.fail")
+	cpa(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL)
 	
 	\method{summary}{critpat}(object, ...)
   
@@ -20,13 +20,12 @@
 }
 
 \arguments{
-  \item{criterion}{Corresponds to the criterion variable.}
-  \item{predictor}{Corresponds to the predictor variables.}
+  \item{formula}{N/A}
+  \item{data}{N/A}
   \item{k}{Corresponds to the scalar constant and must be greater than 0. Defaults to 100.}
   \item{na.action}{How should missing data be handled? Function defaults to failing if missing data are present.}
-  \item{x}{An object of class \code{"critpat"}.}
-  \item{object}{An object of class \code{"critpat"}.}
-  \item{...}{Additional arguments to be passed.}
+  \item{family}{N/A}
+  \item{weights}{N/A}
 }
 \value{
   An object of class \code{critpat} is returned, listing the
@@ -57,7 +56,7 @@
 \examples{
 \dontrun{
 data(IPMMc)
-mod <- cp(IPMMc[,5], IPMMc[,1:4],k=100)
+mod <- cpa(IPMMc[,5], IPMMc[,1:4],k=100)
 print(mod)
 summary(mod)
 plot(mod)
@@ -75,7 +74,7 @@ anova(mod)
   468-484.
 }
 \seealso{
-  \code{\link{pc}}
+  \code{\link{pcv}}
 }
 \keyword{methods}
 

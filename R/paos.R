@@ -4,7 +4,7 @@
 paos <- function(data, scale=TRUE) {
   
   if(scale){
-    x1 <- apply(data,2,function(x) scale(x, center = FALSE, scale = TRUE))
+    x1 <- scale(data, center = FALSE, scale = apply(data, 2, sd, na.rm = TRUE))
     x1 <- as.matrix(x1, ncol=ncol(data))
   } else 
     {x1 <- as.matrix(data, ncol=ncol(data))}
@@ -22,16 +22,16 @@ paos <- function(data, scale=TRUE) {
   one <- as.matrix(rep(1,nrow(x1)),ncol=1)
   ident <- diag(nrow(x1))
   ybar <- t(x1)%*%one/nrow(x1)
-  s <- t(x1)%*%(ident-one%*%t(one)/nrow(x1))%*%x/(nrow(x1)-1)
+  s <- t(x1)%*%(ident-one%*%t(one)/nrow(x1))%*%x1/(nrow(x1)-1)
 
 #   print(mu0)
 #   print(ybar)
 #   print(s)
 
-  t2 <- nrow(x)%*%t(ybar-mu0)%*%solve(s)%*%(ybar-mu0)
-  f <- (nrow(x)-ncol(x))*t2/ncol(x)/(nrow(x)-1)
-  df1=ncol(x)
-  df2=nrow(x)-ncol(x)
+  t2 <- nrow(x1)%*%t(ybar-mu0)%*%solve(s)%*%(ybar-mu0)
+  f <- (nrow(x1)-ncol(x1))*t2/ncol(x1)/(nrow(x1)-1)
+  df1=ncol(x1)
+  df2=nrow(x1)-ncol(x1)
   p <- 1-pf(f, df1, df2, lower.tail = TRUE, log.p = FALSE)
   result1 <- data.frame(t2=t2,F=f,df1=df1,df2=df2,p.value=p);
 
