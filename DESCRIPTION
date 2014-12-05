@@ -12,13 +12,10 @@ Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
 Depends:
     ggplot2,
-    MASS,
     RColorBrewer,
     reshape,
     lavaan,
-    methods,
     stats,
-    plyr,
     R (>= 3.0.0)
 License: GPL (>= 2)
 URL: http://cddesjardins.github.io/profile_analysis/

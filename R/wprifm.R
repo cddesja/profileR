@@ -1,5 +1,6 @@
 #' Within-Person Random Intercept Factor Model
 #' 
+#' @importFrom lavaan sem
 #' @export
 #' @param data Data.frame containing the manifest variables.
 #' @param scale Should the data be scaled? Default = FALSE

@@ -1,5 +1,10 @@
-#'@S3method plot critpat
-
+#' Plot criterion-related profile
+#'
+#' Plots the the criterion-related level and pattern profiles for each observation
+#'
+#' @method plot critpat
+#' @param x \code{critpat} object resulting from \code{cpa}
+#' @param ... additional arguments affecting the plot produced.
 plot.critpat <- function(x, ...){
   if(is.null(x$xc) == TRUE)
   {

@@ -1,5 +1,3 @@
-#' @S3method plot prof
-
 plot.prof <- function(x, ...){
 	dat0 <- x$pattern.level
 	dim <- ncol(dat0)

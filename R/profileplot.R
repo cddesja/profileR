@@ -1,4 +1,7 @@
 #'@export
+#'@import reshape
+#'@import ggplot2
+#'@import RColorBrewer
 
 profileplot <- function(form,person.id,standardize=TRUE,interval=10,by.pattern=TRUE,original.names=TRUE) {
 	

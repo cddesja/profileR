@@ -1,6 +1,3 @@
-
-#'@S3method summary profg
-
 summary.profg <- function(object, ...){
 	cat("Call:\n")
 	print(object$call)
