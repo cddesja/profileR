@@ -1,8 +1,8 @@
-#' Criterion-Related Profile Analysis
+#' Moderated Profile Analysis
 #'
-#' Implements the criterion-related profile analysis described in Davison & Davenport (2002).
+#' Implements the moderated profile analysis approach described in Stanke et al. (XXXX).
 #'
-#' The \code{cpa} function requires two arguments: criterion and predictors. The function returns the criterion-related profile analysis described in Davison & Davenport (2002). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
+#' The function returns the criterion-related profile analysis described in Davison & Davenport (2002). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
 #' @export
 #' @param formula An object of class \code{\link{formula}} of the form \code{response ~ terms}.
 #' @param data An optional data frame, list or environment containing the variables in the model.
@@ -40,7 +40,7 @@
 #' @seealso \code{\link{pcv}}
 #' @keywords method
 
-cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
+mpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
 	if(is.null(weights))
     regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
     else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)

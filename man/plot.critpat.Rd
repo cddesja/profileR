@@ -11,6 +11,9 @@
 \item{...}{additional arguments affecting the plot produced.}
 }
 \description{
-Plots the the criterion-related level and pattern profiles for each observation
+Plots the criterion-related level and pattern profiles for each observation
+}
+\seealso{
+\code{\link{cpa}}
 }
 

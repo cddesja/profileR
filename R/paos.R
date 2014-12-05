@@ -1,4 +1,22 @@
-
+#' Profile Analysis for One Sample with Hotelling's T-Square
+#'
+#' The \code{paos} function implements profile analysis for one sample using Hotelling's T-square.
+#'
+#' The \code{paos} function runs profile analysis for one sample based on the Hotelling's T-square test and tests the two htypothesis. First, the null hypothesis that all the rations of the variables in the data equal to 1. After rejecting the first hypothesis, a secondary null hypothesis that all of the ratios of the variables in the data equal to one another (not necessarily equal to 1) is tested.
+#'
+#' @param data A data matrix or data frame; rows represent individuals, columns represent variables.
+#' @param scale If TRUE (default), variables are standardized by dividing their standard deviations.
+#' @return A summary table is returned, listing the following two hypothesis:
+#' \itemize{
+#'  \item Hypothesis 1 - Ratios of the means of the variables over the hypothesized mean are equal to 1.
+#' \item Hypothesis 2 - All of the ratios are equal to each other.
+#'}
+#' @examples
+#' \dontrun{
+#' data(nutrient) 
+#' paos(nutrient, scale=TRUE)
+#'}
+#' @seealso \code{\link{cpa}}, \code{\link{pr}}
 #'@export
 
 paos <- function(data, scale=TRUE) {

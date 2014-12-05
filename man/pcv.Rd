@@ -7,7 +7,7 @@ pcv(formula, data, seed = NULL, na.action = "na.fail",
   family = "gaussian", weights = NULL)
 }
 \arguments{
-\item{formula}{An object of class \"\code{\link{formula}}\" of the form \code{response ~ terms}.}
+\item{formula}{An object of class \code{\link{formula}} of the form \code{response ~ terms}.}
 
 \item{data}{An optional data frame, list or environment containing the variables in the model.}
 

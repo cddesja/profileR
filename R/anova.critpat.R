@@ -2,8 +2,10 @@
 #' 
 #' Compute analysis of variance tables for the \code{critpat} object.
 #' @method anova critpat
+#' @export
 #' @param object \code{critpat} object resulting from \code{cpa}
 #' @param ... additional arguments affecting the ANOVA table produced.
+#' @seealso \code{\link{cpa}}
 anova.critpat <- function(object, ...){
   cat("Call:\n")
   print(object$call)

@@ -1,3 +1,28 @@
+#' Profile by group: Testing Parallel, Coincidental, and Level Profiles
+#'
+#' The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles are parallel, coincidental, and level across two groups defined by the grouping variable. If parallelism is rejected, the other two tests are meaningless. In that case, flatness may be assessed within each group, and various within- and between-group contrasts may be analyzed. 
+#'
+#' @param x A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.
+#' @param y A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.
+#' @param original.names Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.
+#' @param profile.plot Print a profile plot of scores for two groups. Default is FALSE.
+#' @param ... Additional arguments to be passed.
+#'
+#' @return An object of class \code{profg} is returned, listing the following components:
+#' \itemize{
+#' \item \code{data.summary} - Means of observed variables by the grouping variable	
+#' \item \code{corr.table} - A matrix of correlations among observed variables splitted by the grouping variable
+#' \item \code{profile.test} - Results of F-tests for testing parallel, coincidential, and level profiles across two groups.
+#' }
+#' @examples
+#' \dontrun{
+#'#Read spouse data from Professor Richard Jonhson's website 
+#'spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
+#'mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
+#'print(mod) #prints average scores in the profile across two groups
+#'summary(mod) #prints the results of hypothesis tests
+#' }
+#' @seealso \code{\link{pr}}, \code{\link{profileplot}}
 #'@export
 
 pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {

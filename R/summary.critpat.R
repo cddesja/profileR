@@ -5,6 +5,8 @@
 #' @method summary critpat
 #' @param object object of class \code{critpat}
 #' @param ... additional arguments affecting the summary produced.
+#' @export
+#' @seealso \code{\link{cpa}}
 summary.critpat <- function(object, ...){
 	cat("Call:\n")
 	print(object$call)

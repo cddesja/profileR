@@ -1,7 +1,29 @@
+#' Score Profile Plot
+#'
+#' The \code{profileplot} function creates a profile plot for a matrix or dataframe with multiple scores or subscores using \code{\link[ggplot2]{ggplot2}} function in \code{ggplot2} package.
+#'
 #'@export
 #'@import reshape
 #'@import ggplot2
 #'@import RColorBrewer
+#' @param form A matrix or dataframe including two or more subscores.
+#' @param person.id A vector that includes person ID values (Optional).
+#' @param standardize If not FALSE, all scores are rescaled with a mean of 0 and standard deviation of 1. Default is TRUE.
+#' @param interval The number of equal intervals from the mimimum score to the meximum score. Default is 10. Ignored when by.pattern=FALSE.
+#' @param by.pattern If TRUE, the function creates a profile plot with level and pattern values using ggplot2. Otherwise, the function creates a profile plot showing profile scores of persons using the base graphics in R. Default is TRUE.
+#' @param original.names Use the original column names in the data. Otherwise, columns are renamed as v1,v2,.... Default is TRUE.
+#' @return  The \code{profileplot} functions returns a score profile plot from either \link{\code{ggplot2}} or the base graphics in R.
+#' @examples
+#' \dontrun{
+#'	data(PS)
+#'  myplot <- profileplot(PS[,2:4], person.id = PS$Person,by.pattern = TRUE, original.names = TRUE)
+#'  myplot
+#' 
+#' data(leisure)
+#' leis.plot <- profileplot(leisure[,2:4],standardize=TRUE,by.pattern=FALSE)
+#' leis.plot
+#' }
+#' @seealso \link[ggplot2]{ggplot2}, \link{PS}
 
 profileplot <- function(form,person.id,standardize=TRUE,interval=10,by.pattern=TRUE,original.names=TRUE) {
 	

@@ -13,4 +13,7 @@
 \description{
 Prints the generic output from a \code{critpat} object.
 }
+\seealso{
+\code{\link{cpa}}
+}
 

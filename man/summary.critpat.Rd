@@ -13,4 +13,7 @@
 \description{
 Provides a summary of the criterion-related profile analysis
 }
+\seealso{
+\code{\link{cpa}}
+}
 

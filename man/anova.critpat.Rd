@@ -13,4 +13,7 @@
 \description{
 Compute analysis of variance tables for the \code{critpat} object.
 }
+\seealso{
+\code{\link{cpa}}
+}
 

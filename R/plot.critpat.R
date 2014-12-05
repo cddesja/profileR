@@ -1,10 +1,12 @@
 #' Plot criterion-related profile
 #'
-#' Plots the the criterion-related level and pattern profiles for each observation
+#' Plots the criterion-related level and pattern profiles for each observation
 #'
 #' @method plot critpat
+#' @export
 #' @param x \code{critpat} object resulting from \code{cpa}
 #' @param ... additional arguments affecting the plot produced.
+#' @seealso \code{\link{cpa}}
 plot.critpat <- function(x, ...){
   if(is.null(x$xc) == TRUE)
   {
