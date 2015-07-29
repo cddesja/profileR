@@ -24,7 +24,7 @@
 
 
 pcv <- function(formula, data, seed=NULL, na.action = "na.fail", family = "gaussian", weights = NULL){
-  
+  k = 100
   if(is.numeric(seed))
   	set.seed(seed)
   
