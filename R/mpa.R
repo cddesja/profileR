@@ -40,24 +40,35 @@
 #' @seealso \code{\link{pcv}}
 #' @keywords method
 
-mpa <- function(formula, data, moderator =, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
-	if(is.null(weights))
-    regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
-    else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)
-	  b <- coef(regweg)[-1]
-    bstar <- b - mean(b)
-    xc <- k*bstar
+mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", family = "gaussian"){
+  regweg <- plyr::dlply(data, .(data[,moderator]), glm, formula = formula, family = family, na.action = na.action)
+  b <- plyr::ldply(regweg, coef)
+  bsum <- rowSums(b[,-c(1,2)])
+  bstar <- b[,-c(1:2)] - apply(b[,-c(1:2)], 1, mean)
+  xc <- t(k*bstar)
+  y <- ldply(regweg, model.frame)
+  y <- y[,-2]
+  N <- plyr::ddply(data, .(data[, moderator]), nrow)
+  v <- ncol(y[,-1])
+  V <- 1/v
+  pat.comp <- y[,-1] - apply(y[,-1], 1, mean)
+  pat.comp <- data.frame(moderator = y[,1], pat.comp)
 
-    if(is.null(weights))
-    x <- regweg$model[,-1]
-    else x <- regweg$model[,c(-1,-ncol(regweg$model))]
-  	y <- regweg$model[,1]
-    N <- nrow(x)
-    v <- ncol(x)
-    V <- 1/ncol(x)
-    pat.comp <- x - apply(x,1,mean)
-    Xp <- apply(x,1,mean)
-    Covpc <- V*(as.matrix(pat.comp)%*%as.matrix(xc))
+  tmp <- split(pat.comp, pat.comp$moderator)
+  Covpc <- list()
+  for(i in 1: length(tmp)){
+    Covpc[[i]] <- V*(as.matrix(tmp[[i]][,-1])%*%xc[,i])
+  }
+  Covpc = unlist(Covpc)
+  Xp <- apply(y[,-1], 1, mean)
+  betas <- rep(bsum[,2], N$V1)
+  betas <- data.frame(moderator = y[,1], betas)
+  betas <- tidyr::spread(betas, moderator, betas)
+  betas[is.na(betas)] <- 0
+  data_model <- data.frame(Covpc, Xp, betas)
+
+  # THIS IS WHERE I STOPPED #
+
     ypred <- fitted(lm(y ~ 1 + Covpc + Xp, na.action = na.action))
     R2.f <- cor(ypred,y)^2
     R2.pat <- cor(y,as.vector(Covpc))^2 ## pattern effect
