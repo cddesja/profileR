@@ -1,0 +1,140 @@
+library("shiny")
+runApp("Dropbox/hi/atlantis/atlantis_materials/rscripts/output/shiny_apps/oliver/")
+library(devtools)#
+install_github(repo = "cddesja/profileR")
+library(profileR)
+?profileR
+library(devtools)#
+install_github(repo = "cddesja/profileR", ref = "develop")
+library(profileR)
+library("profileR")
+?wprifm
+wprifm()
+library(devtools)#
+install_github(repo = "cddesja/profileR", ref = "develop")
+warnings()
+library(profileR)
+wprifm
+library("profileR")
+warnings()
+library("profileR")
+data("IPMMc")
+IPMMC
+IPMMc
+cpa
+examples("cpa")
+example("cpa")
+data(IPMMc)
+mod <- cpa(R ~ A + H + S + B, data = IPMMc)
+mod
+IPMMC
+IPMMc
+cpa(R ~ A + H + S + B, data = IPMMc)
+str(mod)
+mod
+print.critpat <- function(x, ...){#
+  if (!inherits(x, "critpat")) stop("Use only with 'critpat' objects.\n")#
+	cat("Call:\n")#
+	print(x$call)#
+  cat("\nCoefficients\n")#
+	print(x$b)#
+  invisible(x) #
+}
+mod
+summary.critpat <- function(object, ...){#
+	cat("Call:\n")#
+	print(object$call)#
+  cat("\nRelability\n")#
+	print(object$r2)#
+  if(is.null(object$lvl.comp) == FALSE){#
+  cat("\n Level Component\n")#
+  print(object$lvl.comp)}#
+  if(is.null(object$pat.comp) == FALSE){#
+  cat("\n Pattern Component \n")#
+  print(object$pat.comp)#
+  }#
+}
+summary(mod)
+plot(mod)
+anova.critpat <- function(object, ...){#
+	cat("Call:\n")#
+	print(object$call)#
+	cat("\nAnalysis of Variance Table\n")#
+	cat("\n")#
+	print(object$ftable)#
+}
+anova(mod)
+library("roxygen2")
+roxygenize("~/Programming/R/profileR/")
+library(profileR)
+plot
+plot.cv
+plot.cpa
+roxygenize("~/Programming/R/profileR/")
+library(lavaan)
+lavaan::sem
+roxygenize("~/Programming/R/profileR/")
+ls
+roxygenize("~/Programming/R/profileR/")
+q()
+library("profileR")
+?cpa
+data(IPMMc)#
+mod <- cpa(R ~ A + H + S + B, data = IPMMc)#
+print(mod)#
+summary(mod)#
+plot(mod)#
+anova(mod)
+library("roxygen2")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+setwd("/Users/chris/Programming/R/profileR/R")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")?
+?
+?glm
+cmdscale
+?cmdscale
+?matplot
+roxygenize("~/Programming/R/profileR")?
+qweibull
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+roxygenize("~/Programming/R/profileR")
+library("profileR")
+?profileR-package
+?profileR
+??profileR
+?cpa
+data(IPMMc)#
+mod <- cpa(R ~ A + H + S + B, data = IPMMc)#
+print(mod)#
+summary(mod)#
+plot(mod)#
+anova(mod)
+data(IPMMc)#
+mod <- cpa(R ~ A + H + S + B, data = IPMMc)#
+print(mod)#
+summary(mod)#
+plot(mod)#
+anova(mod)
