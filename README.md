@@ -6,6 +6,8 @@ Type: Package
 
 Version: IN-DEVELOPMENT
 
+**Development versions**: v0.3 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR)
+
 Description: The package profileR provides a set of multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
