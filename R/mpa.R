@@ -6,7 +6,7 @@
 #' @export
 #' @param formula An object of class \code{\link{formula}} of the form \code{response ~ terms}.
 #' @param data An optional data frame, list or environment containing the variables in the model.
-#' @param mod Name of the moderator variable.
+#' @param moderator Name of the moderator variable.
 #' @param k Corresponds to the scalar constant and must be greater than 0. Defaults to 100.
 #' @param stage2 Should stage 2 be executed regardless of stage 1 outcome? defaults to FALSE.
 #' @return An object of class \code{critpat} is returned, listing the following components:
@@ -28,7 +28,7 @@
 #' @examples
 #' \dontrun{
 #' data(mod_data)
-#' mod <- mpa(dv ~ pred * mod, data = mod_data)
+#' mod <- mpa(dv ~ pred1 * mod + pred2 * mod, data = mod_data)
 #' print(mod)
 #' summary(mod)
 #' plot(mod)
@@ -39,49 +39,35 @@
 #' @seealso \code{\link{cpa}}
 #' @keywords method
 
-mpa <- function(formula, data, mod, k=100, na.action = "na.fail", stage2 = FALSE, ){
+mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 = FALSE, ){
   cat("# -------- Executing Stage 1 --------  #\n\n")
   stage1_mod <- lm(formula=formula,data=data,na.action = na.action)
   print(stage1_tab <- anova(stage1_mod))
   if(stage1_tab[nrow(stage1_tab) - 1, ncol(stage1_tab)] < .05 | stage2 == TRUE){
     cat("\n# ------- Executing Stage 2 --------  #\n\n")
-    b <- names(stage1_mod$model)
-    Xp <- apply(y[,-1], 1, mean)
+    
+    # Drop response and moderator variables
+    x <- stage1_mod$model[,-c(1, which(names(stage1_mod$model) == moderator))]
+    Xp <- apply(x, 1, mean)
+    pat.comp <- x - apply(x,1,mean)
+    
+    # Set up the regression weight contrast
+    reg_names <- levels(data[, moderator])
+    bref <- coef(stage1_mod)[-(grep(levels(data$mod)[2], names(coef(stage1_mod))))]
+    bref <- ref[-1]
+    refstar <- mean(bref) * k
+    bfoc <- coef(stage1_mod)[-1]
+    focstar <- mean(bfoc) * k
+    
+    #
+    # This will be easier enough to code later
+    # 
+    
   } else {
     cat("Interaction not significant. Not executing stage 2\n")
     break
     }
   
-  
-  
-#   regweg <- plyr::dlply(data, .(data[,moderator]), glm, formula = formula, family = family, na.action = na.action)
-#   b <- plyr::ldply(regweg, coef)
-#   bsum <- rowSums(b[,-c(1,2)])
-#   bstar <- b[,-c(1:2)] - apply(b[,-c(1:2)], 1, mean)
-#   xc <- t(k*bstar)
-#   y <- ldply(regweg, model.frame)
-#   y <- y[,-2]
-#   N <- plyr::ddply(data, .(data[, moderator]), nrow)
-#   v <- ncol(y[,-1])
-#   V <- 1/v
-#   pat.comp <- y[,-1] - apply(y[,-1], 1, mean)
-#   pat.comp <- data.frame(moderator = y[,1], pat.comp)
-# 
-#   tmp <- split(pat.comp, pat.comp$moderator)
-#   Covpc <- list()
-#   for(i in 1: length(tmp)){
-#     Covpc[[i]] <- V*(as.matrix(tmp[[i]][,-1])%*%xc[,i])
-#   }
-#   Covpc = unlist(Covpc)
-#   Xp <- apply(y[,-1], 1, mean)
-#   betas <- rep(bsum[,2], N$V1)
-#   betas <- data.frame(moderator = y[,1], betas)
-#   betas <- tidyr::spread(betas, moderator, betas)
-#   betas[is.na(betas)] <- 0
-#   data_model <- data.frame(Covpc, Xp, betas)
-# 
-#   # THIS IS WHERE I STOPPED #
-# 
 #     ypred <- fitted(lm(y ~ 1 + Covpc + Xp, na.action = na.action))
 #     R2.f <- cor(ypred,y)^2
 #     R2.pat <- cor(y,as.vector(Covpc))^2 ## pattern effect
