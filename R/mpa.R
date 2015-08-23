@@ -39,7 +39,7 @@
 #' @seealso \code{\link{cpa}}
 #' @keywords method
 
-mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 = FALSE, ){
+mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 = FALSE){
   cat("# -------- Executing Stage 1 --------  #\n\n")
   stage1_mod <- lm(formula=formula,data=data,na.action = na.action)
   print(stage1_tab <- anova(stage1_mod))
@@ -47,66 +47,103 @@ mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 =
     cat("\n# ------- Executing Stage 2 --------  #\n\n")
     
     # Drop response and moderator variables
-    x <- stage1_mod$model[,-c(1, which(names(stage1_mod$model) == moderator))]
+    loc <- which(names(stage1_mod$model) == moderator)
+    resp <- stage1_mod$model[,1]
+    
+    # Identify number of predictors
+    pred_num <- length(names(stage1_mod$model)[-c(1, loc)])
+    x <- stage1_mod$model[,-c(1, loc)]
+    z <- stage1_mod$model[,loc]
+    z <- ifelse(z == levels(z)[1], 1, 0)
+    
+    # Find level effect
     Xp <- apply(x, 1, mean)
-    pat.comp <- x - apply(x,1,mean)
+    
+    # Pattern component by groups
+    dat <- stage1_mod$model
+    mod_data <- dat[,loc]
+    reg_names <- levels(data[, moderator])
+    ref <- which(mod_data == reg_names[1])
+    foc <- which(mod_data == reg_names[2])
+    x.ref <- dat[ref,-c(1, loc)]
+    x.foc <- dat[foc,-c(1, loc)]
+    pat.comp.ref <- matrix(ncol = pred_num, rep(0,length(z)*pred_num))
+    pat.comp.foc <- matrix(ncol = pred_num, rep(0,length(z)*pred_num))
+    pat.comp.ref.t <- x.ref - apply(x.ref,1,mean)
+    pat.comp.ref[which(mod_data == reg_names[1]),] <- pat.comp.ref.t
+    
+    pat.comp.foc.t <- x.foc - apply(x.foc,1,mean)
     
     # Set up the regression weight contrast
-    reg_names <- levels(data[, moderator])
+    
     bref <- coef(stage1_mod)[-(grep(levels(data$mod)[2], names(coef(stage1_mod))))]
-    bref <- ref[-1]
-    refstar <- mean(bref) * k
+    bref <- bref[-1]
+    brefsum <- sum(bref) 
+    refstar <- (bref - mean(bref)) * k
     bfoc <- coef(stage1_mod)[-1]
-    focstar <- mean(bfoc) * k
     
-    #
-    # This will be easier enough to code later
-    # 
+    variable_names <- variable.names(stage1_mod$model)[-1]
+    variable_names <- variable_names[-(grep(moderator, variable_names))]
+    vlen <- length(variable_names)
+    bfoc_tmp <- list()
+    for(i in 1:vlen){
+    bfoc_tmp[[i]] <- sum(coef(stage1_mod)[grep(variable_names[i], names(coef(stage1_mod)))])
+    }
+    bfoc_tmp <- unlist(bfoc_tmp)
+    focstar <- (bfoc_tmp - mean(bfoc_tmp)) * k
+    bfocsum <- sum(bfoc_tmp)
     
+    V <- length(bref)
+    Covpc.ref <- V*(as.matrix(pat.comp.ref)%*%as.matrix(refstar))
+    Covpc.foc <- V*(as.matrix(pat.comp.foc)%*%as.matrix(focstar))
+    
+    model_data <- data.frame(resp, first = brefsum*Xp, sec = (bfocsum - brefsum)*z*Xp, thr = V*Covpc.ref, four =  (Covpc.foc - Covpc.ref)*V*z, z = z)
+    
+    lm_full <- lm(V*as.numeric(z)*(Covpc.foc - Covpc.ref) + as.numeric(z))
   } else {
     cat("Interaction not significant. Not executing stage 2\n")
     break
-    }
+  }
   
-#     ypred <- fitted(lm(y ~ 1 + Covpc + Xp, na.action = na.action))
-#     R2.f <- cor(ypred,y)^2
-#     R2.pat <- cor(y,as.vector(Covpc))^2 ## pattern effect
-#     R2.lvl <- cor(y,Xp)^2 ## level effect
-#     r2 <- rbind(R2.f,R2.pat,R2.lvl)
-#     colnames(r2) <- "R2"
-#     rownames(r2) <- c("Full Model","Pattern","Level")
-#     r2 <- round(r2,digits=6)
-# 
-#     full.df <- c(v,N-v-1)
-#     F.R2.full <- (R2.f*full.df[2])/((1-R2.f)*full.df[1])
-#     p.value.F.R2.full <- pf(F.R2.full,full.df[1],full.df[2],lower.tail=FALSE)
-# 
-#     pat.df <- c(v-1,N-v-1)
-#     F.R2.pat <- ((R2.f - R2.lvl)*pat.df[2])/((1-R2.f)*pat.df[1])
-#     p.value.F.R2.pat <- pf(F.R2.pat,pat.df[1],pat.df[2],lower.tail = FALSE)
-# 
-#     lvl.df<-c(1,N-v-1)
-#     F.R2.lvl <- ((R2.f - R2.pat)*lvl.df[2])/((1-R2.f))
-#     p.value.F.R2.lvl <- pf(F.R2.lvl,lvl.df[1],lvl.df[2],lower.tail=FALSE)
-# 
-#     F.R2.pat.only <- ((R2.pat)*pat.df[2])/((1-R2.pat)*pat.df[1])
-#     p.value.F.R2.pat.only <- pf(F.R2.pat.only,pat.df[1],pat.df[2],lower.tail = FALSE)
-# 
-#     F.R2.lvl.only <- ((R2.lvl)*lvl.df[2])/((1-R2.lvl)*lvl.df[1])
-#     p.value.F.R2.lvl.only <- pf(F.R2.lvl.only,lvl.df[1],lvl.df[2],lower.tail = FALSE)
-# 
-#     fvalue <- c(F.R2.full,F.R2.pat.only,F.R2.lvl.only,F.R2.pat,F.R2.lvl)
-#     df <- rbind(full.df,pat.df,lvl.df,pat.df,lvl.df)
-#     pvalue <- rbind(p.value.F.R2.full,p.value.F.R2.pat.only,p.value.F.R2.lvl.only,p.value.F.R2.pat,p.value.F.R2.lvl)
-#     ftable <- cbind(df,fvalue,pvalue)
-# 
-#     rownames(ftable) <- c("R2.full = 0 ","R2.pat = 0","R2.lvl = 0","R2.full = R2.lvl","R2.full = R2.pat")
-#     colnames(ftable) <- c("df1", "df2", "F value", "Pr(>F)")
-# 
-#     call<- match.call()
-#     output <- list(call=call,lvl.comp=Xp,pat.comp=pat.comp,b=regweg,bstar=bstar, xc=xc, k=k, Covpc=Covpc, Ypred=ypred,r2=r2,ftable=ftable)
-# 
-#     class(output) <- "critpat"
-#     return(output)
-#   }
+  #     ypred <- fitted(lm(y ~ 1 + Covpc + Xp, na.action = na.action))
+  #     R2.f <- cor(ypred,y)^2
+  #     R2.pat <- cor(y,as.vector(Covpc))^2 ## pattern effect
+  #     R2.lvl <- cor(y,Xp)^2 ## level effect
+  #     r2 <- rbind(R2.f,R2.pat,R2.lvl)
+  #     colnames(r2) <- "R2"
+  #     rownames(r2) <- c("Full Model","Pattern","Level")
+  #     r2 <- round(r2,digits=6)
+  # 
+  #     full.df <- c(v,N-v-1)
+  #     F.R2.full <- (R2.f*full.df[2])/((1-R2.f)*full.df[1])
+  #     p.value.F.R2.full <- pf(F.R2.full,full.df[1],full.df[2],lower.tail=FALSE)
+  # 
+  #     pat.df <- c(v-1,N-v-1)
+  #     F.R2.pat <- ((R2.f - R2.lvl)*pat.df[2])/((1-R2.f)*pat.df[1])
+  #     p.value.F.R2.pat <- pf(F.R2.pat,pat.df[1],pat.df[2],lower.tail = FALSE)
+  # 
+  #     lvl.df<-c(1,N-v-1)
+  #     F.R2.lvl <- ((R2.f - R2.pat)*lvl.df[2])/((1-R2.f))
+  #     p.value.F.R2.lvl <- pf(F.R2.lvl,lvl.df[1],lvl.df[2],lower.tail=FALSE)
+  # 
+  #     F.R2.pat.only <- ((R2.pat)*pat.df[2])/((1-R2.pat)*pat.df[1])
+  #     p.value.F.R2.pat.only <- pf(F.R2.pat.only,pat.df[1],pat.df[2],lower.tail = FALSE)
+  # 
+  #     F.R2.lvl.only <- ((R2.lvl)*lvl.df[2])/((1-R2.lvl)*lvl.df[1])
+  #     p.value.F.R2.lvl.only <- pf(F.R2.lvl.only,lvl.df[1],lvl.df[2],lower.tail = FALSE)
+  # 
+  #     fvalue <- c(F.R2.full,F.R2.pat.only,F.R2.lvl.only,F.R2.pat,F.R2.lvl)
+  #     df <- rbind(full.df,pat.df,lvl.df,pat.df,lvl.df)
+  #     pvalue <- rbind(p.value.F.R2.full,p.value.F.R2.pat.only,p.value.F.R2.lvl.only,p.value.F.R2.pat,p.value.F.R2.lvl)
+  #     ftable <- cbind(df,fvalue,pvalue)
+  # 
+  #     rownames(ftable) <- c("R2.full = 0 ","R2.pat = 0","R2.lvl = 0","R2.full = R2.lvl","R2.full = R2.pat")
+  #     colnames(ftable) <- c("df1", "df2", "F value", "Pr(>F)")
+  # 
+  #     call<- match.call()
+  #     output <- list(call=call,lvl.comp=Xp,pat.comp=pat.comp,b=regweg,bstar=bstar, xc=xc, k=k, Covpc=Covpc, Ypred=ypred,r2=r2,ftable=ftable)
+  # 
+  #     class(output) <- "critpat"
+  #     return(output)
+  #   }
 }
