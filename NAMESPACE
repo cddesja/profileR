@@ -18,6 +18,8 @@ export(wprifm)
 import(MASS)
 import(RColorBrewer)
 import(ggplot2)
+importFrom("graphics", "abline", "axis", "legend", "lines", "matplot",
+     "par", "points", "text")
 import(methods)
 import(stats)
 importFrom(graphics,plot)
