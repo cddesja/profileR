@@ -1,3 +1,9 @@
+Changes in version: profileR_0.3
+
+  * Changed cp to cpa and pc to pcv.
+  * Added a wprifm, which performs a within-person random intercept factor model.
+  * EXPERIMENTAL: Added moderated profile analysis. This function is untested and best on unpublished methodology.
+
 Changes in version: profileR_0.2-1
   
   * Standardize option was added to profileplot. This allows users to center all scores before plotting them using the profileplot function. 
