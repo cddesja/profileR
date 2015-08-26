@@ -1,6 +1,6 @@
 #' Moderated Profile Analysis
 #'
-#' Implements the moderated profile analysis approach developed by Davison & Davenport (unpublished)
+#' Implements the moderated profile analysis approach developed by Davison & Davenport (unpublished) - EXPERIMENTAL SUPPORT
 #'
 #' The function returns the criterion-related moderated profile analysis described in Davison & Davenport (unpublished). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are not yet available but will be in future implementations. \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
 #' @export
@@ -8,6 +8,7 @@
 #' @param data An optional data frame, list or environment containing the variables in the model.
 #' @param moderator Name of the moderator variable.
 #' @param k Corresponds to the scalar constant and must be greater than 0. Defaults to 100.
+#' @param na.action How should missing data be handled? Function defaults to failing if missing data are present.
 #' @param stage2 Should stage 2 be executed regardless of stage 1 outcome? defaults to FALSE.
 #' @return An object of class \code{critpat} is returned, listing the following components:
 #' \itemize{
