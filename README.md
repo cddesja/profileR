@@ -6,7 +6,7 @@
 
 **Development version**: v0.3 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR)
 
-Description: Fit profile analytic models. This includes multivariate methods and data visualization tools 
+Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
 
