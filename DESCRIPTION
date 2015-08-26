@@ -1,7 +1,7 @@
 Package: profileR
 Title: Profile Analysis of Multivariate Data in R
 Type: Package
-Description: Fit profile analytic models. This includes multivariate methods and data visualization tools 
+Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
 Version: 0.3
