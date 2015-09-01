@@ -18,7 +18,7 @@ install_github(repo = "cddesja/profileR")
 ```
 
 #### Changes since v0.2
-- Added a wprifm, which performs a within-person random intercept factor model.
+- Added wprifm, which performs a within-person random intercept factor model.
 - EXPERIMENTAL: Added moderated profile analysis. This function is untested and best on unpublished methodology. 
 - Changed cp to cpa to avoid confusion with cp in Linux and Mac environments.
 - Changed pc to pcv.
