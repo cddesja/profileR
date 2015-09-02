@@ -4,7 +4,7 @@
 
 ###Type: Package
 
-**Development version**: v0.3 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR)
+**Development version**: v0.3-1 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR)
 
 Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
@@ -13,10 +13,10 @@ Description: Fit profile analytic models. This includes the multivariate methods
 Released versions are installable from [CRAN](http://cran.r-project.org/package=profileR) and the developmental version can be installed by:
 
 ```R
-devtools::install_github(repo = "cddesja/profileR")
+devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE)
 ```
 
-To view a vignette about the `profileR` package:
+The `build_vignettes = TRUE` argument can be omitted if you do not want to build the vignette (or the build is causing problems). To view the vignette for the `profileR` package:
 ```R
 library("profileR")
 vignette("jss_profileR")
