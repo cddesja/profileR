@@ -13,8 +13,13 @@ Description: Fit profile analytic models. This includes the multivariate methods
 Released versions are installable from [CRAN](http://cran.r-project.org/package=profileR) and the developmental version can be installed by:
 
 ```R
-library(devtools)
-install_github(repo = "cddesja/profileR")
+devtools::install_github(repo = "cddesja/profileR")
+```
+
+To view a vignette about the `profileR` package:
+```R
+library("profileR")
+vignette("jss_profileR")
 ```
 
 #### Changes since v0.3
