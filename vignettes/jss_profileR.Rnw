@@ -1,4 +1,3 @@
-%\VignetteIndexEntry{Profile Analysis of Multivariate Data in R: An Introduction to the profileR Package}
 \documentclass[article]{jss}
 %\bibliographystyle{jss}
 \usepackage{natbib}
@@ -480,10 +479,11 @@ where \code{form1} and \code{form2} are matrices or data frames that include two
 In this example, we analyze the \code{nutrient} data to test the two hypotheses that the ratio of the variables are equal to 1 and that they are all equivalent, where failure to reject the former renders the second hypothesis unnecessary. The \code{nutrient} data come from a study of women's nutrition commissioned by the United States Department of Agriculture (USDA) in 1985. Nutrient intake was measured on a random sample of 737 women aged 25-50 years. Five nutrients were measured: calcium, iron, protein, vitamin A and vitamin C. The first six rows of the \code{nutrient} data are shown below.  
 
 \begin{CodeChunk}
+\begin{CodeInput}
+data(nutrient)
+head(nutrient)
+\end{CodeInput}
 \begin{CodeOutput}
-> data(nutrient)
-> head(nutrient)
-
   calcium   iron protein      a       c
 1  522.29 10.188  42.561 349.13  54.141
 2  343.32  4.113  67.793 266.99  24.839
@@ -497,9 +497,10 @@ In this example, we analyze the \code{nutrient} data to test the two hypotheses 
 Using the \code{nutrient} data, we want to test whether the ratios of these variables are equal to 1 or each other in the sample. Because the variables in the data are not on the same scale, \code{scale=TRUE} should be used to get the variables standardized. The following output shows the results of two hypothesis tests:
 
 \begin{CodeChunk}
+\begin{CodeInput}
+paos(nutrient, scale=TRUE)
+\end{CodeInput}
 \begin{CodeOutput}
-> paos(nutrient, scale=TRUE)
-
 Profile Analysis for One Sample with Hotelling's T-Square:
 
                                               T-Squared        F df1 df2 p-value
@@ -515,12 +516,12 @@ The results indicate that both hypotheses should be rejected for the nutrient da
 The \code{spouse} data set includes four rating scale items where 60 spouses (30 husbands and 30 wives) rate each other. The \code{pbg} function can be used to test whether the profiles of husbands and wives are parallel, coincidental, or level.
 
 \begin{CodeChunk}
+\begin{CodeInput}
+# Read spouse data from Professor Richard Jonhson's website 
+spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
+head(spouse)
+\end{CodeInput}
 \begin{CodeOutput}
-> #Read spouse data from Professor Richard Jonhson's website 
-> spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
-> head(spouse)
-
-
   V1 V2 V3 V4      V5
 1  2  3  5  5 Husband
 2  5  5  4  4 Husband
@@ -533,10 +534,11 @@ The \code{spouse} data set includes four rating scale items where 60 spouses (30
 
 The first four columns are the items and the last column in the data is the group variable. We will run \code{pbg} on this data set and store it in an object called \code{mod}. 
 \begin{CodeChunk}
+\begin{CodeInput}
+mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
+print(mod)
+\end{CodeInput}
 \begin{CodeOutput}
-> mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
-> print(mod)
-
 Data Summary:
     Husband     Wife
 v1 3.900000 3.833333
@@ -549,9 +551,10 @@ v4 4.400000 4.533333
 The \code{print} function displays the average scores on the items for the husband and wife groups. It can be seen that the means of the rating scale items are quite similar between the husbands and wives. The \code{summary} function prints the findings of the three hypotheses corresponding to whether the profiles are parallel, coincidental, or level. The output shows that assuming $\alpha=.05$, the first and third hypotheses were not rejected; however the second hypothesis was rejected. The results suggest that the profiles of husbands and wives are parallel and level, but not coincidental.       
 
 \begin{CodeChunk}
+\begin{CodeInput}
+summary(mod)
+\end{CodeInput}
 \begin{CodeOutput}
-> summary(mod)
-
 Call:
 pbg(x = spouse[, 1:4], y = spouse[, 5], profile.plot = TRUE, 
     labels = FALSE)
@@ -596,9 +599,10 @@ data <- cbind(data,gender)
 The resulting data set has 1000 rows, three columns of variables for the profiles, and an additional column of the group variable (i.e., gender). The first three rows of the simulated data set are:
 
 \begin{CodeChunk}
+\begin{CodeInput}
+head(data,3)
+\end{CodeInput}
 \begin{CodeOutput}
-> head(data,3)
-
           V1         V2         V3 gender
 1  0.7956448  1.2150803  1.3751826   Male
 2  0.6166696  0.9726083 -0.4316263   Male
@@ -609,18 +613,21 @@ The resulting data set has 1000 rows, three columns of variables for the profile
 If we use the \code{pbg} function to assess the profiles of the male and female groups, we obtain the following results:
 
 \begin{CodeChunk}
+\begin{CodeInput}
+mod2 <- pbg(data[,1:3],data[,4],labels=FALSE,profile.plot=TRUE)
+print(mod2)
+\end{CodeInput}
 \begin{CodeOutput}
-> mod2 <- pbg(data[,1:3],data[,4],labels=FALSE,profile.plot=TRUE)
-> print(mod2)
-
 Data Summary:
        Female        Male
 v1 0.05149379 -0.04385813
 v2 0.18629128  0.07732983
 v3 0.29538716  0.03379842
-
-> summary(mod2)
-
+\end{CodeOutput}
+\begin{CodeInput}
+summary(mod2)
+\end{CodeInput}
+\begin{CodeOutput}
 Call:
 pbg(x = data[, 1:3], y = data[, 4], profile.plot = TRUE, labels = FALSE)
 
@@ -660,7 +667,6 @@ The \code{cpa} function will print the following by default:
 print(mod)
 \end{CodeInput}
 \begin{CodeOutput}
-> mod
 Call:
 cpa(formula = R ~ A + H + S + B, data = IPMMc)
 
@@ -685,7 +691,6 @@ This output should look familiar to users of  \code{lm} and \code{glm}. This out
 anova(mod)
 \end{CodeInput}
 \begin{CodeOutput}
-> anova(mod)
 Call:
 cpa(formula = R ~ A + H + S + B, data = IPMMc)
 
@@ -727,10 +732,9 @@ Finally, the proportion of variability in the criterion variable explained by th
 
 \begin{CodeChunk}
 \begin{CodeInput}
-summary(mod}
+summary(mod)
 \end{CodeInput}
 \begin{CodeOutput}
-> summary(mod)
 Call:
 cpa(formula = R ~ A + H + S + B, data = IPMMc)
 
@@ -771,44 +775,29 @@ dat0 <- data.frame(dv, A, H, S, B)
 \end{CodeInput}
 \end{CodeChunk}
 
-To perform cross-validation, we call \code{pcv} and save the output in \code{cv.model} (which is also a \code{critpat} object):
-
-\begin{CodeChunk}
-\begin{CodeInput}
-cv.model <- pcv(dv ~ A + H + S + B, data = dat0)
-\end{CodeInput}
-\end{CodeChunk}
-
-As with \code{cpa}, \code{pcv} uses the same syntax as a call to \code{glm} does. Regression coefficients can be obtained through printing. 
-
-\begin{CodeChunk}
-\begin{CodeInput}
-print(cv.model)
-\end{CodeInput}
-\begin{CodeOutput}
-Call:
-pcv(formula = dv ~ A + H + S + B, data = dat0)
-
-Coefficients
-$`Random Sample 1`
-            A             H             S             B 
- 0.0514905676  0.0515755913 -0.0285983736  0.0005443284 
-
-$`Random Sample 2`
-           A            H            S            B 
--0.087656366 -0.013529506 -0.155730560 -0.007347574 
-\end{CodeOutput}
-\end{CodeChunk}
-
-It may be useful to set the seed when doing cross-validation and this can be set through the \code{seed} argument.
+To perform cross-validation, we will call the \code{pcv} function and save the output in \code{cv.model} (which is also a \code{critpat} object).  The \code{pcv} uses the same syntax as a call to \code{glm} does and regression coefficients can be obtained through printing \code{cv.model}. It is typically useful to set the seed when doing cross-validation to have reproducible findings and this we will set through the \code{seed} argument.
 
 \begin{CodeChunk}
 \begin{CodeInput}
 cv.model <- pcv(dv ~ A + H + S + B, data = dat0, seed = 4135)
+cv.model
 \end{CodeInput}
+\begin{CodeOutput}
+Call:
+pcv(formula = dv ~ A + H + S + B, data = dat0, seed = 4135)
+
+Coefficients
+$`Random Sample 1`
+          A           H           S           B 
+-0.03361991  0.04856235 -0.12887236 -0.01101022 
+
+$`Random Sample 2`
+           A            H            S            B 
+ 0.029186708 -0.008203231 -0.029430924 -0.029546606 
+\end{CodeOutput}
 \end{CodeChunk}
 
-The proportion of variability associated with each effect can be obtained using \code{summary} and hypothesis tests (described in Table~\ref{tab:hyptest}) can be obtained using \code{anova} for each sample.
+The proportion of variability associated with each effect can be obtained using \code{summary} and the hypothesis tests (described in Table~\ref{tab:hyptest}) can be obtained by using the \code{anova} method on the \code{cv.model} object.
 
 \begin{CodeChunk}
 \begin{CodeInput}
@@ -878,14 +867,15 @@ Random Sample 2 0.004141   1  48 0.182944 0.670768
 
 As with \code{cpa}, additional information can be examined and extracted using \code{str(cv.model)}.
 
-
 \subsection{An example of profile analysis via multidimensional scaling}
 To demonstrate the use of the \code{pams} function, we will use a data set which contains score profiles of six respondents to a hypothetical personality scale. Each score profile consists of three scores from the neurotic, psychotic, and character disorder scales. The data include three types of profile patterns: Linearly increasing, inverted V, and linearly decreasing. To preview the \code{PS} data:
 
 \begin{CodeChunk}
+\begin{CodeInput}
+data(PS)
+head(PS)
+\end{CodeInput}
 \begin{CodeOutput}
-> data(PS)
-> head(PS)
   Person Neu Psy CD
 1      1  60  70 80
 2      2  30  40 50
@@ -899,9 +889,12 @@ To demonstrate the use of the \code{pams} function, we will use a data set which
 The first column in the \code{PS} data is a person ID variable, and the remaining columns are scores from the neurotic, psychotic, and character disorder scales. Assuming that there are two latent dimensions that can be extracted from the PS data,  \code{pams} is called by:
 
 \begin{CodeChunk}
+\begin{CodeInput}
+result <- pams(PS[,2:4], dim=2)
+print(result)
+\end{CodeInput}
 \begin{CodeOutput}
-> result <- pams(PS[,2:4], dim=2)
-> print(result)
+
 $weights.matrix
      weight1 weight2 level R.sq
 [1,]     1.5 0.00000    70    1
@@ -925,9 +918,12 @@ The first part of the output shows a weight matrix that includes the subject cor
 The \code{pr} function can be used to examine profile reliability of the subscores in the \code{EEGS} data set. The \code{EEGS} data set includes three subtests for examinees: quantitative 1 (Q1), quantitative 2 (Q2), and verbal (V). For each subtest, there are two subscores that come from parallel forms. To activate the EEGS data set and preview the first six rows of the data.
 
 \begin{CodeChunk}
+\begin{CodeInput}
+data(EEGS)
+head(EEGS)
+\end{CodeInput}
 \begin{CodeOutput}
-> data(EEGS)
-> head(EEGS)
+
      Form1_Q1 Form2_Q1 Form1_Q2 Form2_Q2 Form1_V Form2_V
 [1,]        2        0        2        0       0       0
 [2,]        4        9        0        0       3       4
@@ -947,8 +943,11 @@ result <- pr(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
 
 The \code{print} function returns the following output:
 \begin{CodeChunk}
+\begin{CodeInput}
+print(result)
+\end{CodeInput}
 \begin{CodeOutput}
-> print(result)
+
 Subscore Reliability Estimates:
 
          Estimate
@@ -959,8 +958,6 @@ Overall 0.9308374
 \end{CodeChunk}
 
 In the output, level refers to between-person reliability, pattern refers to within-person reliability, and overall refers to the total profile reliability which is the weighted average of between-person and within-person reliability coefficients. In this example, the three subtests of EEGS indicate high levels of between-person and within-person reliability. \code{plot(result)} returns a scatter plot of the level values from the two parallel forms each with three subtests. 
-
-
 
 \section{Discussion}
 
