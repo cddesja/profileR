@@ -1,3 +1,4 @@
+%\VignetteIndexEntry{User manual}
 \documentclass[article]{jss}
 %\bibliographystyle{jss}
 \usepackage{natbib}

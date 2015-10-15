@@ -1,4 +1,5 @@
-#'@S3method anova critpat
+#' @method anova critpat
+#' @export
 anova.critpat <- function(object, ...){
 	cat("Call:\n")
 	print(object$call)

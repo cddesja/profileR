@@ -1,5 +1,5 @@
-
-#'@S3method print critpat
+#' @method print critpat
+#' @export
 
 print.critpat <- function(x, ...){
   if (!inherits(x, "critpat")) stop("Use only with 'critpat' objects.\n")
