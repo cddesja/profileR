@@ -39,7 +39,7 @@ The \code{pcv} function requires two arguments: criterion and predictor. The cri
 Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{ Psychological Methods, 7}(4), 468-484.
 }
 \seealso{
-\code{\link{cpa}},\code{\link{summary.critpat}},\code{\link{plot.critpat}}
+\code{\link{cpa}},\code{\link{print.critpat}},\code{\link{summary.critpat}},\code{\link{anova.critpat}},\code{\link{plot.critpat}}
 }
 \keyword{methods}
 

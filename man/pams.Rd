@@ -18,7 +18,7 @@
 }
 
 \description{
-  The \code{pams} function implements profile analysis via multidimensional scaling as described by Davison, Davenport, & Bielinski (1995) and Davenport, Ding, & Davison (1995). 
+  The \code{pams} function implements profile analysis via multidimensional scaling as described by Davison, Davenport, and Bielinski (1995) and Davenport, Ding, and Davison (1995). 
 }
 
 \details{

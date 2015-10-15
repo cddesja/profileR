@@ -12,11 +12,11 @@
  }}
 \description{
   The \code{EEGS} is a subset of the Entrance Examination
-  for Graduate Studies in Turkey. There are three subscores
+  for Graduate Studies. There are three subscores
   in EEGS: Quantitative 1, Quantitative 2, and Verbal. In
   order to show the utility of subscore reliability method
   in this package, each subtest was separated into two
-  parallel form.
+  parallel forms.
 }
 \keyword{datasets}
 
