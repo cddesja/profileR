@@ -18,7 +18,10 @@
 }
 
 The responses to all four questions are on a five-point Likert scale where 1 indicates "none at all" and 5 indicates "tremendous amount". 
-
 }
+\examples{
+\dontrun{
+data(spouse)
+}}
 \keyword{datasets}
 

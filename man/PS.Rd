@@ -1,7 +1,7 @@
 \docType{data}
 \name{PS}
 \alias{PS}
-\title{A Hypothetical Personality Scale from Davison, Kim, & Close (2009)}
+\title{A Hypothetical Personality Scale from Davison, Kim, and Close (2009)}
 \format{\describe{
 		\item{Person}{Person ID}
 		\item{NEU}{Neurotic scale score}

@@ -17,7 +17,6 @@
 \examples{
 \dontrun{
 data(leisure)
-}
-}
+}}
 \keyword{datasets}
 
