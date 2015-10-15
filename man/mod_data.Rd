@@ -14,7 +14,7 @@
 Randomly generated data to test the \code{mpa} function.
 }
 \source{
-This data was randomly generated to demonstrate how to use the \code{mpa} function.
+This data set was randomly generated to demonstrate how to use the \code{mpa} function.
 }
 \seealso{
 \code{\link{mpa}}

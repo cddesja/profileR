@@ -4,8 +4,8 @@ Type: Package
 Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
     in Davison & Davenport (2002) and Bulut (2013).
-Version: 0.3-1
-Date: 2015-09-02
+Version: 0.3-2
+Date: 2015-10-15
 Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins <cddesjardins@gmail.com>
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
 Depends:

@@ -45,8 +45,7 @@
 
 \examples{
 \dontrun{
-#Read spouse data from Professor Richard Jonhson's website 
-spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
+data(spouse)
 mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
 print(mod) #prints average scores in the profile across two groups
 summary(mod) #prints the results of hypothesis tests
