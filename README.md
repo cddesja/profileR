@@ -4,7 +4,7 @@
 
 ###Type: Package
 
-**Development version**: v0.3-1 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master)
+**Development version**: v0.3-2 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master)
 
 Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
@@ -24,6 +24,7 @@ vignette("jss_profileR")
 
 #### Changes since v0.3
 - Added JSS unpublished, and under review, manuscript as a vignette.
+- Added the spouse data in the package. 
 
 #### Changes since v0.2
 - Added wprifm, which performs a within-person random intercept factor model to obtain a score profile.

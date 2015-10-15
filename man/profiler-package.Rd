@@ -20,7 +20,7 @@
   University of Minnesota. University of Minnesota,
   Minneapolis, MN. (AAT 3589000).
 
-  Davison, M., & Davenport, E. (2002). Identifying
+  Davison, M. L., & Davenport, E. C. (2002). Identifying
   criterion-related patterns of predictor scores using
   multiple regression. \emph{Psychological Methods, 7}(4),
   468-484.

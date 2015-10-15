@@ -12,7 +12,7 @@
   rankings for three different groups: politicians,
   administrators, and belly-dancers. Rankings are provided
   in three categories: Reading-TV, Dance-TV, and TV-Ski.
-  See Tabachnik & Fidell (1996) for more details.
+  See Tabachnik and Fidell (1996) for more details.
 }
 \examples{
 \dontrun{

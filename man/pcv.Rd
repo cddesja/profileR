@@ -36,7 +36,7 @@ Implements the cross-validation described in Davison & Davenport (2002).
 The \code{pcv} function requires two arguments: criterion and predictor. The criterion corresonds to the dependent variable and the predictor corresponds to the matrix of predictor variables. The function performs the cross-validation technique described in Davison & Davenport (2002) and an object of class \code{critpat} is returned. There the following s3 generic functions are available: \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the cross-validation (namely, R2); performs ANOVA of the R2 based on the split for the level, pattern, and overall; provide output similar to \code{lm()}; and plot the estimated parameters for the random split.  Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. A seed may also be set for reproducibility by setting the \code{seed}.
 }
 \references{
-Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{ Psychological Methods, 7}(4), 468-484.
+Davison, M. L., & Davenport, E. C. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{ Psychological Methods, 7}(4), 468-484.
 }
 \seealso{
 \code{\link{cpa}},\code{\link{summary.critpat}},\code{\link{plot.critpat}}

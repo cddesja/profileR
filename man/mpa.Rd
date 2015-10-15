@@ -43,7 +43,7 @@ mod <- mpa(dv ~ pred1 * mod + pred2 * mod, moderator = "mod", data = mod_data)
 }
 }
 \references{
-Davison, M., & Davenport, E. (unpublished). Comparing Criterion-Related Patterns of Predictor Variables across Populations Using Moderated Regression.
+Davison, M. L., & Davenport, E. C. (unpublished). Comparing Criterion-Related Patterns of Predictor Variables across Populations Using Moderated Regression.
 }
 \seealso{
 \code{\link{cpa}}
