@@ -502,7 +502,7 @@ Using the \code{nutrient} data, we want to test whether the ratios of these vari
 
 \begin{CodeChunk}
 \begin{CodeInput}
-R> paos(nutrient, scale=TRUE)
+R> paos(nutrient, scale = TRUE)
 \end{CodeInput}
 \begin{CodeOutput}
 Profile Analysis for One Sample with Hotelling's T-Square:
