@@ -4,6 +4,7 @@
 #'
 #' The \code{paos} function runs profile analysis for one sample based on the Hotelling's T-square test and tests the two htypothesis. First, the null hypothesis that all the rations of the variables in the data equal to 1. After rejecting the first hypothesis, a secondary null hypothesis that all of the ratios of the variables in the data equal to one another (not necessarily equal to 1) is tested.
 #'
+#' @importFrom stats pf sd
 #' @param data A data matrix or data frame; rows represent individuals, columns represent variables.
 #' @param scale If TRUE (default), variables are standardized by dividing their standard deviations.
 #' @return A summary table is returned, listing the following two hypothesis:

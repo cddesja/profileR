@@ -2,6 +2,8 @@
 #'
 #' The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles are parallel, coincidental, and level across two groups defined by the grouping variable. If parallelism is rejected, the other two tests are meaningless. In that case, flatness may be assessed within each group, and various within- and between-group contrasts may be analyzed. 
 #'
+#' @importFrom graphics par matplot axis legend
+#' @importFrom stats pf var
 #' @param x A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.
 #' @param y A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.
 #' @param original.names Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.

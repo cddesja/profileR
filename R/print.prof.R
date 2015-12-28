@@ -1,4 +1,5 @@
-#'@S3method print prof
+#'@method print prof
+#'@export
 
 print.prof <- function(x, ...){
   if (!inherits(x, "prof")) stop("Use only with 'prof' objects.\n")

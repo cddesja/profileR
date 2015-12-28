@@ -3,6 +3,7 @@
 #' Plots the criterion-related level and pattern profiles for each observation
 #'
 #' @method plot critpat
+#' @importFrom graphics plot abline lines text
 #' @export
 #' @param x \code{critpat} object resulting from \code{cpa}
 #' @param ... additional arguments affecting the plot produced.

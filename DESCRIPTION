@@ -11,10 +11,8 @@ Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
 Depends:
     ggplot2,
-    MASS,
     RColorBrewer,
     reshape,
-    methods,
     lavaan,
     R (>= 3.0.0)
 License: GPL (>= 2)

@@ -4,6 +4,7 @@
 #'
 #' The function returns the criterion-related moderated profile analysis described in Davison & Davenport (unpublished). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are not yet available but will be in future implementations. \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
 #' @export
+#' @importFrom stats lm anova coef update variable.names
 #' @param formula An object of class \code{\link{formula}} of the form \code{response ~ terms}.
 #' @param data An optional data frame, list or environment containing the variables in the model.
 #' @param moderator Name of the moderator variable.

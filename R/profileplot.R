@@ -2,10 +2,11 @@
 #'
 #' The \code{profileplot} function creates a profile plot for a matrix or dataframe with multiple scores or subscores using \code{\link[ggplot2]{ggplot}} function in \code{ggplot2} package.
 #'
-#'@export
-#'@import reshape
-#'@import ggplot2
-#'@import RColorBrewer
+#' @export
+#' @importFrom reshape melt
+#' @importFrom ggplot2 ggplot aes element_blank element_rect geom_line geom_point scale_colour_hue scale_shape_discrete scale_x_discrete scale_y_continuous theme
+#' @importFrom graphics plot points text
+#' @importFrom RColorBrewer brewer.pal
 #' @param form A matrix or dataframe including two or more subscores.
 #' @param person.id A vector that includes person ID values (Optional).
 #' @param standardize If not FALSE, all scores are rescaled with a mean of 0 and standard deviation of 1. Default is TRUE.

@@ -1,5 +1,6 @@
 
-#'@S3method summary profg
+#'@method summary profg
+#'@export
 
 summary.profg <- function(object, ...){
 	cat("Call:\n")
