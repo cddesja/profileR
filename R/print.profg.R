@@ -1,5 +1,5 @@
-
-#'@S3method print profg
+#'@method print profg
+#'@export
 
 print.profg <- function(x, ...){
   if (!inherits(x, "profg")) stop("Use only with 'profg' objects.\n")
