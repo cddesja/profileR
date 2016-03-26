@@ -4,8 +4,8 @@
 #'
 #' @importFrom graphics par matplot axis legend
 #' @importFrom stats pf var
-#' @param x A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.
-#' @param y A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.
+#' @param data A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.
+#' @param group A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.
 #' @param original.names Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.
 #' @param profile.plot Print a profile plot of scores for two groups. Default is FALSE.
 #' @param ... Additional arguments to be passed.
@@ -27,15 +27,15 @@
 #' @seealso \code{\link{pr}}, \code{\link{profileplot}}
 #'@export
 
-pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
+pbg <- function(data, group, original.names=FALSE, profile.plot=FALSE, ...) {
 	
-	x <- as.data.frame(x)
-	y <- as.data.frame(y)
+	x <- as.data.frame(data)
+	y <- as.data.frame(group)
 	n=nrow(x)
 	m=nrow(y)
 	k=ncol(x)
 	
-	if(!(n == m)){ stop("Number of rows are not equal in x and y.")}
+	if(!(n == m)){ stop("Number of rows are not equal in data and group.")}
 	
 	else {
   	
@@ -94,15 +94,15 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	parallel <- data.frame(F1,df1,df2,pf1)
 	names(parallel) <- c("F","df1","df2","p-value")
 	
-	#Coincidential profile test
+	#Equal levels
 	F2 <- sum(average[,1] - average[,2])^2 / sum(S) 
 	pf2 <- pf(F2, 1, (c1+c2-2), lower.tail=F) # P-value
 	df1 <- 1
 	df2 <- (c1+c2-2)
-	coincidential <- data.frame(F2,df1,df2,pf2)
-	names(coincidential) <- c("F","df1","df2","p-value")
+	level <- data.frame(F2,df1,df2,pf2)
+	names(level) <- c("F","df1","df2","p-value")
 	
-	#Level profile test
+	#Flatness
 	allS <- var(z[,1:k]) #overall variance
 	xbar <- apply(z[,1:k],2,mean) #grand mean
 	y <- Cont %*% xbar
@@ -112,10 +112,10 @@ pbg <- function(x, y, original.names=FALSE, profile.plot=FALSE, ...) {
 	
 	df1 <- (k-1)
 	df2 <- (c1+c2-k+1)
-	level <- data.frame(F3,df1,df2,pf3)
-	names(level) <- c("F","df1","df2","p-value")
-  	result <- rbind(parallel,coincidential,level)
-  	rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidental","Ho: Profiles are level")
+	flatness <- data.frame(F3,df1,df2,pf3)
+	names(flatness) <- c("F","df1","df2","p-value")
+  	result <- rbind(parallel,level,flatness)
+  	rownames(result) <- c("Ho: Profiles are parallel","Ho: Profiles have equal levels","Ho: Profiles are flat")
 	
 	call<- match.call()
 	output <- list(call=call, data.summary=average, corr.table=cor.table, profile.test=result)
