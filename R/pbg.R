@@ -6,7 +6,6 @@
 #' @importFrom stats pf var aov manova
 #' @param data A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.
 #' @param group A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, A-B-C, 0-1-2). The grouping variable must have the same length of x. Missing values are not allowed in y.
-#' @na.action na.action This is the rule how to handle missing data. Default is na.omit.
 #' @param original.names Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.
 #' @param profile.plot Print a profile plot of scores for the groups. Default is FALSE.
 #'
@@ -27,7 +26,7 @@
 #' @seealso \code{\link{pr}}, \code{\link{profileplot}}
 #'@export
 
-pbg <- function(data, group, na.action = na.omit, original.names=FALSE, profile.plot=FALSE) {
+pbg <- function(data, group, original.names=FALSE, profile.plot=FALSE) {
   
   x <- as.data.frame(data)
   y <- as.factor(group)
@@ -80,7 +79,7 @@ pbg <- function(data, group, na.action = na.omit, original.names=FALSE, profile.
     parallel <- data.frame(Multivariate.Test=c("Wilks","Pillai","Hotelling-Lawley","Roy"),Statistic=rep(0,4),Approx.F=rep(0,4),
                            num.df=rep(0,4), den.df=rep(0,4),p.value=rep(0,4))
     
-    fit1 <- manova(deviation1 ~ y, na.action=na.action)
+    fit1 <- manova(deviation1 ~ y, na.action=na.omit)
     parallel[1,2:6] <- summary(fit1, test="Wilks")$stats[1,2:6]
     parallel[2,2:6] <- summary(fit1, test="Pillai")$stats[1,2:6]
     parallel[3,2:6] <- summary(fit1, test="Hotelling-Lawley")$stats[1,2:6]
