@@ -2,20 +2,20 @@
 % Please edit documentation in R/pbg.R
 \name{pbg}
 \alias{pbg}
-\title{Profile by group: Testing Parallel, Coincidental, and Level Profiles}
+\title{Profile by group: Testing Parallelism, Equal Levels, and Flatness}
 \usage{
-pbg(data, group, original.names = FALSE, profile.plot = FALSE, ...)
+pbg(data, group, na.action = na.omit, original.names=FALSE, profile.plot=FALSE)
 }
 \arguments{
 \item{data}{A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.}
 
 \item{group}{A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.}
 
+\item(na.action}{This is the rule how to handle missing data. Default is na.omit.}
+
 \item{original.names}{Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.}
 
-\item{profile.plot}{Print a profile plot of scores for two groups. Default is FALSE.}
-
-\item{...}{Additional arguments to be passed.}
+\item{profile.plot}{Print a profile plot of scores for the groups. Default is FALSE.}
 }
 \value{
 An object of class \code{profg} is returned, listing the following components:
