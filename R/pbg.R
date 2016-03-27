@@ -113,7 +113,7 @@ pbg <- function(data, group, original.names=FALSE, profile.plot=FALSE) {
     
     #Combine the results from parallelism, equal levels, and flatness
     profile.test <- list(parallel, equal.levels, flatness)
-    names(profile.test) <- c("Ho: Profiles are parallel","Ho: Profiles are coincidental","Ho: Profiles are level")
+    names(profile.test) <- c("Ho: Profiles are parallel","Ho: Profiles have equal levels","Ho: Profiles are level")
     
     call <- match.call()
     output <- list(call=call, data.summary=average, corr.table=cor.table, profile.test=profile.test)
