@@ -4,7 +4,7 @@
 \alias{pams}
 \title{Profile Analysis via Multidimensional Scaling}
 \usage{
-pams(x, dim)
+pams(data, dim)
 }
 \arguments{
 \item{data}{A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.}
