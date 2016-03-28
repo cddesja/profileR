@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom stats cmdscale dist
 #' 
-#' @param x A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.
+#' @param data A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.
 #' @param dim Number of dimensions to be extracted from the data.
 #' 
 #' @return 
@@ -27,10 +27,10 @@
 #' @seealso \code{\link{cpa}}, \code{\link{pr}}
 #' 
 
-pams <- function(x, dim) {
+pams <- function(data, dim) {
   
   #PART I
-  rawdata <- as.matrix(x)
+  rawdata <- as.matrix(data)
   raw <- t(rawdata)
   k <- nrow(raw)
   

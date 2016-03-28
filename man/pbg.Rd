@@ -2,20 +2,18 @@
 % Please edit documentation in R/pbg.R
 \name{pbg}
 \alias{pbg}
-\title{Profile by group: Testing Parallel, Coincidental, and Level Profiles}
+\title{Profile Analysis by Group: Testing Parallelism, Equal Levels, and Flatness}
 \usage{
-pbg(x, y, original.names = FALSE, profile.plot = FALSE, ...)
+pbg(data, group, original.names = FALSE, profile.plot = FALSE)
 }
 \arguments{
-\item{x}{A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.}
+\item{data}{A matrix or data frame with multiple scores; rows represent individuals, columns represent subscores. Missing subscores have to be inserted as NA.}
 
-\item{y}{A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, high-low, 0-1). The grouping variable must have the same length of x. Missing values are not allowed in y.}
+\item{group}{A vector or data frame that indicates a grouping variable. It can be either numeric or character (e.g., male-female, A-B-C, 0-1-2). The grouping variable must have the same length of x. Missing values are not allowed in y.}
 
 \item{original.names}{Use original column names in x. If FALSE, variables are renamed using v1, v2, ..., vn for subscores and "group" for the grouping variable. Default is FALSE.}
 
-\item{profile.plot}{Print a profile plot of scores for two groups. Default is FALSE.}
-
-\item{...}{Additional arguments to be passed.}
+\item{profile.plot}{Print a profile plot of scores for the groups. Default is FALSE.}
 }
 \value{
 An object of class \code{profg} is returned, listing the following components:
@@ -26,15 +24,15 @@ An object of class \code{profg} is returned, listing the following components:
 }
 }
 \description{
-The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles are parallel, coincidental, and level across two groups defined by the grouping variable. If parallelism is rejected, the other two tests are meaningless. In that case, flatness may be assessed within each group, and various within- and between-group contrasts may be analyzed.
+The \code{pbg} function implements three hypothesis tests. These tests are whether the profiles are parallel, have equal levels, and are flat across groups defined by the grouping variable. If parallelism is rejected, the other two tests are not necessary. In that case, flatness may be assessed within each group, and various within- and between-group contrasts may be analyzed.
 }
 \examples{
 \dontrun{
-#Read spouse data from Professor Richard Jonhson's website 
-spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
-mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
+#Activate spouse data
+data(spouse)
+mod <- pbg(data=spouse[,1:4], group=spouse[,5], original.names=TRUE, profile.plot=TRUE)
 print(mod) #prints average scores in the profile across two groups
-summary(mod) #prints the results of hypothesis tests
+summary(mod) #prints the results of three profile by group hypothesis tests
 }
 }
 \seealso{
