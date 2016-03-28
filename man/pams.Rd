@@ -7,7 +7,7 @@
 pams(x, dim)
 }
 \arguments{
-\item{x}{A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.}
+\item{data}{A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.}
 
 \item{dim}{Number of dimensions to be extracted from the data.}
 }
