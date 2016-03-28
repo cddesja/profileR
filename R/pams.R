@@ -30,7 +30,7 @@
 pams <- function(data, dim) {
   
   #PART I
-  rawdata <- as.matrix(x)
+  rawdata <- as.matrix(data)
   raw <- t(rawdata)
   k <- nrow(raw)
   
