@@ -1,3 +1,4 @@
+%\VignetteIndexEntry{User manual}
 \documentclass[article]{jss}
 %\bibliographystyle{jss}
 \usepackage{natbib}
@@ -86,7 +87,7 @@ The mean score of a score vector of tests (or subtests) indicates the \textit{le
 \begin{figure}
   \centering
   \includegraphics [width=5in]{plot1.png}
-  \caption{Score profiles of six individuals}
+  \caption{Score profiles of six individuals.}
   \label{fig:plot1}
 \end{figure}  
 
@@ -119,7 +120,7 @@ To have a clear and meaningful graphical summary of the variables in the data, a
 \begin{figure}
   \centering
   \includegraphics [width=5in]{plot2.png}
-  \caption{A profile plot with two persons and four content domains}
+  \caption{A profile plot with two persons and four content domains.}
   \label{fig:plot2}
 \end{figure}     
 
@@ -183,13 +184,13 @@ If a $t$-distributed random variable with $n -1$ degrees of freedom is squared, 
 In the expression for Hotelling's $T^2$, the difference between the sample mean and the $\mu_0$ in the univariate t-test is replaced with the difference between the sample mean vector, $\boldsymbol{\bar{x}}$, and the hypothesized mean vector, $\boldsymbol{\mu_0}$. The sample variance is replaced by the inverse of the sample variance-covariance matrix \textbf{S}, yielding the matrix form of the equation:
 
 \begin{equation}
-T^2 = n\mathbf{(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})'S^{-1}(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})}
+T^2 = n\mathbf{(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})^{\top}S^{-1}(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})}
 \end{equation}
 
 For large $n$, $T^2$ is approximately chi-square distributed with $p$ degrees of freedom. If the sample variance-covariance matrix \textbf{S} is replaced by the population variance-covariance matrix $\boldsymbol{\Sigma}$, then Hotelling's $T^2$ becomes
 
 \begin{equation}
-T^2 = n\mathbf{(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})'\Sigma^{-1}(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})}.
+T^2 = n\mathbf{(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})^{\top}\Sigma^{-1}(\boldsymbol{\bar{x}}-\boldsymbol{\mu_0})}.
 \end{equation}
 
 This test is exactly chi-square distributed with $p$ degrees of freedom. For small samples, the chi-square approximation for $T^2$ does not take into account variation due to estimating the sample variance-covariance matrix \textbf{S}. Therefore, better results can be obtained from the transformation of the Hotelling's $T^2$ statistic to an $F$ statistic as shown below:
@@ -230,7 +231,7 @@ If the answer to any of these questions is no (i.e., that a specific null hypoth
 \subsubsection{Parallelism}
 In profile analysis, parallelism is usually the main test of interest because the test examines whether each segment is the same across all individuals or groups. A segment in this context is simply the difference in the response between time points or variables.  Therefore, the segment is equivalent to the slope of the line between two points on the x-axis. Parallelism is assessed using a multivariate test which compares the multiple segments of the profile.  
 
-A one-way MANOVA can be used to test whether there is evidence for significant non-parallelism between the groups. The within-group variance comes from subtracting the segment matrix for each individual in the group from the group mean. The between-group variance is obtained by subtracting each group mean segment matrix from the grand mean segment matrix. If the null hypothesis of parallelism is rejected, there is a significant interaction between group membership and the measured variables or group membership and the time points (e.g.\ if a test is repeatedly administered). 
+A one-way MANOVA can be used to test whether there is evidence for significant non-parallelism between the groups. The within-group variance comes from subtracting the segment matrix for each individual in the group from the group mean. The between-group variance is obtained by subtracting each group mean segment matrix from the grand mean segment matrix. If the null hypothesis of parallelism is rejected, there is a significant interaction between group membership and the measured variables or group membership and the time points (e.g., if a test is repeatedly administered). 
 
 \subsubsection{Equal levels (coincident profiles)}
 The test of equal levels across the profiles is the most straightforward test in profile analysis. Given that the profiles are parallel, an equal level test examines whether the profiles coincide (i.e., there are no group differences). The test is used for determining whether one group scores higher on average across all the variables (e.g., domains or subtests) or time points. To evaluate this, the grand mean of all time points or variables is calculated for each group. Since all of the time points or variables are collapsed into a group mean, this becomes a univariate test. This is equivalent to a between-groups main effect in ANOVA. Mathematically, the test simply measures the relative contributions of between-group and within-group variations to the total sum of squared errors. This should look familiar, as it is the basis behind simple ANOVA models. For \textit{i} groups measured on \textit{j} variables:
@@ -245,7 +246,7 @@ where $\bar{X}_{tot}$ is the grand mean, $n$ is the sample size of each group, a
 Flatness evaluates the extent to which the profiles are flat (i.e., no differences in mean response within any group) given the profiles are parallel. The flatness null hypothesis is that the segments are 0 (i.e., the slope of each line segment is zero and the profile is flat).  This is evaluated independently for each group, making this a within-subjects test.  If the line is not flat (i.e., any of the segments vary significantly from 0) then there is a within groups main effect of the time point (if the data are from repeated assessments) or a measured variable (e.g., multiple subtests or a test measuring multiple domains). Hotelling's $T^2$ test can be used to test the difference of the zero-matrix and the segmented data for each group as follows:
 
 \begin{equation}
-T^2=N(\mathbf{\bar{X}_{tot}})'(\mathbf{S_{wg}})^{-1}(\mathbf{\bar{X}_{tot}})
+T^2=N(\mathbf{\bar{X}_{tot}})^{\top}(\mathbf{S_{wg}})^{-1}(\mathbf{\bar{X}_{tot}})
 \end{equation}
 
 where $\mathbf{\bar{X}_{tot}}$ is the grand mean, $N$ is the number of segments, and $\mathbf{S_{wg}}$ is the within-group variance-covariance matrix. Wilk's $\lambda$ can then be calculated from the $T^2$ statistic using the following equation:
@@ -263,7 +264,7 @@ Consider the test score data from a personality inventory presented in Table~\re
 
 \begin{table}[h!]
 \begin{center}
-\caption[]{Inventory of Personality and Mood Manifestation.}
+\caption[]{Inventory of Personality and Mood Manifestation. (\textit{Note}: A = anxiety, H = hypochrondriasis, S = schizophrenia, B = bipolar disorder, and C corresponds to the criterion, 1 = neurotic and 0 = psychotic. Adapted from \citet{davison2002identifying}).}
 \begin{tabular}{lllll}
 \hline
 A & H & S & B & C \\
@@ -277,7 +278,7 @@ A & H & S & B & C \\
 \hline
 \end{tabular}
 \label{tab1}
-\caption*{\textit{Note.} A = anxiety, H = hypochrondriasis, S = schizophrenia, B = bipolar disorder, and C corresponds to the criterion, 1 = neurotic and 0 = psychotic. Table adapted from\citet{davison2002identifying}.}
+%\caption*{\textit{Note.} A = anxiety, H = hypochrondriasis, S = schizophrenia, B = bipolar disorder, and C corresponds to the criterion, 1 = neurotic and 0 = psychotic. Table adapted from \citet{davison2002identifying}.}
 \end{center}
 \end{table}
 If we wanted to predict whether an individual's personality profile is related to whether they are neurotic or psychotic we may consider the following regression model:
@@ -330,7 +331,7 @@ Examining an individual's strengths and weaknesses from pattern scores has broug
 \citet{conger} defined the observed difference vector as $\overrightarrow{X}_i-\overrightarrow{X}_{i.}$; where $\overrightarrow{X}_i$ is the vector of scores for person $i$ and $\overrightarrow{X}_{i.}$ is the average of person $i$'s scores. Using the observed and true difference vectors, canonical reliability can be written for any distance function as: 
 
 \begin{equation}
-\rho_p=\frac{(\overrightarrow{T}_i-\overrightarrow{T}_{i.})^\text{T}\mathbf{A}(\overrightarrow{T}_i-\overrightarrow{T}_{i.})}{(\overrightarrow{X}_i-\overrightarrow{X}_{i.})^\text{T}\mathbf{A}(\overrightarrow{X}_i-\overrightarrow{X}_{i.})},
+\rho_p=\frac{(\overrightarrow{T}_i-\overrightarrow{T}_{i.})^{\top}\mathbf{A}(\overrightarrow{T}_i-\overrightarrow{T}_{i.})}{(\overrightarrow{X}_i-\overrightarrow{X}_{i.})^{\top}\mathbf{A}(\overrightarrow{X}_i-\overrightarrow{X}_{i.})},
 \end{equation}
 
 where $(\overrightarrow{T}_i-\overrightarrow{T}_{i.})$ is the true difference vector and \textbf{A} is a square matrix used for weighting the reliability. The square matrix \textbf{A} can either be a correlation matrix of the subscores on the test or an identity matrix if weighting is not desired \citep{conger}.
@@ -338,7 +339,7 @@ where $(\overrightarrow{T}_i-\overrightarrow{T}_{i.})$ is the true difference ve
 Using the canonical reliability framework defined by \citet{conger}, \citet{bulut2013between} presented a profile reliability approach that made use of both the vector of difference scores and the vector of the average score in a test score profile. For a given person, the level represents the mean of the subscores in the profile which can be expressed as
 
 \begin{equation}\label{eq:15}
-\bar{X}_p=\frac{1}{v}\sum \nolimits_v X_{pv},
+\bar{X}_p = \frac{1}{v}\sum \nolimits_v X_{pv},
 \end{equation} 
 
 where $X_{pv}$ is the score of person $p$ ($p = 1,\dots,P$) on domain $v$ ($v = 1,\dots, V$) and $\bar{X}_p$ is the average scores from $V$ domains for person $p$. When Equation~\ref{eq:15} is applied to each person in the data, a level vector that consists of $P$ level scores is obtained. 
@@ -346,7 +347,7 @@ where $X_{pv}$ is the score of person $p$ ($p = 1,\dots,P$) on domain $v$ ($v = 
 The pattern of a test score profile is a vector of the score differences (i.e., ipsatized scores) between each score and the mean of the scores for a given person. A pattern vector of a test score profile can be shown as $(X_{p1}-\bar{X}_p),\dots,(X_{pv}-\bar{X}_p)$; where $X_{pv}$ is the score of person $p$ on test $v$ and $\bar{X}_p$ is the mean of the subscores that person $p$ obtained from $V$ tests. Using the level and pattern components defined above, the total score variation ($T$) of a test score profile can be defined as the sum of the variances for the $V$ tests:
 
 \begin{equation}
-T=\sum\limits_{v=1}^{V} \sigma_v^2;
+T = B + W,
 \end{equation}
 
 where the total variation ($T$) is the sum of two orthogonal components: between-person variation ($B$) and within-person variation ($W$) \citep{davison2009factor}. The B corresponds to the level effect and W is corresponds to the pattern effect. Essentially, B is the between-person variation due to individual differences in profile level; and W is the within-person variation due to individual differences in profile patterns \citep{bulut2013between, davison2009factor}.
@@ -386,18 +387,21 @@ The within-person reliability coefficient can be interpreted as the proportion o
 As explained above, within-person and between-person reliability coefficients are based on the relationship between true and observed subscores in a test score profile. It is assumed in CTT that true scores are unknown and observed scores are the approximations of true scores. When there are parallel forms of a test, the covariance of the two forms provides an estimate of the true score variation. If true scores from two tests are perfectly correlated (i.e., congeneric) and equally reliable, then the correlation between the observed scores provides an estimate of the proportion of true score variance to observed score variance. 
 
 \vspace{0.2 cm}
-After obtaining an estimate of the covariance between every possible pair of parallel tests $v$ and $v'$, the true score variation becomes equal to the average of all possible covariances because the tests $v$ and $v'$ are assumed to have equal variances. Based on the test scores from parallel test forms, within-person and between-person reliability coefficients can be formulated as follows \citep{bulut2013between}:
+After obtaining an estimate of the covariance between every possible pair of parallel tests $v$ and $v'$ , the true score variation becomes equal to the average of all possible covariances because the tests $v$ and $v'$ are assumed to have equal variances. Based on the test scores from parallel test forms, within-person and between-person reliability coefficients can be formulated as follows \citep{bulut2013between}:
 
 \begin{equation}
-\hat{\rho}_W=\frac{\sum_{p=1}^{P}\left(\sum_{v=1}^{V}(X_{pv}-\bar{X}_p)(X_{pv'}-\bar{X}_{p'})\right)}{\sum_{p=1}^{P}(\sum_{v=1}^{V}(X_{pv}-\bar{X}_p)^2}, \text{and}
+\label{rhow}
+\hat{\rho}_W=\frac{\sum_{p=1}^{P}\left(\sum_{v=1}^{V}(X_{pv}-\bar{X}_p)(X_{pv'}-\bar{X}_{p'})\right)}{\sum_{p=1}^{P}(\sum_{v=1}^{V}(X_{pv}-\bar{X}_p)^2},
 \end{equation}
 
+and
+
 \begin{equation}
+\label{rhob}
 \hat{\rho}_B=\frac{\hat{\sigma}(\bar{X}_p\bar{X}_{p'})}{\sqrt{\hat{\sigma}^2(\bar{X}_p)\hat{\sigma}^2(\bar{X}_{p'})}}=\frac{\bar{\sigma}(\bar{X}_p\bar{X}_{p'})}{\hat{\sigma}^2(\bar{X}_p)}.
 \end{equation}
 
-
-It should be noted that the within-person reliability coefficient is a weighted average of within-person reliability coefficients from all subtests. Without averaging over the subtests, within-person reliability coefficients can also be computed to evaluate reliability for each subtest (for more details, see \citet{bulut2013between}). 
+Please note that the $'$ refers to a parallel form of a test in Equations~\ref{rhow} and~\ref{rhob} and not a transpose. The within-person reliability coefficient is a weighted average of within-person reliability coefficients from all subtests. Without averaging over the subtests, within-person reliability coefficients can also be computed to evaluate reliability for each subtest (for more details, see \citet{bulut2013between}). 
 
 
 \section{Principal functions in the profileR package}
@@ -420,13 +424,13 @@ The \code{pbg} function (i.e., profile by group) implements three tests that cor
 
 \begin{CodeChunk}
 \begin{CodeInput}
-pbg(x, y, original.names=FALSE, profile.plot=FALSE, ...)
+pbg(x, y, original.names = FALSE, profile.plot = FALSE, ...)
 \end{CodeInput}
 \end{CodeChunk}
 
 where \code{x} is a data frame with multiple subscores and \code{y} is a grouping variable which can be either a character or numerical variable or a factor. The \code{original.names} asks whether the original column names in the data frame should be used. If \code{profile.plot = TRUE}, then a profile plot of scores for the groups is drawn. 
 
-The \code{pbg} function returns a summary of the means of the observed variables (e.g.\ subscores on the tests or domains) by the grouping variable, a correlation table among the variables by the grouping variable, and the results of F-tests for testing parallel, coincidental, and level profiles across two groups.
+The \code{pbg} function returns a summary of the means of the observed variables (e.g., subscores on the tests or domains) by the grouping variable, a correlation table among the variables by the grouping variable, and the results of F-tests for testing parallel, coincidental, and level profiles across two groups.
 
 \subsection{Criterion-related profile analysis}
 Criterion-related profile analysis in the \pkg{profileR} package is performed using the \code{cpa} function.  The \code{cpa} function utilizes the same formula syntax as the familiar \code{lm} and \code{glm} functions but utilizes slightly different arguments. The full default call to \code{cpa} is:
@@ -457,7 +461,7 @@ The \code{pams} function implements profile analysis via multidimensional scalin
 
 \begin{CodeChunk}
 \begin{CodeInput}
-pams(x,dim)
+pams(x, dim)
 \end{CodeInput}
 \end{CodeChunk}
 
@@ -468,7 +472,7 @@ The \code{pr} function uses subscores from two parallel test forms and computes 
 
 \begin{CodeChunk}
 \begin{CodeInput}
-pr(form1,form2)
+pr(form1, form2)
 \end{CodeInput}
 \end{CodeChunk}
 
@@ -480,8 +484,8 @@ In this example, we analyze the \code{nutrient} data to test the two hypotheses 
 
 \begin{CodeChunk}
 \begin{CodeInput}
-data(nutrient)
-head(nutrient)
+R> data("nutrient", package = "profileR")
+R> head(nutrient)
 \end{CodeInput}
 \begin{CodeOutput}
   calcium   iron protein      a       c
@@ -498,14 +502,15 @@ Using the \code{nutrient} data, we want to test whether the ratios of these vari
 
 \begin{CodeChunk}
 \begin{CodeInput}
-paos(nutrient, scale=TRUE)
+R> paos(nutrient, scale = TRUE)
 \end{CodeInput}
 \begin{CodeOutput}
 Profile Analysis for One Sample with Hotelling's T-Square:
 
-                                              T-Squared        F df1 df2 p-value
-Ho: Ratios of the means over Mu0=1             1392.347 276.9559   5 732       0
-Ho: All of the ratios are equal to each other  1278.073 318.2159   4 733       0
+                                       T-Squared     F     df1  df2  p-value
+Ho: Ratios of the means over Mu0=1     1392.347  276.9559   5   732       0
+Ho: All of the ratios are equal        1278.073  318.2159   4   733       0
+    to each other
 \end{CodeOutput}
 \end{CodeChunk} 
 
@@ -517,26 +522,29 @@ The \code{spouse} data set includes four rating scale items where 60 spouses (30
 
 \begin{CodeChunk}
 \begin{CodeInput}
-# Read spouse data from Professor Richard Jonhson's website 
-spouse <- read.table(file="http://www.stat.wisc.edu/~rich/JWMULT02dat/T6-14.DAT")
-head(spouse)
+R> data("spouse", package = "profileR")
+R> head(spouse)
 \end{CodeInput}
+
 \begin{CodeOutput}
-  V1 V2 V3 V4      V5
-1  2  3  5  5 Husband
-2  5  5  4  4 Husband
-3  4  5  5  5 Husband
-4  4  3  4  4 Husband
-5  3  3  5  5 Husband
-6  3  3  4  5 Husband
+
+
+  item1 item2 item3 item4  spouse
+1     2     3     5     5 Husband
+2     5     5     4     4 Husband
+3     4     5     5     5 Husband
+4     4     3     4     4 Husband
+5     3     3     5     5 Husband
+6     3     3     4     5 Husband
 \end{CodeOutput}
 \end{CodeChunk}
 
-The first four columns are the items and the last column in the data is the group variable. We will run \code{pbg} on this data set and store it in an object called \code{mod}. 
+The first four columns are the survey items and the last column in the data is the group variable. We will run \code{pbg} on this data set and store it in an object called \code{mod}. 
 \begin{CodeChunk}
 \begin{CodeInput}
-mod <- pbg(spouse[,1:4],spouse[,5],labels=FALSE,profile.plot=TRUE)
-print(mod)
+R> mod <- pbg(spouse[, 1:4], spouse[, 5], labels = FALSE, 
+              profile.plot = TRUE)
+R> print(mod)
 \end{CodeInput}
 \begin{CodeOutput}
 Data Summary:
@@ -552,7 +560,7 @@ The \code{print} function displays the average scores on the items for the husba
 
 \begin{CodeChunk}
 \begin{CodeInput}
-summary(mod)
+R> summary(mod)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -570,29 +578,29 @@ Ho: Profiles are level        24.820709   3  57 0.0001554491
 
 The \code{pbg} function returns a profile plot of the husbands' and wives' profiles because \code{profile.plot = TRUE}. In Figure~\ref{fig:plot3}, the lines appear to be parallel across the four items although the direction of the mean difference in the first question is different from the other three questions.  
 
-
 In the following example, we create a pseudo data set where two groups (i.e., males and females) have different profiles on three continuous variables. For both groups, the variables have a multivariate normal distribution and the correlations among the variables are fixed to $\rho=.3$. Although the variables have the same variance ($\sigma^2=1$) for both groups, the means of the variables for the male group are different from the female group. We use the \code{mvrnorm} function from the \pkg{MASS} package to simulate pseudo data for this example. 
 
 \begin{figure}
   \centering
   \includegraphics [width=5in]{plot3.png}
-  \caption{Profile plot of husbands and wives on the four rating scale items}
+  \caption{Profile plot of husbands and wives on the four rating scale items.}
   \label{fig:plot3}
 \end{figure}     
 
 \begin{CodeChunk}
 \begin{CodeInput}
-library(MASS)
-Sigma <- matrix(c(1,0.3,0.3,
-                  0.3,1,0.3,
-                  0.3,0.3,1),3,3)
+R> library("MASS")
 
-set.seed(2015)
-male <- mvrnorm(n = 500, rep(0, 3), Sigma)
-female <- mvrnorm(n = 500, c(0.1, 0.2, 0.3), Sigma)
-data <- as.data.frame(rbind(male, female))
-gender <- c(rep("Male",500), rep("Female",500))
-data <- cbind(data,gender)
+R> Sigma <- matrix(c(1, 0.3, 0.3,
+                     0.3, 1, 0.3,
+                     0.3, 0.3, 1), 3, 3)
+
+R> set.seed(2015)
+R> male <- mvrnorm(n = 500, rep(0, 3), Sigma)
+R> female <- mvrnorm(n = 500, c(0.1, 0.2, 0.3), Sigma)
+R> data <- as.data.frame(rbind(male, female))
+R> gender <- c(rep("Male", 500), rep("Female", 500))
+R> data <- cbind(data, gender)
 \end{CodeInput}
 \end{CodeChunk}
 
@@ -600,7 +608,7 @@ The resulting data set has 1000 rows, three columns of variables for the profile
 
 \begin{CodeChunk}
 \begin{CodeInput}
-head(data,3)
+R> head(data,3)
 \end{CodeInput}
 \begin{CodeOutput}
           V1         V2         V3 gender
@@ -614,8 +622,8 @@ If we use the \code{pbg} function to assess the profiles of the male and female 
 
 \begin{CodeChunk}
 \begin{CodeInput}
-mod2 <- pbg(data[,1:3],data[,4],labels=FALSE,profile.plot=TRUE)
-print(mod2)
+R> mod2 <- pbg(data[, 1:3], data[, 4], profile.plot = TRUE, labels = FALSE)
+R> print(mod2)
 \end{CodeInput}
 \begin{CodeOutput}
 Data Summary:
@@ -625,7 +633,7 @@ v2 0.18629128  0.07732983
 v3 0.29538716  0.03379842
 \end{CodeOutput}
 \begin{CodeInput}
-summary(mod2)
+R> summary(mod2)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -645,10 +653,9 @@ The results show that all three null hypotheses were rejected in this example. F
 \begin{figure}[H]
   \centering
   \includegraphics [width=5in]{plot4.png}
-  \caption{Profile plot of male and females from the pseudo data set}
+  \caption{Profile plot of male and females from the pseudo data set.}
   \label{fig:plot4}
 \end{figure}     
-
 
 \newpage
 \subsection{Criterion-related profile analysis and cross-validation using the IPMMc data set}
@@ -656,15 +663,15 @@ A typical call to the \code{cpa} function using the data in Table~\ref{tab1}, av
 
 \begin{CodeChunk}
 \begin{CodeInput}
-data(IPMMc)
-mod <- cpa(R ~ A + H + S + B, data = IPMMc)
+R> data("IPMMc", package = "profileR")
+R> mod <- cpa(R ~ A + H + S + B, data = IPMMc)
 \end{CodeInput}
 \end{CodeChunk}
 
 The \code{cpa} function will print the following by default:
 \begin{CodeChunk}
 \begin{CodeInput}
-print(mod)
+R> print(mod)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -672,7 +679,8 @@ cpa(formula = R ~ A + H + S + B, data = IPMMc)
 
 Coefficients
 
-Call:  glm(formula = formula, family = family, data = data, na.action = na.action)
+Call:  glm(formula = formula, family = family, data = data, 
+           na.action = na.action)
 
 Coefficients:
 (Intercept)            A            H            S            B  
@@ -688,7 +696,7 @@ This output should look familiar to users of  \code{lm} and \code{glm}. This out
 
 \begin{CodeChunk}
 \begin{CodeInput}
-anova(mod)
+R> anova(mod)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -711,12 +719,12 @@ This output corresponds to testing that the proportion of variability in the cri
 We see in the example that none of the hypothesis tests were rejected and we can conclude that the proportion of variability in the criterion variable that is explained by the full model is not significantly different than 0. Do note that the strange F-values and small degrees of freedom are a function of the sample size of the data set.
 
 \begin{table}[h!]
-\caption{Hypothesis tested reported from \code{anova(mod)}}
+\caption{Hypothesis tested reported from \code{anova(mod)}.}
 \label{tab:hyptest}
 \begin{center}
 \begin{tabular}{ll}
 \hline
-\code{R} output & Null hypothesis test  \\
+\proglang{R} output & Null hypothesis test  \\
 \hline
 R2.full = 0 & $H_0: R^2_{Full} = 0$  \\ 
 R2.pat = 0 & $H_0: R^2_{Pattern} = 0$ \\
@@ -732,7 +740,7 @@ Finally, the proportion of variability in the criterion variable explained by th
 
 \begin{CodeChunk}
 \begin{CodeInput}
-summary(mod)
+R> summary(mod)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -747,6 +755,10 @@ Level      0.000000
  Level Component
     1     2     3     4     5     6 
 58.75 58.75 55.00 58.75 58.75 55.00 
+
+
+
+
 
  Pattern Component 
        A      H      S      B
@@ -765,13 +777,13 @@ To demonstrate the cross-validation technique, we'll generate a data set suffici
 
 \begin{CodeChunk}
 \begin{CodeInput}
-set.seed(13251)
-dv <- rbinom(n = 100, size = 1, prob = mean(IPMMc$R))
-A <- rnorm(n = 100, mean = mean(IPMMc$A))
-H <- rnorm(n = 100, mean = mean(IPMMc$H))
-S <- rnorm(n = 100, mean = mean(IPMMc$S))
-B <- rnorm(n = 100, mean = mean(IPMMc$B))
-dat0 <- data.frame(dv, A, H, S, B)
+R> set.seed(13251)
+R> dv <- rbinom(n = 100, size = 1, prob = mean(IPMMc$R))
+R> A <- rnorm(n = 100, mean = mean(IPMMc$A))
+R> H <- rnorm(n = 100, mean = mean(IPMMc$H))
+R> S <- rnorm(n = 100, mean = mean(IPMMc$S))
+R> B <- rnorm(n = 100, mean = mean(IPMMc$B))
+R> dat0 <- data.frame(dv, A, H, S, B)
 \end{CodeInput}
 \end{CodeChunk}
 
@@ -779,8 +791,8 @@ To perform cross-validation, we will call the \code{pcv} function and save the o
 
 \begin{CodeChunk}
 \begin{CodeInput}
-cv.model <- pcv(dv ~ A + H + S + B, data = dat0, seed = 4135)
-cv.model
+R> cv.model <- pcv(dv ~ A + H + S + B, data = dat0, seed = 4135)
+R> cv.model
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -801,7 +813,7 @@ The proportion of variability associated with each effect can be obtained using 
 
 \begin{CodeChunk}
 \begin{CodeInput}
-summary(cv.model)
+R> summary(cv.model)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -829,7 +841,7 @@ Random Sample 1 Random Sample 2
        0.015489        0.004141 
 \end{CodeOutput}
 \begin{CodeInput}
-anova(cv.model)
+R> anova(cv.model)
 \end{CodeInput}
 \begin{CodeOutput}
 Call:
@@ -872,8 +884,8 @@ To demonstrate the use of the \code{pams} function, we will use a data set which
 
 \begin{CodeChunk}
 \begin{CodeInput}
-data(PS)
-head(PS)
+R> data("PS, package = "profileR"")
+R> head(PS)
 \end{CodeInput}
 \begin{CodeOutput}
   Person Neu Psy CD
@@ -890,10 +902,16 @@ The first column in the \code{PS} data is a person ID variable, and the remainin
 
 \begin{CodeChunk}
 \begin{CodeInput}
-result <- pams(PS[,2:4], dim=2)
-print(result)
+R> result <- pams(PS[, 2:4], dim = 2)
+
+R> print(result)
 \end{CodeInput}
 \begin{CodeOutput}
+
+
+
+
+
 
 $weights.matrix
      weight1 weight2 level R.sq
@@ -919,8 +937,8 @@ The \code{pr} function can be used to examine profile reliability of the subscor
 
 \begin{CodeChunk}
 \begin{CodeInput}
-data(EEGS)
-head(EEGS)
+R> data("EEGS", package = "profileR")
+R> head(EEGS)
 \end{CodeInput}
 \begin{CodeOutput}
 
@@ -937,17 +955,16 @@ head(EEGS)
 The returning output shows two columns for each subtest. These columns represent subscores from parallel forms from each subtest. To compute between-person and within-person subscore reliability of the three subscores in EEGS, the \code{pr} function can be called as:
 \begin{CodeChunk}
 \begin{CodeInput}
-result <- pr(EEGS[,c(1,3,5)],EEGS[,c(2,4,6)])
+R> result <- pr(EEGS[, c(1, 3, 5)], EEGS[, c(2, 4, 6)])
 \end{CodeInput}
 \end{CodeChunk}
 
 The \code{print} function returns the following output:
 \begin{CodeChunk}
 \begin{CodeInput}
-print(result)
+R> print(result)
 \end{CodeInput}
 \begin{CodeOutput}
-
 Subscore Reliability Estimates:
 
          Estimate
@@ -961,7 +978,11 @@ In the output, level refers to between-person reliability, pattern refers to wit
 
 \section{Discussion}
 
-The \pkg{profileR} package has been developed to provide researchers and partitioners interested in profile analysis with an intuitive syntax and framework for the \proglang{R} programming language. In addition to the functions described above, functions have been written use a within-person factor model to derive a score profile \citep{davison2009factor} (using the engine from the \pkg{lavaan} package \citep{lavaan}) and experimental support for moderated profile analysis has recently been added (based on unpublished work by Davison and Davenport). In future versions of \pkg{profileR}, we intend to expand the package to allow for multi-level profile analysis (i.e., creating score profiles for test takers and schools while controlling for the inherent nesting of students within classrooms and testing these effects seperately), Bayesian profile analysis, and the addition of increased graphical capabilities using the \pkg{DiagrammeR} package \citep{diagrammer}. We welcome all contributions to the \pkg{profileR} package and would like to encourage the community to open feature requests on the GitHub website to help steer the direction of \pkg{profileR}.
+The \pkg{profileR} package has been developed to provide researchers and partitioners interested in profile analysis with an intuitive syntax and framework for the \proglang{R} programming language. Currently there is no specialized software for profile analysis, although popular matrix languages --- such as \code{PROC IML} in the \proglang{SAS} software \citep{SAS} and the Matrix Command Language in \proglang{SPSS} \citep{SPSS} --- can be used for programming a profile analysis procedure. Because profile analysis is a multivariate statistical technique, software programs capable of running multivariate analyses can be also used for this purpose. However, such an approach would result in using several steps of data analysis across multiple software programs. For instance, the \code{pams} function in the \pkg{profileR} package performs profile analysis and multidimensional scaling together, whereas the same procedure would require creating a dissimilarity matrix between variables using a matrix computation procedure and analyzing this matrix using either the \code{PROC MDS} function in \proglang{SAS}, or the \code{mds} function in \proglang{R}, or the \code{ALSCAL} function in \proglang{SPSS}. Similarly, the \code{cpa} and \code{pbg} functions are capable of testing multiple hypotheses simultaneously, without requiring the user to implement separate analyses to reach the same outcome.      
 
+\vspace{0.2cm}
+In addition to the functions described above, the \pkg{profileR} package includes functions for a within-person factor model to derive a score profile \citep{davison2009factor} (using the engine from the \pkg{lavaan} package \citep{lavaan}) and experimental support for moderated profile analysis (based on unpublished work by Davison and Davenport). In future versions of \pkg{profileR}, we intend to expand the package to allow for multi-level profile analysis (i.e., creating score profiles for test takers and schools while controlling for the inherent nesting of students within classrooms and testing these effects seperately), Bayesian profile analysis, and the addition of increased graphical capabilities using the \pkg{DiagrammeR} package \citep{diagrammer}. We welcome all contributions to the \pkg{profileR} package and would like to encourage the community to open feature requests on the GitHub website to help steer the direction of \pkg{profileR}.
+
+\newpage
 \bibliography{jss_profiler}
 \end{document}

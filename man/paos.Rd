@@ -22,7 +22,10 @@ A summary table is returned, listing the following two hypothesis:
 The \code{paos} function implements profile analysis for one sample using Hotelling's T-square.
 }
 \details{
-The \code{paos} function runs profile analysis for one sample based on the Hotelling's T-square test and tests the two htypothesis. First, the null hypothesis that all the rations of the variables in the data equal to 1. After rejecting the first hypothesis, a secondary null hypothesis that all of the ratios of the variables in the data equal to one another (not necessarily equal to 1) is tested.
+The \code{paos} function runs profile analysis for one sample based on the Hotelling's T-square test and
+tests the two htypothesis. First, the null hypothesis that all the ratios of the variables in the data are
+equal to 1. After rejecting the first hypothesis, a secondary null hypothesis that all of the ratios of the
+variables in the data equal to one another (not necessarily equal to 1) is tested.
 }
 \examples{
 \dontrun{
