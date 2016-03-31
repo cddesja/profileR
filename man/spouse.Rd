@@ -10,7 +10,7 @@
    \item{spouse}{Spouse type. It is either "Husband" or "Wife"}
  }}
 \description{
-  The \code{spouse} is a data set comes from a study of love and marriage. A sample of 30 husbands and their wives were asked to respond to the following questions: \itemize{
+  The \code{spouse} data come from a study of love and marriage. A sample of 30 husbands and their wives were asked to respond to the following questions: \itemize{
   \item Question 1: What is the level of passionate love you feel for your partner?
   \item Question 2: What is the level of passionate love that your partner feels for you?
   \item Question 3: What is the level of companionate love that you feel for your partner?
