@@ -21,7 +21,6 @@
 #' print(result)
 #' plot(result)}
 #' 
-#' @author Okan Bulut \email{okanbulut84@gmail.com}
 #' @references Bulut, O. (2013). \emph{Between-person and within-person subscore reliability: Comparison of unidimensional and multidimensional IRT models}. (Doctoral dissertation). University of Minnesota. University of Minnesota, Minneapolis, MN. (AAT 3589000).
 #' @references Davison, M. L., & Davenport, E. C. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{Psychological Methods, 7}(4), 468-484.
 #' @seealso \code{\link{plot.prof}}

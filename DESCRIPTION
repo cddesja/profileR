@@ -1,11 +1,14 @@
 Package: profileR
 Title: Profile Analysis of Multivariate Data in R
 Type: Package
-Description: Fit profile analytic models. This includes the multivariate methods
-    and data visualization tools to implement profile analysis and cross-validation
-    techniques described in Davison & Davenport (2002) and Bulut (2013).
-Version: 0.3-2
-Date: 2015-12-28
+Description: A suite of multivariate methods and data visualization 
+      tools to implement profile analysis and cross-validation techniques described in 
+      Davison & Davenport (2002), Bulut (2013), and other published and unpublished resources.
+      The package includes routines to perform criterion-related profile analysis, profile analysis 
+      via multidimensional scaling, moderated profile analysis, profile analysis by group, and a 
+      within-person factor model to derive score profiles.
+Version: 0.3-3
+Date: 2016-03-31
 Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
     <cddesjardins@gmail.com>
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>

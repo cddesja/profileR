@@ -7,7 +7,7 @@
 #' @export
 #' @importFrom stats cmdscale dist
 #' 
-#' @param x A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.
+#' @param data A data matrix or data frame; rows represent individuals, columns represent scores; missing scores are not allowed.
 #' @param dim Number of dimensions to be extracted from the data.
 #' 
 #' @return 
@@ -15,7 +15,6 @@
 #' \item \code{dimensional.configuration} - A matrix that provides prototypical profiles of dimensions extracted from the data.
 #' \item \code{weights.matrix} - A matrix that includes the subject correspondence weights for all dimensions, level parameters, and the subject fit measure which is the proportion of variance in the subject's actual profiles accounted for by the prototypical profiles.}
 #' 
-#' @author Okan Bulut \email{okanbulut84@gmail.com}
 #' @references Davenport, E. C., Ding, S., & Davison, M. L. (1995). PAMS: SAS Template. 
 #' @references Davison, M. L., Davenport, E. C., & Bielinski, J. (1995). PAMS: SPSS Template. 
 #' @examples 
@@ -27,10 +26,10 @@
 #' @seealso \code{\link{cpa}}, \code{\link{pr}}
 #' 
 
-pams <- function(x, dim) {
+pams <- function(data, dim) {
   
   #PART I
-  rawdata <- as.matrix(x)
+  rawdata <- as.matrix(data)
   raw <- t(rawdata)
   k <- nrow(raw)
   

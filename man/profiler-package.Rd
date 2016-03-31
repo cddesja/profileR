@@ -5,7 +5,10 @@
 \description{
   The package profileR provides a set of multivariate methods and data visualization 
   tools to implement profile analysis and cross-validation techniques described in 
-  Davison & Davenport (2002) and Bulut (2013).
+  Davison & Davenport (2002), Bulut (2013), and other resources.This package includes routines 
+  to perform criterion-related profile analysis, profile analysis via multidimensional scaling, 
+  moderated profile analysis, profile analysis by group, and a within-person factor model to 
+  derive score profiles.
 }
 \author{
   Okan Bulut \email{okanbulut84@gmail.com}

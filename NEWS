@@ -1,6 +1,15 @@
+Changes in version: profileR_0.3-3
+
+  * the pbg function can now analyze profiles cross two or more groups. Also, the terminology in the function has been revised. 
+  
+  * Now, the pams and pbg functions define the data as "data" rather than x in the functions.
+  
+  * A few minor typos haven corrected in the help files. 
+
 Changes in version: profileR_0.3-1
 
   * Added the "spouse" data as a part of the package. Now the pbg function can be directly examined using the spouse data.
+  
   * Added unpublished Journal of Statistical Software manuscript as a vignette.
 
 Changes in version: profileR_0.3
