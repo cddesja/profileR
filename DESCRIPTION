@@ -3,7 +3,7 @@ Title: Profile Analysis of Multivariate Data in R
 Type: Package
 Description: A suite of multivariate methods and data visualization 
       tools to implement profile analysis and cross-validation techniques described in 
-      Davison & Davenport (2002), Bulut (2013), and other published and unpublished resources.
+      Davison & Davenport (2002) <DOI: 10.1037/1082-989X.7.4.468>, Bulut (2013), and other published and unpublished resources.
       The package includes routines to perform criterion-related profile analysis, profile analysis 
       via multidimensional scaling, moderated profile analysis, profile analysis by group, and a 
       within-person factor model to derive score profiles.

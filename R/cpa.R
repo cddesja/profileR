@@ -43,7 +43,7 @@
 #' anova(mod)
 #' }
 #'
-#' @references Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{Psychological Methods, 7}(4), 468-484.
+#' @references Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{Psychological Methods, 7}(4), 468-484. DOI: 10.1037/1082-989X.7.4.468.
 #' @seealso \code{\link{pcv}}
 #' @keywords method
 

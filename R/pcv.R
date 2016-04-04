@@ -19,7 +19,7 @@
 #' \item \code{R2.level}, test that the R2_level = 0
 #' \item \code{R2.full.lvl}, test that the R2_full = R2_level = 0
 #' \item \code{R2.full.pat}, test that the R2_full = R2_pattern = 0}
-#' @references Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{ Psychological Methods, 7}(4), 468-484.
+#' @references Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{ Psychological Methods, 7}(4), 468-484. DOI: 10.1037/1082-989X.7.4.468.
 #' @seealso \code{\link{cpa}},\code{\link{print.critpat}},\code{\link{summary.critpat}},\code{\link{anova.critpat}},\code{\link{plot.critpat}} 
 #' @keywords methods
 

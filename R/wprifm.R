@@ -12,7 +12,7 @@
 #' @examples
 #' data <- HolzingerSwineford1939[,7:ncol(HolzingerSwineford1939)]
 #' wprifm(data, scale = TRUE)
-#' @references Davison, M., Kim, S.-K., Close, C. (2009). Factor analytic modeling of within person variation in score profiles. Multivariate Behavioral Research, 44(5), 668 - 687.
+#' @references Davison, M., Kim, S.-K., Close, C. (2009). Factor analytic modeling of within person variation in score profiles. Multivariate Behavioral Research, 44(5), 668 - 687. DOI: 10.1080/00273170903187665
 
 wprifm <- function(data, scale = FALSE, save_model = FALSE){
 	if(scale){
