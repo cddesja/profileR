@@ -1,3 +1,11 @@
+Changes in version: profileR_0.3-4
+
+ * Added the interest data set.
+
+ * Added under review R Journal manuscript as a vignette.
+
+ * Removed JSS manuscript as a vignette.
+
 Changes in version: profileR_0.3-3
 
   * the pbg function can now analyze profiles cross two or more groups. Also, the terminology in the function has been revised. 
