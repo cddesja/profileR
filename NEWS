@@ -2,9 +2,7 @@ Changes in version: profileR_0.3-4
 
  * Added the interest data set.
 
- * Added under review R Journal manuscript as a vignette.
-
- * Removed JSS manuscript as a vignette.
+ * Removed vignette.
 
 Changes in version: profileR_0.3-3
 
