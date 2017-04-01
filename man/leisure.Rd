@@ -11,7 +11,7 @@
   The \code{leisure} dataset includes leisure activity
   rankings for three different groups: politicians,
   administrators, and belly-dancers. Rankings are provided
-  in three categories: Reading-TV, Dance-TV, and TV-Ski.
+  in four categories: Reading, Dancing, Watching TV, and Skiing.
   See Tabachnik and Fidell (1996) for more details.
 }
 \examples{
