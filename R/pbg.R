@@ -90,10 +90,10 @@ pbg <- function(data, group, original.names=FALSE, profile.plot=FALSE) {
     equal.levels <- summary(fit2)
     
     #Flatness
-    t.sqr <- (sum(c.vector, na.rm = TRUE))*t(xbar.dif)%*%solve(summary(fit1, test="Wilks")$SS$Residuals)%*%xbar.dif
-    F.val <- (sum(c.vector, na.rm = TRUE)-g-k+2)/(k-1)*t.sqr
+    t.sqr <- n*t(xbar.dif)%*%solve(summary(fit1, test="Wilks")$SS$Residuals)%*%xbar.dif
+    F.val <- (n-g-k+2)/(k-1)*t.sqr
     df1 <- (k-1)
-    df2 <- (sum(c.vector, na.rm = TRUE)-g-k+2)
+    df2 <- (n-g-k+2)
     p.val <- pf(F.val, df1, df2, lower.tail = FALSE)
     flatness <- data.frame(F.val,df1,df2,p.val)
     names(flatness) <- c("F","df1","df2","p-value")
