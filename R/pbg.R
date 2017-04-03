@@ -90,6 +90,12 @@ pbg <- function(data, group, original.names=FALSE, profile.plot=FALSE) {
     equal.levels <- summary(fit2)
     
     #Flatness
+    cont2 <- diag(x = -1, k, k)
+    for(i in 1:(k-1)) {cont2[i,(i+1)]=1}
+    cont2 <- cont2[1:(k-1),]
+    allS <- var(z[,1:k]) #overall variance
+    xbar <- apply(z[,1:k],2,mean) #grand mean
+    xbar.dif <- cont2 %*% xbar
     t.sqr <- n*t(xbar.dif)%*%solve(summary(fit1, test="Wilks")$SS$Residuals)%*%xbar.dif
     F.val <- (n-g-k+2)/(k-1)*t.sqr
     df1 <- (k-1)
