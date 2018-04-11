@@ -7,8 +7,8 @@ Description: A suite of multivariate methods and data visualization
       The package includes routines to perform criterion-related profile analysis, profile analysis 
       via multidimensional scaling, moderated profile analysis, profile analysis by group, and a 
       within-person factor model to derive score profiles.
-Version: 0.3-4
-Date: 2016-10-19
+Version: 0.3-5
+Date: 2018-4-10
 Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
     <cddesjardins@gmail.com>
 Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>

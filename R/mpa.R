@@ -30,7 +30,7 @@
 #' @seealso \code{\link{cpa}}
 #' @keywords method
 
-mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 = FALSE){
+mpa <- function(formula, data, moderator, k = 100, na.action = "na.fail", stage2 = FALSE){
   cat("# -------- Executing Stage 1 --------  #\n\n")
   stage1_mod <- lm(formula=formula,data=data,na.action = na.action)
   print(stage1_tab <- anova(stage1_mod))
@@ -43,9 +43,9 @@ mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 =
     
     # Identify number of predictors
     pred_num <- length(names(stage1_mod$model)[-c(1, loc)])
-    x <- stage1_mod$model[,-c(1, loc)]
+    x <- stage1_mod$model[, -c(1, loc)]
     z <- stage1_mod$model[,loc]
-    z <- ifelse(z == levels(z)[1], 1, 0)
+    # z <- ifelse(z == levels(z)[1], 1, 0)
     
     # Find level effect
     Xp <- apply(x, 1, mean)
@@ -53,7 +53,7 @@ mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 =
     # Pattern component by groups
     dat <- stage1_mod$model
     mod_data <- dat[,loc]
-    reg_names <- levels(data[, moderator])
+    reg_names <- levels(dat[, moderator])
     ref <- which(mod_data == reg_names[1])
     foc <- which(mod_data == reg_names[2])
     x.ref <- dat[ref,-c(1, loc)]
@@ -70,7 +70,7 @@ mpa <- function(formula, data, moderator, k=100, na.action = "na.fail", stage2 =
     
     # Set up the regression weight contrast
     
-    bref <- coef(stage1_mod)[-(grep(levels(data$mod)[2], names(coef(stage1_mod))))]
+    bref <- coef(stage1_mod)[-grep(moderator, names(coef(stage1_mod)))]
     bref <- bref[-1]
     brefsum <- sum(bref) 
     refstar <- (bref - mean(bref)) * k
