@@ -17,4 +17,3 @@ Prints the default output from fitting the \code{cpa} function.
 \seealso{
 \code{\link{cpa}}
 }
-

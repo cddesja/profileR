@@ -36,4 +36,3 @@ paos(nutrient, scale=TRUE)
 \seealso{
 \code{\link{cpa}}, \code{\link{pr}}
 }
-

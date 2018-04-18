@@ -67,4 +67,3 @@ Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of p
 \code{\link{pcv}}
 }
 \keyword{method}
-

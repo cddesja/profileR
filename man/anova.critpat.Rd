@@ -17,4 +17,3 @@ Computes an analysis of variance table for a criterion-related profile analysis
 \seealso{
 \code{\link{cpa}}
 }
-

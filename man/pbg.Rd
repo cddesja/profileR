@@ -37,4 +37,3 @@ summary(mod) #prints the results of three profile by group hypothesis tests
 \seealso{
 \code{\link{pr}}, \code{\link{profileplot}}
 }
-

@@ -42,4 +42,3 @@ Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of p
 \code{\link{cpa}},\code{\link{print.critpat}},\code{\link{summary.critpat}},\code{\link{anova.critpat}},\code{\link{plot.critpat}}
 }
 \keyword{methods}
-

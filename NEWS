@@ -1,8 +1,8 @@
 Changes in version: profileR_0.3-5
 
  * Fixed bug in pbg function
-
- * Removed vignette.
+ 
+ * Added bacc2001 data set.
 
 
 Changes in version: profileR_0.3-4

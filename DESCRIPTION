@@ -20,22 +20,4 @@ Depends:
     R (>= 3.0.0)
 License: GPL (>= 2)
 LazyData: true
-Collate:
-    'anova.critpat.R'
-    'cpa.R'
-    'mpa.R'
-    'pams.R'
-    'paos.R'
-    'pbg.R'
-    'pcv.R'
-    'plot.critpat.R'
-    'plot.prof.R'
-    'pr.R'
-    'print.critpat.R'
-    'print.prof.R'
-    'print.profg.R'
-    'profileplot.R'
-    'summary.critpat.R'
-    'summary.profg.R'
-    'wprifm.R'
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

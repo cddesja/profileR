@@ -17,4 +17,3 @@ Plots the pattern vs. level reliability returned from the \code{pr} function of 
 \seealso{
 \code{\link{pr}}
 }
-

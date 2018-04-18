@@ -37,4 +37,3 @@ Davison, M. L., Davenport, E. C., & Bielinski, J. (1995). PAMS: SPSS Template.
 \seealso{
 \code{\link{cpa}}, \code{\link{pr}}
 }
-

@@ -39,4 +39,3 @@ Davison, M. L., & Davenport, E. C. (2002). Identifying criterion-related pattern
 \code{\link{plot.prof}}
 }
 \keyword{methods}
-

@@ -40,4 +40,3 @@ leis.plot
 \seealso{
 \link[ggplot2]{ggplot}, \link{PS}
 }
-

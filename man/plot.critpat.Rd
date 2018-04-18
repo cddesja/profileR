@@ -17,4 +17,3 @@ Plots the criterion-related level and pattern profiles for each observation
 \seealso{
 \code{\link{cpa}}
 }
-

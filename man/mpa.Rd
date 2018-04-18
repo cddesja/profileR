@@ -4,8 +4,7 @@
 \alias{mpa}
 \title{Moderated Profile Analysis}
 \usage{
-mpa(formula, data, moderator, k = 100, na.action = "na.fail",
-  stage2 = FALSE)
+mpa(formula, data, moderator, k = 100, na.action = "na.fail")
 }
 \arguments{
 \item{formula}{An object of class \code{\link{formula}} of the form \code{response ~ terms}.}
@@ -17,30 +16,31 @@ mpa(formula, data, moderator, k = 100, na.action = "na.fail",
 \item{k}{Corresponds to the scalar constant and must be greater than 0. Defaults to 100.}
 
 \item{na.action}{How should missing data be handled? Function defaults to failing if missing data are present.}
-
-\item{stage2}{Should stage 2 be executed regardless of stage 1 outcome? defaults to FALSE.}
 }
 \value{
-An object of class \code{critpat} is returned, listing the following components:
+A list containing the following components:
 \itemize{
- \item \code{r2_full} - the proportion of variability attributed to the full model
- \item \code{r2_red} - the proportion of variability attributed to the reduced model
- \item \code{ftable} - the associated F-statistic table
- \item \code{F-statistic} - the F-statistics
- \item \code{df} - the dfs used in the test
- \item \code{pvalue} - the p-values for the test}
+ \item \code{call} - The model call
+ \item \code{output} - The output from the moderated criterion-related profile analysis
+ \item \code{f.table} - The corrected F-table for assessing differences in patterns.
+ \item \code{moder.model} - The standard moderated regression model
+ }
 }
 \description{
-Implements the moderated profile analysis approach developed by Davison & Davenport (unpublished) - EXPERIMENTAL SUPPORT
+Implements the moderated profile analysis approach developed by Davison & Davenport (unpublished)
 }
 \details{
-The function returns the criterion-related moderated profile analysis described in Davison & Davenport (unpublished). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are not yet available but will be in future implementations. \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect.
+The function returns the criterion-related moderated profile analysis described in Davison & Davenport (unpublished). Missing data are presently handled by specifying \code{na.action = "na.omit"}, which performs listwise deletion and \code{na.action = "na.fail"}, the default, which causes the function to fail. The following S3 generic functions are not yet available but will be in future implementations. \code{summary()},\code{anova()}, \code{print()}, and \code{plot()}. These functions provide a summary of the analysis (namely, R2 and the level and pattern components); perform ANOVA of the R2 for the pattern, the level, and the overall model; provide output similar to \code{lm()}, and plots the pattern effect. WORKS ONLY WITH TWO GROUPS!
 }
 \examples{
 \dontrun{
 data(mod_data)
-mod <- mpa(dv ~ pred1 * mod + pred2 * mod, moderator = "mod", data = mod_data)
+mod <- mpa(gpa ~ satv * major + satq * major, moderator = "major", data = bacc2001)
+summary(mod$output)
+mod$f.table
+summary(mod$moder.model)
 }
+
 
 }
 \references{
@@ -50,4 +50,3 @@ Davison, M., & Davenport, E. (unpublished). Comparing Criterion-Related Patterns
 \code{\link{cpa}}
 }
 \keyword{method}
-
