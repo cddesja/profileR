@@ -4,7 +4,7 @@
 
 ### Type: Package
 
-**Development version**: v0.3-3 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
+**Development version**: v0.3-5 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
 [![](https://cranlogs.r-pkg.org/badges/profileR)](https://cran.r-project.org/package=profileR)
 
 Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
