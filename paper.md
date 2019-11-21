@@ -29,45 +29,15 @@ bibliography: paper.bib
 
 # Summary
 
-Assessments, a series of items used to measure one or more constructs, are administered in a variety of contexts. Schools administer high-stakes standardized assessments for accountability purposes and to measure student aptitude; a young adult exhibiting compensatory and binge eating behaviors may complete a brief assessment to ascertain the likelihood of an underlying eating disorder; and human resources may recommend whether to hire an applicant based on a personality assessment. A student's, a young adult's, and applicant's scores on these assessments make up their profile. 
+A profile is a vector containing a person’s or group's scores from an assessment. An assessment, defined here as a series of items used to measure one or more constructs, are administered in a variety of contexts. Schools administer high-stakes standardized assessments for accountability purposes and to measure student aptitude and progress; a young adult exhibiting compensatory and binge eating behaviors may complete a brief assessment to ascertain the likelihood of an underlying eating disorder; and human resources may recommend whether to hire an applicant based on a personality assessment. A student's, a young adult's, and an applicant's scores on these assessments make up their profile. 
 
-A suite of techniques known as profile analysis exists to identify, quantify, and interpret the extent to which individuals or groups exhibit distinct profile in terms of level, pattern, variability, and scale. Profiles can be analyzed using as repeated measures MANOVA, using multidimensional scaling and factor analysis, cluster analysis, or with supervised or unsupervised classification techniques. However, applying these disparate techniques in R can be challenging for novices and practitioners with limited statistical trainings as these techniques are either unavailable, require interfacing with a myriad of packages, or require understanding the relationship between a technique and a more general statistical framework. The R package ``profileR`` was design to address this need. 
+![Figure 1](figure1.png) shows the score profiles of six random participants on an assessment of the five personality constructs - agreebleness (A), conscientiousness (C), Extraversion (E), Neuroticism (N), and Opennness (O). Figure 1 shows that participant 975 had the highest average score across the constructs (23.6), while 710 has the lowest average score (16.4), that individuals 273 and 710 and 392 and 975 share similar, potentially qualitatively important, patterns, and that participant 273's profile had the greatest variance (36.2), while participant 392's had the least (5.5). These features the level, pattern, and variability in a profile often hold important clinicial meaning and statitistically assessing differences in these features is of importance to clincians, educators, and researchers.   
 
+A suite of techniques, collectively known as profile analysis, can be used to analyze and classifiy profiles. These techniques come from a variety of statistical frameworks including repeated measures MANOVA, multidimensional scaling and factor analysis, cluster analysis, or with supervised or unsupervised classification techniques. Applying these disparate techniques in R can be challenging for novices and practitioners with limited statistical training as these techniques are either unavailable, require interfacing with a myriad of packages, or require understanding the relationship between a technique and a more general statistical modeling framework. The R package ``profileR`` was designed to address this need. 
 
-The R package ``profileR``, currently in version 0.3-5 on the comprehensive R archive network (CRAN), implements profile reliability [@bulut2013between], criterion-related profile analysis [@davison2002identifying], profile analysis via multidimensional scaling [@pams], moderated profile analysis, profile analysis by group, and a within-person factor model to derive score profiles [@davison2009factor] as well as a variety of graphical methods to visualize profiles. The API for ``profileR`` was designed to provide a unified and user-friendly R interface for these methods. It uses the S3 class and many generics have been written to work with ``profileR`` objects.
+The R package ``profileR``, currently in version 0.3-5 on the comprehensive R archive network (CRAN), implements profile reliability [@bulut2013between], criterion-related profile analysis [@davison_identifying_2002], profile analysis via multidimensional scaling [@pams], moderated profile analysis, profile analysis by group, and a within-person factor model to derive score profiles [@davison2009factor] as well as a variety of graphical methods to visualize profiles. The API for ``profileR`` was designed to provide a unified, consistent, and user-friendly R interface for these methods (see ![Figure 2](profileR.png). It uses the S3 class and many generics have been written to work with ``profileR`` objects. Any future extensions to ``profileR`` will adhere to the existing API. 
 
-``profileR`` was designed with researchers and practitioners in education, psychology and medicine in mind that are R novices. It has been used in counseling outcome research [@schmidt2018] and to study learning behavior in mice. It featured in a handbook on measurement and psychometrics in R [@desjardins2018], been used workshops and graduate level courses, is psychometric CRAN task view, and is downloaded, on average, 752 per month. Our focus on R novice and usability, should help to expand the reach of profile analysis into new scientific areas.
+``profileR`` was designed with researchers and practitioners in education, psychology, and medicine in mind with limited statistical knowledge and R experience. It has been used in counseling outcome research [@schmidt2018] and to study learning behavior in mice. It was featured in a handbook on measurement and psychometrics in R [@desjardins2018handbook], has been used in workshops and graduate level courses, is a part of the psychometric CRAN task view, and is downloaded, on average, 752 per month. Our focus on R novice and usability, should help to expand the reach of profile analysis into new scientific field.
 
-# Mathematics
-
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
-
-Double dollars make self-standing equations:
-
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
-
-
-# Citations
-
-Citations to entries in paper.bib should be in
-[rMarkdown](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-format.
-
-For a quick reference, the following citation commands can be used:
-- `@author:2001`  ->  "Author et al. (2001)"
-- `[@author:2001]` -> "(Author et al., 2001)"
-- `[@author1:2001; @author2:2001]` -> "(Author1 et al., 2001; Author2 et al., 2002)"
-
-# Figures
-
-Figures can be included like this: ![Example figure.](figure.png)
-
-# Acknowledgements
-
-We acknowledge contributions from Brigitta Sipocz, Syrtis Major, and Semyeong
-Oh, and support from Kathryn Johnston during the genesis of this project.
 
 # References
