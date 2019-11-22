@@ -59,3 +59,57 @@
 #' }
 #' @source \url{http://psych.colorado.edu/~carey/Courses/PSYC7291/ClassDataSets.htm}
 "interest"
+
+#' Hypothetical Executive Functioning Assessment
+#'
+#' The executive function assessement consists of 10 items measured on 30 student participants. The data were randomly generated to demonstrate various psychometric models (e.g., CTT, a one-facet G-study)
+#'
+#' @docType data
+#' @keywords dataset
+#' @format A data frame in long-format with 30 participants' responses to 10 items.
+#'  \describe{
+#' \item{Participants}{The participant ID.}
+#' \item{Items}{The item ID.}
+#' \item{Score}{A participant's score on a particular item.}
+#' }
+"efData"
+
+#' Hypothetical writing prompt example
+#'
+#' This is a hypothetical data set to demonstrate a two facet cross design for generalizability theory. The design is an S X W X R design, a student by writing prompt by rater design. See chapter 3 of "Using R for Educational and Psychological Measurement" for more details.
+#'
+#' @docType data
+#' @keywords dataset
+#' @format A data frame with 100 rows and 4 variables:
+#' \describe{
+#'   \item{student}{The student identifier}
+#'   \item{prompt}{The writing prompt identifier. There were five prompts}
+#'   \item{rater}{The rater identifier. There were two raters.}
+#'   \item{score}{Student score on the writing prompt. Ranged from 4 - 100, with a maximum score of 100.}
+#' }
+#' @source Desjardins, C. D. & Bulut, O. (2017). Using R for Educational and Psychological Measurement.
+#' @examples
+#' library(lme4)
+#' two.facet <- lmer(scores ~ (1 | students) + (1  | prompts) + (1 | raters) + (1 | students:prompts) +  (1 | students:raters) + (1 | prompts:raters), data = writing)
+#' gstudy(two.facet)
+"writing"
+
+#' Second hypothetical writing prompt example
+#'
+#' This is a hypothetical data set to demonstrate a partially nested two-facet design for generalizability theory. In this design, the raters are nested within students, W X (S:R). See chapter 3 of "Using R for Educational and Psychological Measurement" for more details.
+#'
+#' @docType data
+#' @keywords dataset
+#' @format A data frame with 100 rows and 4 variables:
+#' \describe{
+#'   \item{student}{The student identifier}
+#'   \item{prompt}{The writing prompt identifier. There were five prompts}
+#'   \item{rater}{The rater identifier. There were two raters.}
+#'   \item{score}{Student score on the writing prompt. Ranged from 4 - 100, with a maximum score of 100.}
+#' }
+#' @source Desjardins, C. D. & Bulut, O. (2017). Using R for Educational and Psychological Measurement.
+#' @examples
+#' library(lme4)
+#' nested.design <- lmer(scores ~ (1 | students/raters) + (1 | prompts) + (1 | students:prompts), data = writing2)
+#' gstudy(nested.design)
+"writing2"
