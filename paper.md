@@ -34,7 +34,7 @@ A suite of techniques, collectively known as **profile analysis**, can be used t
 
 The R package ``profileR``, currently in version 0.3-5 on the comprehensive R archive network (CRAN), implements profile reliability [@bulut2013between], criterion-related profile analysis [@davison_identifying_2002], profile analysis via multidimensional scaling [@pams], moderated profile analysis, profile analysis by group, and a within-person factor model to derive score profiles [@davison2009factor] as well as a variety of graphical methods to visualize profiles. The API for ``profileR`` was designed to provide a unified, consistent, and user-friendly R interface for these methods (see Figure 2). It uses the S3 class and many generics have been written to work with ``profileR`` objects. Any future statistical methods added to ``profileR`` will adhere to the existing API. 
 
-![Select functions and their generics available in profileR](profileR.png)
+![Primary functions and their generic functions available in profileR](profileR.png)
 
 ``profileR`` has been used in education, counseling, and to study learning behavior in mice. The package has been featured in a handbook on measurement and psychometrics in R [@desjardins2018handbook]; used in workshops and graduate level courses; is a part of the psychometric CRAN task view; and is downloaded, on average, 752 per month from CRAN. Our focus on R novices and usability, should help to expand the reach of profile analysis into new scientific disciplines.
 
