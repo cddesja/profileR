@@ -18,8 +18,9 @@ devtools::install_github(repo = "cddesja/profileR")
 ```
 
 #### Changes since v0.3
-- Added JSS unpublished, and under review, manuscript as a vignette.
+- Added gtheory functions
 - Added the spouse data in the package. 
+- Added ef and writing data.
 
 #### Changes since v0.2
 - Added wprifm, which performs a within-person random intercept factor model to obtain a score profile.
