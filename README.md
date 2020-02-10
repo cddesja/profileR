@@ -9,7 +9,7 @@
 
 Description: Fit profile analytic models. This includes the multivariate methods and data visualization tools 
     to implement profile analysis and cross-validation techniques described 
-    in Davison & Davenport (2002) and Bulut (2013).
+    in Davison & Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017).
 
 Released versions are installable from [CRAN](https://cran.r-project.org/package=profileR) and the developmental version can be installed by:
 
