@@ -29,9 +29,9 @@
 
 ***
 
-### Installation
+### Installing ``profileR``
 
-Released versions are installable from [CRAN](https://cran.r-project.org/package=profileR) by using:
+Most recent version (and early versions) are installable from [CRAN](https://cran.r-project.org/package=profileR) by using:
 
 ```R
 install.packages("profileR")
