@@ -8,6 +8,8 @@
 
 ### Type: Package
 
+***
+
 ### Overview
 
 ``profileR`` can be used for estimating profile analytic models. This includes the multivariate methods and data visualization tools to implement profile analysis and cross-validation techniques described in previous studies, including Davison & Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017). Some of the principal functions in ``profileR`` include:
