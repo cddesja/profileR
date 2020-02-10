@@ -47,7 +47,7 @@ devtools::install_github(repo = "cddesja/profileR")
 
 ***
 
-### Using and citing ``profileR``
+### Using and Citing ``profileR``
 
 To learn how to conduct profile analysis using ``profileR``, you can see our paper available on [PsyArxiv](https://psyarxiv.com/sgy8m). This paper walks through some of the principal methods available in ``profileR``. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in ``profileR``. 
 
