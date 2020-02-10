@@ -4,8 +4,14 @@
 \alias{cpa}
 \title{Criterion-Related Profile Analysis}
 \usage{
-cpa(formula, data, k = 100, na.action = "na.fail",
-  family = "gaussian", weights = NULL)
+cpa(
+  formula,
+  data,
+  k = 100,
+  na.action = "na.fail",
+  family = "gaussian",
+  weights = NULL
+)
 }
 \arguments{
 \item{formula}{An object of class \code{\link{formula}} of the form \code{response ~ terms}.}

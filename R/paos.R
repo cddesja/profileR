@@ -12,7 +12,7 @@
 #' @param scale If TRUE (default), variables are standardized by dividing their standard deviations.
 #' @return A summary table is returned, listing the following two hypothesis:
 #' \itemize{
-#'  \item Hypothesis 1 - Ratios of the means of the variables over the hypothesized mean are equal to 1.
+#' \item Hypothesis 1 - Ratios of the means of the variables over the hypothesized mean are equal to 1.
 #' \item Hypothesis 2 - All of the ratios are equal to each other.
 #'}
 #' @examples
@@ -32,7 +32,7 @@ paos <- function(data, scale=TRUE) {
     {x1 <- as.matrix(data, ncol=ncol(data))}
   
   #The difference matrix for Part II
-  x2 <- matrix(, nrow=nrow(data), ncol=(ncol(data)-1))
+  x2 <- matrix(NA, nrow=nrow(data), ncol=(ncol(data)-1))
   
   for (i in 1:(ncol(x1)-1)) {
     x2[,i] <- x1[,(i+1)]-x1[,i]
@@ -76,13 +76,12 @@ paos <- function(data, scale=TRUE) {
   p <- 1-pf(f, df1, df2, lower.tail = TRUE, log.p = FALSE)
   result2 <- data.frame(t2=t2,F=f,df1=df1,df2=df2,p.value=p);
 
-  #Final results
+  #Return the results
   result <- rbind(result1,result2)
+  result <- as.data.frame(result)
   colnames(result) <- c("T-Squared","F","df1","df2","p-value")
   rownames(result) <- c("Ho: Ratios of the means over Mu0=1","Ho: All of the ratios are equal to each other")
   
-  cat("\nProfile Analysis for One Sample with Hotelling's T-Square:\n")
-  cat("\n")
   return(result)
 }
 

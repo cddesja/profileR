@@ -14,7 +14,7 @@ paos(data, scale = TRUE)
 \value{
 A summary table is returned, listing the following two hypothesis:
 \itemize{
- \item Hypothesis 1 - Ratios of the means of the variables over the hypothesized mean are equal to 1.
+\item Hypothesis 1 - Ratios of the means of the variables over the hypothesized mean are equal to 1.
 \item Hypothesis 2 - All of the ratios are equal to each other.
 }
 }

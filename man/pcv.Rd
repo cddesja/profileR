@@ -4,8 +4,14 @@
 \alias{pcv}
 \title{Cross-Validation for Profile Analysis}
 \usage{
-pcv(formula, data, seed = NULL, na.action = "na.fail",
-  family = "gaussian", weights = NULL)
+pcv(
+  formula,
+  data,
+  seed = NULL,
+  na.action = "na.fail",
+  family = "gaussian",
+  weights = NULL
+)
 }
 \arguments{
 \item{formula}{An object of class \code{\link{formula}} of the form \code{response ~ terms}.}

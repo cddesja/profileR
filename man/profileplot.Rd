@@ -4,8 +4,14 @@
 \alias{profileplot}
 \title{Score Profile Plot}
 \usage{
-profileplot(form, person.id, standardize = TRUE, interval = 10,
-  by.pattern = TRUE, original.names = TRUE)
+profileplot(
+  form,
+  person.id,
+  standardize = TRUE,
+  interval = 10,
+  by.pattern = TRUE,
+  original.names = TRUE
+)
 }
 \arguments{
 \item{form}{A matrix or dataframe including two or more subscores.}
