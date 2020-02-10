@@ -14,7 +14,22 @@ output: github_document
 
 ### Overview
 
-``profileR`` can be used for estimating profile analytic models. This includes the multivariate methods and data visualization tools to implement profile analysis and cross-validation techniques described in previous studies, including Davison & Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017).
+``profileR`` can be used for estimating profile analytic models. This includes the multivariate methods and data visualization tools to implement profile analysis and cross-validation techniques described in previous studies, including Davison & Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017). Some of the principal functions in ``profileR`` include:
+
+1. **Statistical methods:**
+  
+  - Profile analysis for one sample using Hotelling's T-squared statistic
+  - Profile analysis by groups to assess parallelism, equality, and flatness
+  - Profile analysis via multidimensional scaling (a.k.a., PAMS)
+  - Criterion-related profile analysis
+  - Pattern and level reliability for profiles
+  
+2. **Visualizations:**
+  
+  - Profile plots for a set of multivariate scores
+  - Profile plots returned from profile analysis by groups (see ``pbg``)
+  - Plots for showing pattern and levels effects in criterion-related profile analysis (see ``cpa``)
+  
 
 ***
 
@@ -63,12 +78,12 @@ To cite ``profile``, you can use the following citations:
 
 ### Contributing and Contact Information
 
-We are open to suggestions for improvements in ``profileR``. Therefore, we invite all users to post a question or to provide us with (either positive or negative) feedback on the functions available in ``profileR``. In addition, we welcome users who would like to contribute to the ``profileR`` package by adding new functions or co-developing some functions with us. 
+We are open to suggestions for improvements in ``profileR``. Therefore, we invite all users to post a question or to provide us with (either positive or negative) feedback on the functions available in ``profileR``. When filing an issue, the most important thing is to include a minimal reproducible example so that we can quickly verify the problem, and then figure out how to fix it. There are two things you may need to include to make your example reproducible: data and code. If you are using additional packages, we would need that information as well. 
 
-Please note that ``profileR`` is released with a [Contributor Code of Conduct](). By contributing to this project, you agree to abide by its terms.
+In addition, we welcome users who would like to contribute to the ``profileR`` package by adding new functions or co-developing some functions with us. You can let us know which function(s) you want to develop or which of the existing function(s) you want to improve. Please note that ``profileR`` is released with a [Contributor Code of Conduct](https://github.com/cddesja/profileR/blob/master/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 
-To get further help regarding the functions available in ``profileR``, please email us:
+To get further help regarding the functions available in ``profileR`` or inquries regarding contributions, please email us:
 
   - Okan Bulut (<okanbulut84@gmail.com>)
   - Chris Desjardins (<cddesjardins@gmail.com>)
