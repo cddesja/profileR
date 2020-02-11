@@ -16,17 +16,17 @@
 
 1. **Statistical methods:**
   
-  - Profile analysis for one sample using Hotelling's T-squared statistic
-  - Profile analysis by groups to assess parallelism, equality, and flatness
-  - Profile analysis via multidimensional scaling (a.k.a., PAMS)
-  - Criterion-related profile analysis
-  - Pattern and level reliability for profiles
+  - Profile analysis for one sample using Hotelling's T-squared statistic -- ``paos()``
+  - Profile analysis by groups to assess parallelism, equality, and flatness -- ``pbg()``
+  - Profile analysis via multidimensional scaling (a.k.a., PAMS) -- ``pams()``
+  - Criterion-related profile analysis -- ``cpa()``
+  - Pattern and level reliability for profiles -- ``pr()``
   
 2. **Visualizations:**
   
-  - Profile plots for a set of multivariate scores (see ``profileplot``)
-  - Profile plots returned from profile analysis by groups (see ``pbg``)
-  - Plots for showing pattern and levels effects in criterion-related profile analysis (see ``cpa``)
+  - Profile plots for a set of multivariate scores (see ``profileplot()``)
+  - Profile plots returned from profile analysis by groups (see ``pbg()``)
+  - Plots for showing pattern and levels effects in criterion-related profile analysis (see ``cpa()``)
   
 
 ***
