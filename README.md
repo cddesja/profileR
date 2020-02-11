@@ -24,7 +24,7 @@
   
 2. **Visualizations:**
   
-  - Profile plots for a set of multivariate scores
+  - Profile plots for a set of multivariate scores (see ``profileplot``)
   - Profile plots returned from profile analysis by groups (see ``pbg``)
   - Plots for showing pattern and levels effects in criterion-related profile analysis (see ``cpa``)
   
