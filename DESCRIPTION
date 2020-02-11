@@ -9,9 +9,9 @@ Description: A suite of multivariate methods and data visualization
       within-person factor model to derive score profiles.
 Version: 0.3-5
 Date: 2019-11-22
-Author: Okan Bulut <okanbulut84@gmail.com>, Christopher David Desjardins
-    <cddesjardins@gmail.com>
-Maintainer: Christopher David Desjardins <cddesjardins@gmail.com>
+Authors@R: c(
+    person("Okan", "Bulut", email = "okanbulut84@gmail.com", role = "aut"),
+    person("Christopher D", "Desjardins", email = "cddesjardins@gmail.com", role = c("aut", "cre")))
 Depends:
     ggplot2,
     RColorBrewer,
