@@ -1,8 +1,4 @@
 
----
-output: github_document
----
-
 # profileR
 
 **Development version**: v0.3-5 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
@@ -12,9 +8,11 @@ output: github_document
 
 ### Type: Package
 
+***
+
 ### Overview
 
-``profileR`` can be used for estimating profile analytic models. This includes the multivariate methods and data visualization tools to implement profile analysis and cross-validation techniques described in previous studies, including Davison & Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017). Some of the principal functions in ``profileR`` include:
+``profileR`` can be used for estimating profile analytic models. This includes the multivariate methods and data visualization tools to implement profile analysis and cross-validation techniques described in previous studies, including Davison and Davenport (2002), Bulut (2013), and Bulut, Davison, and Rodriguez (2017). Some of the principal functions in ``profileR`` include:
 
 1. **Statistical methods:**
   
@@ -26,16 +24,16 @@ output: github_document
   
 2. **Visualizations:**
   
-  - Profile plots for a set of multivariate scores
+  - Profile plots for a set of multivariate scores (see ``profileplot``)
   - Profile plots returned from profile analysis by groups (see ``pbg``)
   - Plots for showing pattern and levels effects in criterion-related profile analysis (see ``cpa``)
   
 
 ***
 
-### Installation
+### Installing ``profileR``
 
-Released versions are installable from [CRAN](https://cran.r-project.org/package=profileR) by using:
+Most recent version (and early versions) are installable from [CRAN](https://cran.r-project.org/package=profileR) by using:
 
 ```R
 install.packages("profileR")
@@ -53,7 +51,7 @@ devtools::install_github(repo = "cddesja/profileR")
 
 To learn how to conduct profile analysis using ``profileR``, you can see our paper available on [PsyArxiv](https://psyarxiv.com/sgy8m). This paper walks through some of the principal methods available in ``profileR``. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in ``profileR``. 
 
-To cite ``profile``, you can use the following citations:
+To cite ``profileR``, you can use the following citations:
 
 > Bulut, O., & Desjardins, C. D. (2020). *Profile analysis of multivariate data: A brief introduction to the profileR package*. Retrieved from [psyarxiv.com/sgy8m](https://psyarxiv.com/sgy8m). doi: 10.31234/osf.io/sgy8m
 

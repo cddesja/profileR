@@ -1,8 +1,4 @@
 
----
-output: github_document
----
-
 ## Contributor Code of Conduct
 
 As the maintainers of ``profileR``, we pledge to respect all people who want to contribute to the package through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities. In addition, we pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
