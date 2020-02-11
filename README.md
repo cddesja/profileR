@@ -50,9 +50,13 @@ devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE)
 
 ### Using and Citing ``profileR``
 
-To learn how to conduct profile analysis using ``profileR``, you can see our paper available on [PsyArxiv](https://psyarxiv.com/sgy8m). This paper walks through some of the principal methods available in ``profileR``. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in ``profileR``. 
+To learn how to conduct profile analysis using ``profileR``, you can see our paper available on [PsyArxiv](https://psyarxiv.com/sgy8m). This paper walks through some of the principal methods available in ``profileR``. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in ``profileR``. To see this paper as a vignette in the package:
 
-To cite ``profileR``, you can use the following citations:
+```R
+vignette("profiler-vignette", package = "profileR")
+```
+
+To cite ``profileR`` in your work, you can use the following APA-style citations:
 
 > Bulut, O., & Desjardins, C. D. (2020). *Profile analysis of multivariate data: A brief introduction to the profileR package*. Retrieved from [psyarxiv.com/sgy8m](https://psyarxiv.com/sgy8m). doi: 10.31234/osf.io/sgy8m
 
