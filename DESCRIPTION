@@ -18,6 +18,6 @@ Depends:
     reshape,
     lavaan,
     R (>= 3.0.0)
-License: GPL-3
+License: GPL-3 + file LICENSE
 LazyData: true
 RoxygenNote: 7.0.2

@@ -1,0 +1,7 @@
+\documentclass{article}
+\usepackage{pdfpages}
+%\VignetteIndexEntry{author2019profileR}
+
+\begin{document}
+\includepdf[pages=-, fitpaper=true]{profileR.pdf}
+\end{document}
