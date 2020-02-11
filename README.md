@@ -43,7 +43,7 @@ and the developmental version on Github can be installed by using:
 
 ```R
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE) # in case your R version is older
-devtools::install_github(repo = "cddesja/profileR")
+devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE)
 ```
 
 ***
