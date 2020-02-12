@@ -39,11 +39,18 @@ Most recent version (and early versions) are installable from [CRAN](https://cra
 install.packages("profileR")
 ```
 
-and the developmental version on Github can be installed by using:
+and the developmental version on GitHub can be installed by using:
 
 ```R
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE) # in case your R version is older
-devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE)
+devtools::install_github(repo = "cddesja/profileR") # without the vignette
+```
+
+If LaTeX is available, ``profileR`` can be installed with its vignette by using:
+
+```R
+Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE) # in case your R version is older
+devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE) # with the vignette
 ```
 
 ***
