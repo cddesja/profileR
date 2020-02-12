@@ -46,7 +46,7 @@ Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE) # in case your R version is o
 devtools::install_github(repo = "cddesja/profileR") # without the vignette
 ```
 
-If LaTeX is already installed, `profileR` can be installed with its vignette by using:
+If LaTeX is available, ``profileR`` can be installed with its vignette by using:
 
 ```R
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS=TRUE) # in case your R version is older
