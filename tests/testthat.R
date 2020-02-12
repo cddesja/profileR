@@ -4,7 +4,7 @@ library(testthat)
 
 test_that("is the object of type critpat?", {
     mod <- cpa(R ~ A + H + S + B, data = IPMMc)
-    expect_match(method(mod), "meow")
+    expect_(method(mod), "meow")
 })
        
 
