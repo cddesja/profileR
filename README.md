@@ -57,7 +57,7 @@ devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE) # wi
 
 ### Verifying and testing ``profileR``
 
-To verify the installation and test that the examples work as intended, please this our [wiki](https://github.com/cddesja/profileR/wiki/Verifying-the-installation-of-profileR) 
+To verify the installation and test that the examples work as intended, please visit our [wiki](https://github.com/cddesja/profileR/wiki/Verifying-the-installation-of-profileR). 
 
 ### Using and Citing ``profileR``
 
