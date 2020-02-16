@@ -17,11 +17,11 @@
 #' @examples
 #' \dontrun{
 #'	data(PS)
-#'  myplot <- profileplot(PS[,2:4], person.id = PS$Person,by.pattern = TRUE, original.names = TRUE)
-#'  myplot
+#'	myplot <- profileplot(PS[,2:4], person.id = PS$Person,by.pattern = TRUE, original.names = TRUE)
+#'	myplot
 #' 
 #' data(leisure)
-#' leis.plot <- profileplot(leisure[,2:4],standardize=TRUE,by.pattern=FALSE)
+#' leis.plot <- profileplot(leisure[,2:5],standardize=TRUE,by.pattern=FALSE)
 #' leis.plot
 #' }
 #' @seealso \link[ggplot2]{ggplot}, \link{PS}
@@ -108,8 +108,6 @@ profileplot <- function(form,person.id,standardize=TRUE,interval=10,by.pattern=T
 	
 	else {
 	
-  
-  	
   	#Prepare data for plotting
   	form <- as.data.frame(form)
   	numvariables <- ncol(form)
