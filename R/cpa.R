@@ -46,14 +46,13 @@
 #' @references Davison, M., & Davenport, E. (2002). Identifying criterion-related patterns of predictor scores using multiple regression. \emph{Psychological Methods, 7}(4), 468-484. DOI: 10.1037/1082-989X.7.4.468.
 #' @seealso \code{\link{pcv}}
 #' @keywords method
-
 cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian", weights = NULL){
 	if(is.null(weights))
     regweg <- glm(formula=formula,data=data,family = family,na.action = na.action)
     else regweg <- glm(formula=formula,data=data,family = family,na.action = na.action,weights=weights)
 	  b <- coef(regweg)[-1]
     bstar <- b - mean(b)
-    xc <- k*bstar
+        xc <- k*bstar
     
     if(is.null(weights))
     x <- regweg$model[,-1]
@@ -74,15 +73,15 @@ cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian"
     rownames(r2) <- c("Full Model","Pattern","Level")
     r2 <- round(r2,digits=6)
     
-    full.df <- c(v,N-v-1)
+    full.df <- c(v, N-v-1)
     F.R2.full <- (R2.f*full.df[2])/((1-R2.f)*full.df[1])
     p.value.F.R2.full <- pf(F.R2.full,full.df[1],full.df[2],lower.tail=FALSE)
     
-    pat.df <- c(v-1,N-v-1)
+    pat.df <- c(v-1, N-v-1)
     F.R2.pat <- ((R2.f - R2.lvl)*pat.df[2])/((1-R2.f)*pat.df[1])
     p.value.F.R2.pat <- pf(F.R2.pat,pat.df[1],pat.df[2],lower.tail = FALSE)
     
-    lvl.df<-c(1,N-v-1)
+    lvl.df<-c(1, N-v-1)
     F.R2.lvl <- ((R2.f - R2.pat)*lvl.df[2])/((1-R2.f))
     p.value.F.R2.lvl <- pf(F.R2.lvl,lvl.df[1],lvl.df[2],lower.tail=FALSE)
     
@@ -105,4 +104,4 @@ cpa <- function(formula, data, k=100, na.action = "na.fail", family = "gaussian"
     
     class(output) <- "critpat"
     return(output)
-  }
+  }      

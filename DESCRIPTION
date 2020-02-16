@@ -7,17 +7,22 @@ Description: A suite of multivariate methods and data visualization
       The package includes routines to perform criterion-related profile analysis, profile analysis 
       via multidimensional scaling, moderated profile analysis, generalizability theory, profile analysis by group, and a 
       within-person factor model to derive score profiles.
-Version: 0.3-5
-Date: 2019-11-22
+Version: 0.3-6
+Date: 2020-02-12
 Authors@R: c(
     person("Okan", "Bulut", email = "okanbulut84@gmail.com", role = "aut"),
-    person("Christopher D", "Desjardins", email = "cddesjardins@gmail.com", role = c("aut", "cre")))
+    person("Christopher David", "Desjardins", email = "cddesjardins@gmail.com", role = c("aut", "cre")))
 Depends:
     ggplot2,
     RColorBrewer,
     reshape,
     lavaan,
     R (>= 3.0.0)
-License: GPL-3 + file LICENSE
+License: GPL-3
 LazyData: true
 RoxygenNote: 7.0.2
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
