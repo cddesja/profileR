@@ -1,0 +1,73 @@
+---
+title: "Checking profileR's examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{run_examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The output from all the examples in `profileR` is included in this vignette. This vignette can be built to verify there are no problems with the code and can be used to compare your results against the results published on the [wiki](https://github.com/cddesja/profileR/wiki/Verifying-the-installation-of-profileR). If there are any discrepancies, please open an issue on [GitHub](https://github.com/cddesja/profileR/issues/new).
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r load_profiler}
+library(profileR)
+```
+
+## Criterion-Related Profile Analysis
+```{r}
+example(cpa, run.dontrun = TRUE)
+```
+
+## The `leisure` dataset
+```{r}
+example(leisure, run.dontrun = TRUE)
+```
+
+## Moderated Profile Analysis (experimental)
+```{r}
+example(mpa, run.dontrun = TRUE)
+```
+
+## Profile Analysis via Multidimensional Scaling
+```{r}
+example(pams, run.dontrun = TRUE)
+```
+
+## Profile Analysis for One Sample with Hotelling's T-Square
+```{r}
+example(paos, run.dontrun = TRUE)
+```
+
+## Profile Analysis by Group: Testing Parallelism, Equal Levels, and Flatness
+```{r}
+example(pbg, run.dontrun = TRUE)
+```
+
+## Pattern and Level Reliability via Profile Analysis
+```{r}
+example(pr, run.dontrun = TRUE)
+```
+
+## The `spouse` dataset
+```{r}
+example(spouse, run.dontrun = TRUE)
+```
+
+## Within-Person Random Intercept Factor Model
+```{r}
+example(wprifm, run.dontrun = TRUE)
+```
+
+
+
+
+
+
