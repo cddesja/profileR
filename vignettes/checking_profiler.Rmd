@@ -2,7 +2,7 @@
 title: "Checking profileR's examples"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{run_examples}
+  %\VignetteIndexEntry{checking_profiler}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
