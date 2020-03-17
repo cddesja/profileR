@@ -31,6 +31,15 @@
 
 ***
 
+### Citing ``profileR``
+
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+
+To cite ``profileR`` in your work, please use the following APA-style citations:
+
+> Desjardins, C. D., & Bulut, O. (2020). *profileR: An R package for profile analysis*. Journal of Open Source Software, 5(47). Retrieved from [https://doi.org/10.21105/joss.01941). doi: 10.21105/joss.01941
+
+
 ### Installing ``profileR``
 
 Most recent version (and early versions) are installable from [CRAN](https://cran.r-project.org/package=profileR) by using:
@@ -59,7 +68,7 @@ devtools::install_github(repo = "cddesja/profileR", build_vignettes = TRUE) # wi
 
 To verify the installation and test that the examples work as intended, please visit our [wiki](https://github.com/cddesja/profileR/wiki/Verifying-the-installation-of-profileR). 
 
-### Using and Citing ``profileR``
+### Using ``profileR``
 
 To learn how to conduct profile analysis using ``profileR``, you can see our paper available on [PsyArxiv](https://psyarxiv.com/sgy8m). This paper walks through some of the principal methods available in ``profileR``. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in ``profileR``. To see this paper as a vignette in the package:
 
@@ -67,20 +76,18 @@ To learn how to conduct profile analysis using ``profileR``, you can see our pap
 vignette("profiler-vignette", package = "profileR")
 ```
 
-To cite ``profileR`` in your work, you can use the following APA-style citations:
-
-> Desjardins et al., (2020). profileR: An R package for profile analysis. Journal of Open Source Software, 5(47), 1941. [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+To cite this vignette in your work, you can use the following APA-style citations:
 
 > Bulut, O., & Desjardins, C. D. (2020). *Profile analysis of multivariate data: A brief introduction to the profileR package*. Retrieved from [psyarxiv.com/sgy8m](https://psyarxiv.com/sgy8m). doi: 10.31234/osf.io/sgy8m
-
-> Bulut, O., & Desjardins, C. D. (2018). *profileR: Profile analysis of multivariate data in R* [Computer software]. Available from <http://CRAN.R-project.org/package=profileR>.
 
 ***
 
 ### Updates in ``profileR``
 
 ##### Changes since v0.3
-- Added gtheory functions
+- Added vignette to test installation
+- Added ``profileR`` vignette
+- Added gtheory functions (*temporarily removed*)
 - Added the spouse data in the package. 
 - Added ef and writing data.
 
