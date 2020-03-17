@@ -1,8 +1,13 @@
 
 # profileR <img src="man/figures/logo.png" align="right" width="120" />
 
+
 **Development version**: v0.3-6 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
 [![](https://cranlogs.r-pkg.org/badges/profileR)](https://cran.r-project.org/package=profileR)
+
+
+**JOSS manuscript**: [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+
 
 ### Title: Profile Analysis of Multivariate Data in R
 
@@ -31,12 +36,13 @@
 
 ***
 
-### Citing ``profileR`` [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+### Citing ``profileR`` 
 
 To cite ``profileR`` in your work, please use the following APA-style citation:
 
 > Desjardins, C. D., & Bulut, O. (2020). *profileR: An R package for profile analysis*. Journal of Open Source Software, 5(47). Retrieved from https://doi.org/10.21105/joss.01941. doi: 10.21105/joss.01941
 
+***
 
 ### Installing ``profileR``
 
