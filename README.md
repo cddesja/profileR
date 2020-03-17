@@ -73,6 +73,8 @@ To cite ``profileR`` in your work, you can use the following APA-style citations
 
 > Bulut, O., & Desjardins, C. D. (2018). *profileR: Profile analysis of multivariate data in R* [Computer software]. Available from <http://CRAN.R-project.org/package=profileR>.
 
+Also, you can find the most recent ``profileR`` paper in the Journal of Open Source Software: [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+
 ***
 
 ### Updates in ``profileR``
