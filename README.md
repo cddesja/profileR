@@ -35,7 +35,7 @@
 
 To cite ``profileR`` in your work, please use the following APA-style citation:
 
-> Desjardins, C. D., & Bulut, O. (2020). *profileR: An R package for profile analysis*. Journal of Open Source Software, 5(47). Retrieved from [https://doi.org/10.21105/joss.01941). doi: 10.21105/joss.01941
+> Desjardins, C. D., & Bulut, O. (2020). *profileR: An R package for profile analysis*. Journal of Open Source Software, 5(47). Retrieved from https://doi.org/10.21105/joss.01941. doi: 10.21105/joss.01941
 
 
 ### Installing ``profileR``
