@@ -69,11 +69,11 @@ vignette("profiler-vignette", package = "profileR")
 
 To cite ``profileR`` in your work, you can use the following APA-style citations:
 
+> Desjardins et al., (2020). profileR: An R package for profile analysis. Journal of Open Source Software, 5(47), 1941. [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
+
 > Bulut, O., & Desjardins, C. D. (2020). *Profile analysis of multivariate data: A brief introduction to the profileR package*. Retrieved from [psyarxiv.com/sgy8m](https://psyarxiv.com/sgy8m). doi: 10.31234/osf.io/sgy8m
 
 > Bulut, O., & Desjardins, C. D. (2018). *profileR: Profile analysis of multivariate data in R* [Computer software]. Available from <http://CRAN.R-project.org/package=profileR>.
-
-Also, you can find the most recent ``profileR`` paper in the Journal of Open Source Software: [![DOI](https://joss.theoj.org/papers/10.21105/joss.01941/status.svg)](https://doi.org/10.21105/joss.01941)
 
 ***
 
