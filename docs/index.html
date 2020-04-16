@@ -87,7 +87,8 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#profiler-" class="anchor"></a>profileR <img src="reference/figures/logo.png" align="right" width="120">
 </h1></div>
-<p><strong>Development version</strong>: v0.3-5 on GitHub <a href="https://travis-ci.org/cddesja/profileR"><img src="https://travis-ci.org/cddesja/profileR.svg?branch=master" alt="Build Status"></a> <a href="http://codecov.io/github/cddesja/profileR?branch=master"><img src="http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master" alt="codecov.io"></a> <a href="https://cran.r-project.org/package=profileR"><img src="https://cranlogs.r-pkg.org/badges/profileR"></a></p>
+<p><strong>Development version</strong>: v0.3-6 on GitHub <a href="https://travis-ci.org/cddesja/profileR"><img src="https://travis-ci.org/cddesja/profileR.svg?branch=master" alt="Build Status"></a> <a href="http://codecov.io/github/cddesja/profileR?branch=master"><img src="http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master" alt="codecov.io"></a> <a href="https://cran.r-project.org/package=profileR"><img src="https://cranlogs.r-pkg.org/badges/profileR"></a></p>
+<p><strong>JOSS manuscript</strong>: <a href="https://doi.org/10.21105/joss.01941"><img src="https://joss.theoj.org/papers/10.21105/joss.01941/status.svg" alt="DOI"></a></p>
 <div id="title-profile-analysis-of-multivariate-data-in-r" class="section level3">
 <h3 class="hasAnchor">
 <a href="#title-profile-analysis-of-multivariate-data-in-r" class="anchor"></a>Title: Profile Analysis of Multivariate Data in R</h3>
@@ -126,6 +127,16 @@
 </ul>
 <hr>
 </div>
+<div id="citing-profiler" class="section level3">
+<h3 class="hasAnchor">
+<a href="#citing-profiler" class="anchor"></a>Citing <code>profileR</code>
+</h3>
+<p>To cite <code>profileR</code> in your work, please use the following APA-style citation:</p>
+<blockquote>
+<p>Desjardins, C. D., &amp; Bulut, O. (2020). <em>profileR: An R package for profile analysis</em>. Journal of Open Source Software, 5(47), 1941, doi: 10.21105/joss.01941</p>
+</blockquote>
+<hr>
+</div>
 <div id="installing-profiler" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installing-profiler" class="anchor"></a>Installing <code>profileR</code>
@@ -134,10 +145,10 @@
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"profileR"</span>)</a></code></pre></div>
 <p>and the developmental version on GitHub can be installed by using:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="dt">R_REMOTES_NO_ERRORS_FROM_WARNINGS=</span><span class="ot">TRUE</span>) <span class="co"># in case your R version is older</span></a>
-<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="dt">repo =</span> <span class="st">"cddesja/profileR"</span>) <span class="co"># without the vignette</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="dt">repo =</span> <span class="st">"cddesja/profileR"</span>) <span class="co"># without the vignette</span></a></code></pre></div>
 <p>If LaTeX is available, <code>profileR</code> can be installed with its vignette by using:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span>(<span class="dt">R_REMOTES_NO_ERRORS_FROM_WARNINGS=</span><span class="ot">TRUE</span>) <span class="co"># in case your R version is older</span></a>
-<a class="sourceLine" id="cb3-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="dt">repo =</span> <span class="st">"cddesja/profileR"</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>) <span class="co"># with the vignette</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="dt">repo =</span> <span class="st">"cddesja/profileR"</span>, <span class="dt">build_vignettes =</span> <span class="ot">TRUE</span>) <span class="co"># with the vignette</span></a></code></pre></div>
 <hr>
 </div>
 <div id="verifying-and-testing-profiler" class="section level3">
@@ -146,18 +157,15 @@
 </h3>
 <p>To verify the installation and test that the examples work as intended, please visit our <a href="https://github.com/cddesja/profileR/wiki/Verifying-the-installation-of-profileR">wiki</a>.</p>
 </div>
-<div id="using-and-citing-profiler" class="section level3">
+<div id="using-profiler" class="section level3">
 <h3 class="hasAnchor">
-<a href="#using-and-citing-profiler" class="anchor"></a>Using and Citing <code>profileR</code>
+<a href="#using-profiler" class="anchor"></a>Using <code>profileR</code>
 </h3>
 <p>To learn how to conduct profile analysis using <code>profileR</code>, you can see our paper available on <a href="https://psyarxiv.com/sgy8m">PsyArxiv</a>. This paper walks through some of the principal methods available in <code>profileR</code>. In the paper, a brief theory behind each method is presented, followed by a working example demonstrating how to use these methods in <code>profileR</code>. To see this paper as a vignette in the package:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/vignette.html">vignette</a></span>(<span class="st">"profiler-vignette"</span>, <span class="dt">package =</span> <span class="st">"profileR"</span>)</a></code></pre></div>
-<p>To cite <code>profileR</code> in your work, you can use the following APA-style citations:</p>
+<p>To cite this vignette in your work, you can use the following APA-style citations:</p>
 <blockquote>
 <p>Bulut, O., &amp; Desjardins, C. D. (2020). <em>Profile analysis of multivariate data: A brief introduction to the profileR package</em>. Retrieved from <a href="https://psyarxiv.com/sgy8m">psyarxiv.com/sgy8m</a>. doi: 10.31234/osf.io/sgy8m</p>
-</blockquote>
-<blockquote>
-<p>Bulut, O., &amp; Desjardins, C. D. (2018). <em>profileR: Profile analysis of multivariate data in R</em> [Computer software]. Available from <a href="http://CRAN.R-project.org/package=profileR" class="uri">http://CRAN.R-project.org/package=profileR</a>.</p>
 </blockquote>
 <hr>
 </div>
@@ -169,7 +177,9 @@
 <h5 class="hasAnchor">
 <a href="#changes-since-v03" class="anchor"></a>Changes since v0.3</h5>
 <ul>
-<li>Added gtheory functions</li>
+<li>Added vignette to test installation</li>
+<li>Added <code>profileR</code> vignette</li>
+<li>Added gtheory functions (<em>temporarily removed</em>)</li>
 <li>Added the spouse data in the package.</li>
 <li>Added ef and writing data.</li>
 </ul>
