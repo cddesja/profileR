@@ -1,8 +1,9 @@
 
 # profileR <img src="man/figures/logo.png" align="right" width="120" />
 
-
-**Development version**: v0.3-6 on GitHub [![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
+[![](https://www.r-pkg.org/badges/version/profileR?color=orange)](https://cran.r-project.org/package=profileR)
+[![Build Status](https://travis-ci.org/cddesja/profileR.svg?branch=master)](https://travis-ci.org/cddesja/profileR) [![codecov.io](http://codecov.io/github/cddesja/profileR/coverage.svg?branch=master)](http://codecov.io/github/cddesja/profileR?branch=master) 
+[![](http://cranlogs.r-pkg.org/badges/grand-total/profileR?color=blue)](https://cran.r-project.org/package=profileR)
 [![](https://cranlogs.r-pkg.org/badges/profileR)](https://cran.r-project.org/package=profileR)
 
 
@@ -114,7 +115,4 @@ To get further help regarding the functions available in ``profileR`` or inqurie
 
   - Okan Bulut (<okanbulut84@gmail.com>)
   - Chris Desjardins (<cddesjardins@gmail.com>)
-
-
-
 
