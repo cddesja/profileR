@@ -1,6 +1,11 @@
+Changes in version: profileR_0.3-6
+
+ * Fixed a bug in the pr function
+ 
+
 Changes in version: profileR_0.3-5
 
- * Fixed bug in pbg function
+ * Fixed a bug in the pbg function
  
  * Added bacc2001 data set.
 
